@@ -1,0 +1,83 @@
+extends layouts/default.pug
+include mixins/product-item.pug
+
+block title 
+    title Giới thiệu
+
+block main 
+    section.introduce
+        .container
+            .introduce__content Các thành viên
+            .introduce__list 
+
+                .introduce__element 
+                    .introduce__inner 
+                        img(src = "../assets/images/avt_1.jpg" alt="")
+                        .introduce__inner--nameAuthor Gia Quí
+                        .introduce__inner--education HCMUT's student
+                    .introduce__position
+                        i(class = "fa-solid fa-location-dot") 
+                        | Frontend Develop
+                    .introduce__desc 
+                        p Tôi là fan Real Madrid
+                    .introduce__info 
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-facebook-f")
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-x-twitter")
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-instagram")
+
+                .introduce__element 
+                    .introduce__inner 
+                        img(src = "../assets/images/avt_2.jpg" alt="")
+                        .introduce__inner--nameAuthor Quốc Thịnh
+                        .introduce__inner--education HCMUT's student
+                    .introduce__position 
+                        i(class = "fa-solid fa-location-dot") 
+                        | Backend Develop
+                    .introduce__desc 
+                        p Tôi là fan Arsenal
+                    .introduce__info 
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-facebook-f")
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-x-twitter")
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-instagram")
+
+                .introduce__element 
+                    .introduce__inner 
+                        img(src = "../assets/images/avt_3.jpg" alt="")
+                        .introduce__inner--nameAuthor Đăng Khoa 
+                        .introduce__inner--education HCMUT's student
+                    .introduce__position 
+                        i(class = "fa-solid fa-location-dot") 
+                        | Frontend Develop
+                    .introduce__desc 
+                        p Tôi là fan Chelsea
+                    .introduce__info 
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-facebook-f")
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-x-twitter")
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-instagram")
+
+                .introduce__element 
+                    .introduce__inner 
+                        img(src = "../assets/images/avt_4.jpg" alt="")
+                        .introduce__inner--nameAuthor Đăng Khoa
+                        .introduce__inner--education HCMUT's student
+                    .introduce__position 
+                        i(class = "fa-solid fa-location-dot") 
+                        | Backend Develop
+                    .introduce__desc 
+                        p Tôi là fan Paris-Saint Germain
+                    .introduce__info 
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-facebook-f")
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-x-twitter")
+                        a(href = "#" target = "_blank")
+                            i(class = "fa-brands fa-instagram")

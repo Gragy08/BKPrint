@@ -1,0 +1,106 @@
+doctype html
+html
+    head
+        meta(charser="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        block title
+        link(rel="stylesheet" href="assets/css/style.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css")
+    body
+
+        //- Header
+        header.header
+            .container
+                .header__wrap
+                    //- Menu
+                    button.header__menu-mobile
+                        i(class="fa-solid fa-bars")
+
+                    //- Logo
+                    .header__logo
+                        a(href="index.html")
+                            img(src="assets/images/HCMUT_official_logo.png" alt="BachKhoa")
+
+                    //- Menu
+                    nav.header__menu
+                        ul
+                            li
+                                a(href="index.html") Trang Chủ
+                            //- li
+                            //-     a(href="product-list.html") Danh mục           
+                            li
+                                a(href="product-detail.html") Giới thiệu
+                            li
+                                a(href="contact.html") Liên hệ
+
+                    //- Form search
+                    button.header__search-mobile
+                        i(class="fa-solid fa-magnifying-glass")
+
+                    form(action="#" class="header__form")
+                        input(name="keywork" placeholder="Tìm vị trí máy in...")
+                        button
+                            i(class="fa-solid fa-magnifying-glass")
+
+                    //- Button
+                    a(href="#" class="button") Đăng nhập
+        //- End Heade
+
+        //- Main
+        block main
+        //- End Main
+
+        //- Footer
+        footer.footer
+            .container
+                .footer__top
+                    .footer__top__logo
+                        img(src="assets/images/HCMUT_official_logo.png" alt="BachKhoa")
+                        .footer__top__logo__text
+                            .footer__top__logo__text-des ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH
+                            .footer__top__logo__text-name TRƯỜNG ĐẠI HỌC BÁCH KHOA
+                    .footer__top__desc 
+                        ul
+                            li
+                                a(a href="" target="_self") 
+                                    i(class="fa-solid fa-location-dot")
+                                    | Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh.
+
+                .footer__middle
+                    nav.footer__middle-links
+                        ul 
+                            li
+                                a(href="index.html" target="_self") Trang Chủ
+                            li
+                                a(href="#" target="_self") Danh Mục
+                            li
+                                a(href="#" target="_self") Giới Thiệu
+                            li
+                                a(href="contact.html" target="_self") Liên Hệ
+
+                    nav.footer__socials
+                        ul
+                            li
+                                a(a href="#" target="_blank")
+                                    i(class="fa-brands fa-facebook")
+                            li
+                                a(href="contact.html" target="_self")
+                                    i(class="fa-solid fa-envelope")
+                            li
+                                a(href="contact.html" target="_self")
+                                    i(class="fa-solid fa-phone")
+                            li
+                                a(href="contact.html" target="_self")
+                                    i(class="fa-solid fa-location-dot")
+                .footer__bottom
+                    .footer__copyright © HCMUT-VNU. All rights reserved.
+                    .footer__logo
+                        img(src="assets/images/VNU_offical_logo.png" alt="VNU")
+
+                    nav.footer__bottom-links
+                        ul
+                            li
+                                a(href="#") Điều khoản dịch vụ
+                            li
+                                a(href="#") Chính sách bảo mật
+        //- End Footer

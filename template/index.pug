@@ -1,0 +1,185 @@
+extends layouts/default.pug
+include mixins/product-item.pug
+
+block title 
+    title Danh sách sản phẩm
+
+block main
+    
+    //- Breadcrumb
+    .breadcrumb
+        .container
+            nav.breadcrumb__wrap
+                ul
+                    li 
+                        a(href="#") Trang chủ
+                    //- li 
+                    //-     a(href="#") Tòa
+                    li 
+                        a(href="#") Máy in
+    //- End Breadcrumb
+
+    //- Section-3 
+    //- include partials/section-3.pug 
+    //- End Section-3 
+
+    //- Section-5
+    .section-5 
+        .container 
+            .section-5__wrap 
+                .section-5__left
+                    .box-filter 
+                        .box-filter__title
+                            i(class="fa-solid fa-filter")
+                            .box-filter__title__inner Bộ lọc
+                        .box-filter__group 
+                            .box-filter__group-label Chức năng
+                            .box-filter__group-list 
+                                .box-filter__group-item 
+                                    input(type="checkbox" id="")
+                                    label(for="") In Lazer
+                                .box-filter__group-item 
+                                    input(type="checkbox" id="")
+                                    label(for="") In phun màu
+                        .box-filter__group
+                            .box-filter__group-label Khả năng
+                            .box-filter__group-list 
+                                .box-filter__group-item 
+                                    input(type="checkbox" id="")
+                                    label(for="") In hai mặt
+                                .box-filter__group-item 
+                                    input(type="checkbox" id="")
+                                    label(for="") Scan
+                                .box-filter__group-item 
+                                    input(type="checkbox" id="")
+                                    label(for="") Copy
+                        .box-filter__group
+                            .box-filter__group-label Màu săc
+                            .box-filter__group-list 
+                                .box-filter__group-item 
+                                    input(type="checkbox" id="")
+                                    label(for="") Trắng đen
+                                .box-filter__group-item 
+                                    input(type="checkbox" id="")
+                                    label(for="") Màu
+                                //- .box-filter__group-item 
+                                //-     input(type="checkbox" id="")
+                                //-     label(for="") Lớn
+                .section-5__right
+                    -
+                        var printers = [
+                            {
+                                image: 'assets/images/B4-304.webp',
+                                title: 'B4-304 . HP LaserJet M211d',
+                                function: 'In Laser',
+                                ability: 'In 2 mặt tự động, trắng đen',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/A4-201.jpg',
+                                title: 'A4-201 . Brother DCP-B7620DW',
+                                function: 'In Laser',
+                                ability: 'Copy, Scan(Màu), In 2 mặt tự động, trắng đen',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/B6-201.jpg',
+                                title: 'B6-201 . HP Smart Tank 580',
+                                function: 'In phun màu',
+                                ability: 'Copy, Scan(màu), In 1 mặt, in màu',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/B2-402.jpg',
+                                title: 'B2-402 . Canon LBP6030',
+                                function: 'In Laser',
+                                ability: 'In 1 mặt, trắng đen',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/B1-208.jpg',
+                                title: 'B1-208 . Brother HL-L2366DW',
+                                function: 'In Laser',
+                                ability: 'In 2 mặt tự động, trắng đen',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/A4-201.jpg',
+                                title: 'A4-201 . Brother DCP-B7620DW',
+                                function: 'In Laser',
+                                ability: 'Copy, Scan(Màu), In 2 mặt tự động, trắng đen',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/B6-201.jpg',
+                                title: 'B6-201 . HP Smart Tank 580',
+                                function: 'In phun màu',
+                                ability: 'Copy, Scan(màu), In 1 mặt, in màu',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/B2-402.jpg',
+                                title: 'B2-402 . Canon LBP6030',
+                                function: 'In Laser',
+                                ability: 'In 1 mặt, trắng đen',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/B1-208.jpg',
+                                title: 'B1-208 . Brother HL-L2366DW',
+                                function: 'In Laser',
+                                ability: 'In 2 mặt tự động, trắng đen',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/A4-201.jpg',
+                                title: 'A4-201 . Brother DCP-B7620DW',
+                                function: 'In Laser',
+                                ability: 'Copy, Scan(Màu), In 2 mặt tự động, trắng đen',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/B6-201.jpg',
+                                title: 'B6-201 . HP Smart Tank 580',
+                                function: 'In phun màu',
+                                ability: 'Copy, Scan(màu), In 1 mặt, in màu',
+                                status: 'Đang hoạt động'
+                            },
+                            {
+                                image: 'assets/images/B2-402.jpg',
+                                title: 'B2-402 . Canon LBP6030',
+                                function: 'In Laser',
+                                ability: 'In 1 mặt, trắng đen',
+                                status: 'Đang hoạt động'
+                            }
+                        ];
+
+                    
+                    .section-5__head
+                        h2.section-5__title Máy in
+                        .box-filter__title
+                            i(class="fa-solid fa-filter")
+                            .box-filter__title__inner Bộ lọc
+                    .section-5__list
+                        each printer in printers
+                            +product-item(printer)
+
+                    nav.pagination
+                        ul 
+                            li 
+                                a(href="#" class="pagination__item") <i class="fa-solid fa-arrow-left"></i>
+                            li 
+                                a(href="#" class="pagination__item pagination__item--active") 1
+                            li 
+                                a(href="#" class="pagination__item") 2
+                            li 
+                                a(href="#" class="pagination__item") 3
+                            li 
+                                a(href="#" class="pagination__item") 4
+                            li 
+                                a(href="#" class="pagination__item") ...
+                            li 
+                                a(href="#" class="pagination__item") 28
+                            li 
+                                a(href="#" class="pagination__item") <i class="fa-solid fa-arrow-right"></i>
+    //- End Section-5

@@ -1,0 +1,65 @@
+extends layouts/default.pug
+
+block title 
+    title Liên Hệ
+
+block main
+    //- Breadcrumb
+    .breadcrumb
+        .container
+            nav.breadcrumb__wrap
+                ul
+                    li 
+                        a(href="#") Trang chủ
+                    li 
+                        a(href="#" class="contact") Liên hệ hỗ trợ và Đóng góp ý kiến
+    //- End Breadcrumb
+
+    //- Form
+    .form 
+        .container 
+            .form__wrap 
+                .form__content Thông tin liên hệ
+                .form__table 
+                    .form__table--element
+                        form(action="#" target="_blank" method="POST")
+                            input(type="text" id="fullName" name="hoTen" class="control" placeholder="Tên của bạn")
+                    .form__table--element   
+                        form(action="#" target="_blank" method="POST")
+                            input(type="email" id="eMail" name="diaChiEmail" class="control" placeholder="Email của bạn")
+                    .form__table--element
+                        form(action="#" target="_blank" method="POST")
+                            input(type="text" id="nameOfMail" name="tieuDe" class="control" placeholder="Tiêu đề thư")
+                    .form__table--element
+                        form(action="#" target="_blank" method="POST")
+                            textarea(id="content" name="noiDung" class="control" placeholder="Nội dung")
+                    .form__table--element
+                        .button Gửi thông tin
+    //- End Form
+
+    //- Maps
+    .maps   
+        .container 
+            .maps_wrap 
+                .maps__content Liên hệ với chúng tôi
+                .maps__info
+                    .maps__info--detail 
+                        i(class="fa-solid fa-phone")
+                        | 0912345678
+                    .maps__info--detail 
+                        i(class="fa-solid fa-envelope")
+                        | BKPrint@hcmut.edu.vn
+                    .maps__info--detail
+                        i(class="fa-brands fa-facebook") 
+                        | BKPrint.facbook.com
+                .maps__base 
+                    .maps__base--title Cơ Sở Lý Thường Kiệt
+                    .maps__base--destination
+                        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d582.6385168685912!2d106.65805560838005!3d10.772263831292069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec3c161a3fb%3A0xef77cd47a1cc691e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBCw6FjaCBraG9hIC0gxJDhuqFpIGjhu41jIFF14buRYyBnaWEgVFAuSENN!5e0!3m2!1svi!2s!4v1727280084923!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+
+                    //- .maps__base--branchbase
+                    //-     .maps__content 
+                    //-         .maps__title Cơ Sở Dĩ An
+                    //-     .maps__destination
+                    //-         iframe(width="auto" height="50px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.092637491518!2d106.8005153445737!3d10.880558461619357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d8a5568c997f%3A0xdeac05f17a166e0c!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBCw6FjaCBraG9hIC0gxJBIUUcgVFAuSENN!5e0!3m2!1svi!2s!4v1727280176423!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+    //- End Maps

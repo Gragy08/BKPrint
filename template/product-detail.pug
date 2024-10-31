@@ -2,82 +2,119 @@ extends layouts/default.pug
 include mixins/product-item.pug
 
 block title 
-    title Giới thiệu
+    title Chi tiết máy in
 
-block main 
-    section.introduce
+block main
+    //- Section-6
+    section.section-6
         .container
-            .introduce__content Các thành viên
-            .introduce__list 
+            .section-6__wrap 
+                .section-6__images 
+                    .section-6__image-main 
+                        img(src="assets/images/B4-304.webp")
+                    //- .section-6__image-thumb 
+                    //-     img(src="assets/images/pro-11.jpg")
+                    //-     img(src="assets/images/pro-2.jpg")
+                    //-     img(src="assets/images/pro-3.jpg")
+                    //-     img(src="assets/images/pro-4.jpg")
+                    //-     img(src="assets/images/pro-5.jpg")
+                .section-6__content 
+                    //- Breadcrumb
+                    .breadcrumb
+                        nav.breadcrumb__wrap
+                            ul
+                                li 
+                                    a(href="index.html") Trang chủ
+                                //- li 
+                                //-     a(href="#") Chó
+                                li 
+                                    a(href="index.html") Máy in
+                                li 
+                                    a(href="product-detail.html") Máy in B4 - 304
+                    //- End Breadcrumb
+                    h1.section-6__title Máy in B4 - 304
+                    .section-6__price HP LaserJet M211d
+                    .section-6__buttons 
+                        a(href="#" class="button-outline") Chỉnh sửa
+                        a(href="#" class="button") Xóa
+                    .section-6__table 
+                        table 
+                            tbody 
+                                tr 
+                                    td Code
+                                    td #9YF82A
+                                tr 
+                                    td Chức năng
+                                    td In Laser
+                                tr 
+                                    td Khả năng
+                                    td In hai mặt, trắng đen
+                                tr 
+                                    td Tốc độ
+                                    td 29 trang / 1 phút
+                                tr 
+                                    td Trạng thái
+                                    td Đang hoạt động
+                                tr 
+                                    td Mô tả ngắn
+                                    td Máy in Laser đơn năng với khả năng in hai mặt trắng đen với tốc độ 29 trang/phút
+                    //- .box-share  
+                    //-     .box-share__label 
+                    //-         i(class="fa-solid fa-share")
+                    //-         | Chia sẻ:
+                    //-     .box-share__list 
+                    //-         a(href="#" target="_blank") <i class="fa-brands fa-facebook"></i>
+                    //-         a(href="#" target="_blank") <i class="fa-brands fa-twitter"></i>
+                    //-         a(href="#" target="_blank") <i class="fa-brands fa-instagram"></i>
+                    //-         a(href="#" target="_blank") <i class="fa-brands fa-youtube"></i>
+    //- End Section-6
 
-                .introduce__element 
-                    .introduce__inner 
-                        img(src = "../assets/images/avt_1.jpg" alt="")
-                        .introduce__inner--nameAuthor Gia Quí
-                        .introduce__inner--education HCMUT's student
-                    .introduce__position
-                        i(class = "fa-solid fa-location-dot") 
-                        | Frontend Develop
-                    .introduce__desc 
-                        p Tôi là fan Real Madrid
-                    .introduce__info 
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-facebook-f")
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-x-twitter")
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-instagram")
+    -
+        var printers = [
+            {
+                image: 'assets/images/B1-208.jpg',
+                title: 'B1-208 . Brother HL-L2366DW',
+                function: 'In Laser',
+                ability: 'In 2 mặt tự động, trắng đen',
+                status: 'Đang hoạt động'
+            },
+            {
+                image: 'assets/images/A4-201.jpg',
+                title: 'A4-201 . Brother DCP-B7620DW',
+                function: 'In Laser',
+                ability: 'Copy, Scan(Màu), In 2 mặt tự động, trắng đen',
+                status: 'Đang hoạt động'
+            },
+            {
+                image: 'assets/images/B6-201.jpg',
+                title: 'B6-201 . HP Smart Tank 580',
+                function: 'In phun màu',
+                ability: 'Copy, Scan(màu), In 1 mặt, in màu',
+                status: 'Đang hoạt động'
+            },
+            {
+                image: 'assets/images/B2-402.jpg',
+                title: 'B2-402 . Canon LBP6030',
+                function: 'In Laser',
+                ability: 'In 1 mặt, trắng đen',
+                status: 'Đang hoạt động'
+            }
+        ];
 
-                .introduce__element 
-                    .introduce__inner 
-                        img(src = "../assets/images/avt_2.jpg" alt="")
-                        .introduce__inner--nameAuthor Quốc Thịnh
-                        .introduce__inner--education HCMUT's student
-                    .introduce__position 
-                        i(class = "fa-solid fa-location-dot") 
-                        | Backend Develop
-                    .introduce__desc 
-                        p Tôi là fan Arsenal
-                    .introduce__info 
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-facebook-f")
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-x-twitter")
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-instagram")
+    section.section2
+        .container
+            .box-head
+                .box-head__left
+                    h3 Xem thêm máy in khác
+                .box-head__right
+                    a(class="button-outline" href="index.html") 
+                        | Xem thêm 
+                        i(class="fa-solid fa-angle-right")
 
-                .introduce__element 
-                    .introduce__inner 
-                        img(src = "../assets/images/avt_3.jpg" alt="")
-                        .introduce__inner--nameAuthor Đăng Khoa 
-                        .introduce__inner--education HCMUT's student
-                    .introduce__position 
-                        i(class = "fa-solid fa-location-dot") 
-                        | Frontend Develop
-                    .introduce__desc 
-                        p Tôi là fan Chelsea
-                    .introduce__info 
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-facebook-f")
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-x-twitter")
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-instagram")
-
-                .introduce__element 
-                    .introduce__inner 
-                        img(src = "../assets/images/avt_4.jpg" alt="")
-                        .introduce__inner--nameAuthor Đăng Khoa
-                        .introduce__inner--education HCMUT's student
-                    .introduce__position 
-                        i(class = "fa-solid fa-location-dot") 
-                        | Backend Develop
-                    .introduce__desc 
-                        p Tôi là fan Paris-Saint Germain
-                    .introduce__info 
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-facebook-f")
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-x-twitter")
-                        a(href = "#" target = "_blank")
-                            i(class = "fa-brands fa-instagram")
+            .section2__wrap 
+                each printer in printers
+                    +product-item(printer)
+            .section2__button-bottom
+                a(class="button-outline" href="index.html") 
+                    | Xem thêm 
+                    i(class="fa-solid fa-angle-right")

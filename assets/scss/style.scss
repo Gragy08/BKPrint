@@ -42,6 +42,8 @@ a {
     }
 }
 
+
+// Button
 .button {
     /* thẻ a, là inline, không thêm được chiều cao nên cố tình thêm height cũng ko được -> inline-block*/
     /* để chữ canh ra chính giữa -> inline-flex + align-items: center */
@@ -56,6 +58,7 @@ a {
     color: #FDFDFD;
     background-color: $color-main;
     border-radius: 57px;
+    border: 0;
 
     transition: all 0.3s;
 
@@ -96,6 +99,7 @@ a {
 .button-outline:hover {
     background-color: #def0f8;
 }
+// End Button
 
 // Header
 .header {
@@ -111,7 +115,7 @@ a {
         /* lúc co màn hình lại thì cách nhau ít nhất là 14px */
         gap: 14px;
         position: relative;
-        z-index: 99;
+        // z-index: 10;
     }
 
     &__logo img {
@@ -289,220 +293,205 @@ a {
 }
 // End Breadcrumb
 
+
 //--------------------------------------------------INDEX--------------------------------------------------
-// Section-1
-.section1 {
-    background: linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%);
-    /* góc trên phải trái bo 0, góc dưới phải trái bo 40px */
-    border-radius: 0 0 40px 40px;
-    /* do cái nền nó thòi lên trên bao cái header nên margin-100px để nó thòi lên */
-    /* không thêm nền cho header vì các trang con có header màu khác nên mình dùng cách này để dễ responsive và dùng header cho nhiều trang */
-    margin-top: -100px;
-    /* các phần tử cũng bị thòi theo nên pad 100px để nó có khoảng cách và về vị trí cũ */
-    padding-top: 100px;
-    /* display: flex; */
 
-    overflow: hidden;
-    /* do anh x1.5 nen se co thanh cuon ngang -> loi man hinh */
+// Section-5
+.section-5 {
+    padding: 60px 0;
 
-    &__wrap {
-        /* content và img cùng một hàng */
-        display: flex;
-    }
-
-    & .header__bg1 {
-        position: absolute;
-        top: -10px;
-        left: -80px;
-        z-index: 0;
-    }
-
-    &__content {
-        width: 50%;
-        padding-top: 80px;
-        padding-right: 76px;
-    
-        /* để ảnh bg1 có class cha là inner content có thể canh chỉnh position */
-        position: relative;
-        z-index: 1;
-    }
-
-    &__bg1 {
-        position: absolute;
-        top: 75px;
-        left: -10px;
-    
-        /* z-index cùng bằng 0 (mặc định), nhưng mà content được viết sau trong html nên chữ đè lên ảnh */
-        /* z-index:0; */
-    }
-
-    &__bg2 {
-        position: absolute;
-        bottom: 0;
-        left: -100px;
-    
-        /* z-index cùng bằng 0 (mặc định), nhưng mà content được viết sau trong html nên chữ đè lên ảnh */
-        /* z-index:0; */
-    }
-
-    &__title {
-        /* các thẻ h1-h6 luôn có margin mặc định nên phải reset về 0 */
-        margin-top: 0;
-        margin-bottom: 24px;
-        color: #003459;
-        font-weight: 700;
-        text-transform: capitalize;
-    
-        /* để có position có z-index=0 (mặc định), nếu 0 thêm pos relative thì có pos < 0*/
-        position: relative;
-        /* z-index: 0; */
-    }
-
-    &__title-main {
-        font-size: 56px;
-    }
-
-    &__title-sub {
-        font-size: 42px;
-    }
-
-    &__desc {
-        width: 480px;
-        height: 72px;
-        font-size: 16px;
-        font-weight: 500;
-        color: #242B33;
-        margin-bottom: 34px;
-
-        p {
-            margin: 0;
-        }
-    }
-
-    &__buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-        text-transform: capitalize;
-
-        a {
-            font-weight: 500;
-            font-size: 16px;
-        }
-    }
-
-    &__image {
-        width: 50%;
-        padding-right: 74px;
-    
-        position: relative;
-    }
-
-    &__image-main {
-        /* để ảnh co nhỏ lại vừa container, không fix cứng chiều cao */
-        width: 100%;
-        height: auto;
-        /* thẻ img có kiểu hiển thị inline, có mặc định 1 khoảng trắng nho nhỏ ở dưới nên chỉ cần thêm display block là mất khoảng trắng */
-        display: block;
-        position: relative;
-    }
-
-    &__bg3 {
-        position: absolute;
-        bottom: 0;
-        right: -150px;
-    }
-
-    @media (max-width: 1199.98px) {
-        &__title-main {
-            font-size: 54px;
-        }
-    
-        &__title-sub {
-            font-size: 34px;
-        }
-    
-        &__bg2 {
-            left: -15px;
-            height: 50px;
-        }
-    
-        &__bg3 {
-            width: 145%;
-        }
-    }
-    
-    /* block content ben tren, block img ben duoi */
-    @media (max-width: 991.98px) {
-        &__wrap {
-            flex-wrap: wrap;
-        }
-    
-        &__content {
-            width: 100%;
-            padding-right: 0;
-            padding-top: 35px;
-        }
-    
-        &__desc {
-            width: 100%;
-            margin: 0px;
-
-            p {
-                display: inline;
-                margin: 0px;
-            }
-        }
-    
-        &__image {
-            width: 100%;
-            margin-right: 0;
-            margin-top: 25px;
-        }
-    
-        &__bg2 {
+    &__head {
+        .box-filter__title {
             display: none;
         }
     }
-    
-    @media (max-width: 767.98px) {
-        .header-bg1 {
-            left: 22%;
-            top: -35px;
+
+    &__wrap {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__left {
+        width: calc(25% - 10px);
+    }
+
+    &__right {
+        width: calc(75% - 10px);
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 14px;
+        font-weight: 700;
+        font-size: 24px;
+        color: $color-main;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .product-item {
+            width: calc((100% - 40px) / 3);
         }
     }
-    
-    @media (max-width: 575.98px) {
-        border-radius: 0 0 20px 20px;
-        /* overflow: hidden; */
-    
-        &__title {
-            margin-bottom: 12px;
+
+    &__button-bottom {
+        display: none;
+    }
+
+    @media (max-width: 991.98px) {
+        &__list {
+            .product-item {
+                width: calc((100% - 20px) / 2);
+            }
         }
-    
-        &__title-main {
-            font-size: 46px;
-        }
-    
-        &__title-sub {
-            font-size: 28px;
-        }
-    
-        &__desc {
-            font-size: 12px;
-            margin-bottom: 0;
+    }
+
+    @media (max-width: 767.98px) {
+        &__left {
+            display: none;
         }
 
-        .header-bg1 {
-            left: 8%;
-            top: -35px;
+        &__right {
+            width: 100%;
+        }
+
+        &__head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .box-filter__title {
+                display: inline-flex;
+                font-size: 16px;
+            }
+        }
+
+        &__list {
+            gap: 12px;
+        }
+
+        &__button-bottom {
+            display: block;
+            margin-top: 16px;
+            // justify-content: center;
+            // align-items: center;
+
+            button {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        padding: 32px 0 40px 0;
+    }
+}
+// End Section-5
+
+// box-filter
+.box-filter {
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        color: $color-main;
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        gap: 7px;
+
+        img {
+            width: 20px;
+            height: auto;
+            margin-right: 13px;
+        }
+    }
+
+    &__group {
+        padding-bottom: 16px;
+        border-bottom: 1px solid #EBEEFF;
+        margin-bottom: 16px;
+    }
+
+    &__group-label {
+        font-size: 16px;
+        font-weight: 700;
+        color: $color-dark-text;
+        margin-bottom: 10px;
+    }
+
+    &__group-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__group-item {
+        display: flex;
+        align-items: center;
+
+        input {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+
+        label {
+            margin-bottom: 0;
+            font-weight: 500;
+            font-size: 14px;
+            color: $color-dark-text;
         }
     }
 }
-// End Section-1
+// End box-filter
+
+// Pagination
+.pagination {
+    margin-top: 20px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    &__item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        // background-color: #DDD;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 700;
+        color: $color-main;
+
+        &--active, &:hover {
+            background-color: $color-main;
+            color: white;
+        }
+    }   
+}
+// End Pagination
+
+//--------------------------------------------------END - INDEX--------------------------------------------------
+
+
+//--------------------------------------------------PRODUCT-DETAIL--------------------------------------------------
 
 // Section-2
-.section2 {
+.section-2 {
     background-color: #FDFDFD;
     padding: 60px 0;
 
@@ -622,224 +611,186 @@ a {
 }
 // End box-head
 
-// Section-3
-.section3 {
+// Section-6
+.section-6 {
     &__wrap {
-        background-image: url(../images/section3-bg.svg);
-        
-        /* khong bi repeat anh */
-        background-repeat: no-repeat;
-        /* cover cai img 1.5x */
-        background-size: cover;
-        background-position: center;
-    
-        display: flex;
-    
-        border-radius: 20px;
-        overflow: hidden;
-        justify-content: space-between;
-    }
-    
+         display: flex;
+         padding: 20px 22px;
+         border: 1px solid #EBEEFF;
+         border-radius: 20px;
+         gap: 30px;
+    } 
+ 
     &__image {
-        width: 45%;
-        margin-left: 20px;
-        margin-top: 36px;
-
-        img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
+         width: calc(50% - 15px);
     }
-    
+ 
+    &__image-main {
+         width: 100%;
+         aspect-ratio: 1/1;
+         border-radius: 10px;
+         overflow: hidden;
+         margin-bottom: 12px;
+ 
+         img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+         }
+    }
+ 
+    &__image-thumb {
+         display: flex;
+         gap: 12px;
+ 
+         img {
+             width: calc((100% - 48px) / 5);
+             aspect-ratio: 1/1;
+             object-fit: cover;
+             border-radius: 6px;
+             display: block;
+         }
+    }
+ 
     &__content {
-        width: 45%;
-        text-align: right;
-        margin-top: 58px;
-        margin-right: 85px;
+         width: calc(50% - 15px);
     }
-    
+ 
     &__title {
-        /* các thẻ h1-h6 luôn có margin mặc định nên phải reset về 0 */
-        margin-top: 0;
-        margin-bottom: 8px;
-        color: $color-main;
-        font-weight: 700;
-        text-transform: capitalize;
-    
-        position: relative;
+         margin-top: 18px;
+         margin-bottom: 6px;
+         font-size: 24px;
+         font-weight: 700;
+         color: $color-dark-text;
     }
-    
-    &__title-main {
-        font-size: 52px;
+ 
+    &__price {
+         margin-bottom: 18px;
+         font-weight: 700;
+         font-size: 20px;
+         color: $color-main;
     }
-    
-    &__title-sub {
-        font-size: 36px;
-    }
-    
-    &__desc {
-        width: 394px;
-        height: 54px;
-        font-size: 12px;
-        font-weight: 500;
-        color: #242B33;
-        margin-bottom: 24px;
-    
-        position: relative;
-        top: 0;
-        right: -135px;
-
-        p {
-            margin: 0;
-        }
-    }
-    
+ 
     &__buttons {
-        display: flex;
-        justify-content: right;
-        flex-wrap: wrap;
-        gap: 18px;
-        text-transform: capitalize;
-
-        a {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 18px;
+    }
+ 
+    &__table {
+         margin-top: 18px;
+         margin-bottom: 18px;
+ 
+         td {
+            border-bottom: 1px solid #EBEEFF;
+            padding: 11px;
             font-weight: 500;
-            font-size: 16px;
-        }
-    }
-    
-    @media (max-width: 1199.98px) {
-    
-        &__content {
-            width: 39%;
-            margin-top: 25px;
-            margin-right: 25px;
-        }
-    
-        &__title-main {
-            font-size: 42px;
-        }
-    
-        &__title-sub {
-            font-size: 28px;
-        }
-    
-        &__desc {
-            right: 30px;
-        }
-    }
-    
-    @media (max-width: 991.98px) {
-        &__wrap {
-            flex-wrap: wrap;
-            background-image: url(../images/Bg-mobile-sec3.svg);
-        }
-    
-        &__image {
-            width: 100%;
-            order: 1;
-            margin: 0;
-        }
-    
-        &__content {
-            width: 100%;
-            order: 0;
-            margin: 0;
-            padding: 32px 20px 23px 20px;
-            text-align: center;
-        }
-    
-        &__buttons {
-            justify-content: center;
-        }
-    
-        &__desc {
-            right: -142.5px;
-        }
-    }
-    
-    @media(max-width: 767.98px) {
-        &__desc {
-            right: -50px;
-        }
-    }
-    
-    @media (max-width: 575.98px) {
-        &__title {
-            margin-bottom: 12px;
-        }
-    
-        &__title-main {
-            font-size: 36px;
-        }
-    
-        &__title-sub {
-            font-size: 24px;
-            margin-top: 0;
-        }
-    
-        &__desc {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    }
+            font-size: 14px;
+            color: $color-light-text;
 
-}
-// End Section-3
-
-// Section-4
-.section4 {
-    padding: 60px 0;
-
-    &__wrap {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-
-        .elements {
-            width: calc((100% - 40px) / 3);
-        }
-    }
-
-    &__button-bottom {
-        display: none;
-    }
-    
-    @media (max-width: 991.98px) {
-        &__wrap {
-            gap: 12px;
-
-            .elements {
-                width: calc((100% - 12px) / 2);
+            &.status--active {
+                color: #52CE22;
+                font-weight: 700;
             }
-        }
+         }
     }
-    
-    @media (max-width: 767.98px) {
-        &__button-bottom {
-            display: block;
-            margin-top: 16px;
-
-            .button-outline {
-                display: flex;
-                justify-content: center;
-            }
-        }
-    }
-    
+ 
+    @media (max-width: 991.98px) {
+         &__wrap {
+             flex-wrap: wrap;
+         }
+ 
+         &__image {
+             width: 100%;
+         }
+ 
+         &__content {
+             width: 100%;
+         }
+    } 
+ 
     @media (max-width: 575.98px) {
-        padding: 40px 0;
-    
-        &__wrap .elements {
-            width: 100%;
-        }
+         .container {
+             padding: 0;
+         }
+ 
+         &__wrap {
+             padding: 0;
+             border: 0;
+             gap: 22px;
+         }
+ 
+         &__content {
+             box-shadow: 0px -6px 6px 0px #0000000F;
+             padding: 32px 16px 20px 16px;
+             border-radius: 20px;
+         }
+ 
+         &__title {
+             margin-top: 15px;
+             margin-bottom: 2px;
+         }
+ 
+         &__price {
+             margin-bottom: 16px;
+         }
     }
-}
-// End Section-4
-//--------------------------------------------------INDEX--------------------------------------------------
+ }
+ // End Section-6
 
-// Product-item 
+ // modal
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__main {
+        width: 40%;
+        padding: 25px;
+        border-radius: 8px;
+        background-color: #fff;
+        z-index: 999;
+        position: relative;
+    }
+
+    &__close {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 32px;
+        height: 32px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    &__overlay {
+        background-color: #00000065;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+
+        cursor: pointer;
+    }
+ }
+ // End modal
+
+//--------------------------------------------------END - PRODUCT-DETAIL--------------------------------------------------
+
+
+//--------------------------------------------------PRODUCT-ITEM--------------------------------------------------
 .product-item {
     box-shadow: 0px 4px 28px -2px #00000014;
     background-color: #FDFDFD;
@@ -921,7 +872,7 @@ a {
         // }
     }
     
-    &__status {
+    .status--active {
         font-size: 14px;
         font-weight: 700;
         color: #52CE22;
@@ -940,407 +891,7 @@ a {
         }
     }
 }
-// End Product-item
-
-// element - blog 
-.elements {
-    box-shadow: 0px 4px 28px -2px #00000014;
-    border-radius: 12px;
-    padding: 8px;
-
-    &__image {
-        border-radius: 10px;
-        overflow: hidden;
-    
-        /* để tỉ lệ bằng size trong Figma */
-        /* để ở thẻ cha */
-        aspect-ratio: 364/240;
-    
-        margin-bottom: 8px;
-
-        img {
-            width: 100%;
-            height: 100%;
-        
-            /* cat di nhung phan thua */
-            object-fit: cover;
-        
-            display: block;
-        }
-    }
-    
-    &__content {
-        padding: 8px;
-    
-        &--tag {
-            background-color: #00A7E7;
-            padding: 2px 10px;
-            border-radius: 28px;
-        
-            /* them padding thi kieu hien thi khong duoc de inline */
-            display: inline-block;
-            
-            font-weight: 700;
-            font-size: 10px;
-            color: #FDFDFD;
-        }
-
-        &--title {
-            margin-top: 10px;
-            margin-bottom: 6px;
-        
-            font-weight: 700;
-            font-size: 16px;
-            color: $color-dark-text;
-        
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            display: -webkit-box;
-        }
-
-        &--desc {
-            margin: 0;
-            font-weight: 400;
-            font-size: 14px;
-            color: #242B33;
-        
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            display: -webkit-box;
-        }
-    }
-}
-// End element - blog 
-
-// Section-5
-.section-5 {
-    padding: 60px 0;
-
-    &__head {
-        .box-filter__title {
-            display: none;
-        }
-    }
-
-    &__wrap {
-        display: flex;
-        gap: 20px;
-    }
-
-    &__left {
-        width: calc(25% - 10px);
-    }
-
-    &__right {
-        width: calc(75% - 10px);
-    }
-
-    &__title {
-        margin-top: 0;
-        margin-bottom: 14px;
-        font-weight: 700;
-        font-size: 24px;
-        color: $color-main;
-    }
-
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-
-        .product-item {
-            width: calc((100% - 40px) / 3);
-        }
-    }
-
-    @media (max-width: 991.98px) {
-        &__list {
-            .product-item {
-                width: calc((100% - 20px) / 2);
-            }
-        }
-    }
-
-    @media (max-width: 767.98px) {
-        &__left {
-            display: none;
-        }
-
-        &__right {
-            width: 100%;
-        }
-
-        &__head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .box-filter__title {
-                display: inline-flex;
-                font-size: 16px;
-            }
-        }
-
-        &__list {
-            gap: 12px;
-        }
-    }
-
-    @media (max-width: 575.98px) {
-        padding: 32px 0 40px 0;
-
-    }
-}
-// End Section-5
-
-// box-filter
-.box-filter {
-    &__title {
-        font-weight: 700;
-        font-size: 20px;
-        color: $color-main;
-        display: flex;
-        align-items: center;
-        margin-bottom: 12px;
-        gap: 7px;
-
-        img {
-            width: 20px;
-            height: auto;
-            margin-right: 13px;
-        }
-    }
-
-    &__group {
-        padding-bottom: 16px;
-        border-bottom: 1px solid #EBEEFF;
-        margin-bottom: 16px;
-    }
-
-    &__group-label {
-        font-size: 16px;
-        font-weight: 700;
-        color: $color-dark-text;
-        margin-bottom: 10px;
-    }
-
-    &__group-list {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    &__group-item {
-        display: flex;
-        align-items: center;
-
-        input {
-            width: 16px;
-            height: 16px;
-            margin-right: 10px;
-        }
-
-        label {
-            margin-bottom: 0;
-            font-weight: 500;
-            font-size: 14px;
-            color: $color-dark-text;
-        }
-    }
-}
-// End box-filter
-
-// Pagination
-.pagination {
-    margin-top: 20px;
-
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    &__item {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 34px;
-        height: 34px;
-        // background-color: #DDD;
-        border-radius: 8px;
-        font-size: 18px;
-        font-weight: 700;
-        color: $color-main;
-
-        &--active, &:hover {
-            background-color: $color-main;
-            color: white;
-        }
-    }   
-}
-// End Pagination
-
-// Section-6
-.section-6 {
-   &__wrap {
-        display: flex;
-        padding: 20px 22px;
-        border: 1px solid #EBEEFF;
-        border-radius: 20px;
-        gap: 30px;
-   } 
-
-   &__image {
-        width: calc(50% - 15px);
-   }
-
-   &__image-main {
-        width: 100%;
-        aspect-ratio: 1/1;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-bottom: 12px;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-   }
-
-   &__image-thumb {
-        display: flex;
-        gap: 12px;
-
-        img {
-            width: calc((100% - 48px) / 5);
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            border-radius: 6px;
-            display: block;
-        }
-   }
-
-   &__content {
-        width: calc(50% - 15px);
-   }
-
-   &__title {
-        margin-top: 18px;
-        margin-bottom: 6px;
-        font-size: 24px;
-        font-weight: 700;
-        color: $color-dark-text;
-   }
-
-   &__price {
-        margin-bottom: 18px;
-        font-weight: 700;
-        font-size: 20px;
-        color: $color-main;
-   }
-
-   &__buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-   }
-
-   &__table {
-        margin-top: 18px;
-        margin-bottom: 18px;
-
-        td {
-            border-bottom: 1px solid #EBEEFF;
-            padding: 11px;
-            font-weight: 500;
-            font-size: 14px;
-            color: $color-light-text;
-        }
-   }
-
-   @media (max-width: 991.98px) {
-        &__wrap {
-            flex-wrap: wrap;
-        }
-
-        &__image {
-            width: 100%;
-        }
-
-        &__content {
-            width: 100%;
-        }
-   } 
-
-   @media (max-width: 575.98px) {
-        .container {
-            padding: 0;
-        }
-
-        &__wrap {
-            padding: 0;
-            border: 0;
-            gap: 22px;
-        }
-
-        &__content {
-            box-shadow: 0px -6px 6px 0px #0000000F;
-            padding: 32px 16px 20px 16px;
-            border-radius: 20px;
-        }
-
-        &__title {
-            margin-top: 15px;
-            margin-bottom: 2px;
-        }
-
-        &__price {
-            margin-bottom: 16px;
-        }
-   }
-}
-// End Section-6
-
-// Box-share
-.box-share {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 21px;
-
-    &__label {
-        font-weight: 700;
-        font-size: 14px;
-        color: $color-main;
-
-        i {
-            font-size: 15px;
-            margin-right: 8px;
-        }
-    }
-
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-
-        a {
-            font-size: 18px;
-            color: $color-light-text;
-        }
-    }
-}
-// End Box-share
-//--------------------------------------------------INDEX--------------------------------------------------
+//--------------------------------------------------END - PRODUCT-ITEM--------------------------------------------------
 
 
 //--------------------------------------------------INTRODUCE--------------------------------------------------
@@ -1453,6 +1004,7 @@ a {
     }
 }
 //--------------------------------------------------INTRODUCE--------------------------------------------------
+
 
 //--------------------------------------------------CONTACT--------------------------------------------------
 // Form - Contact
@@ -1611,6 +1163,7 @@ a {
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
 
             ul {
                 list-style: none;

@@ -19,12 +19,8 @@ block main
                         a(href="index.html" class = "contact") Máy in
     //- End Breadcrumb
 
-    //- Section-3 
-    //- include partials/section-3.pug 
-    //- End Section-3 
-
     //- Section-5
-    .section-5 
+    section.section-5 
         .container 
             .section-5__wrap 
                 .section-5__left
@@ -33,38 +29,24 @@ block main
                             i(class="fa-solid fa-filter")
                             .box-filter__title__inner Bộ lọc
                         .box-filter__group 
-                            .box-filter__group-label Chức năng
+                            .box-filter__group-label Trạng thái
                             .box-filter__group-list 
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="")
-                                    label(for="") In Lazer
+                                    input(type="checkbox" id="" aria-label="active")
+                                    label(for="") Đang hoạt động
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="")
-                                    label(for="") In phun màu
-                        .box-filter__group
-                            .box-filter__group-label Khả năng
-                            .box-filter__group-list 
+                                    input(type="checkbox" id="" aria-label="passive")
+                                    label(for="") Không hoạt động
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="")
-                                    label(for="") In hai mặt
+                                    input(type="checkbox" id="" aria-label="maintenance")
+                                    label(for="") Đang bảo trì
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="")
-                                    label(for="") Scan
-                                .box-filter__group-item 
-                                    input(type="checkbox" id="")
-                                    label(for="") Copy
-                        .box-filter__group
-                            .box-filter__group-label Màu săc
-                            .box-filter__group-list 
-                                .box-filter__group-item 
-                                    input(type="checkbox" id="")
-                                    label(for="") Trắng đen
-                                .box-filter__group-item 
-                                    input(type="checkbox" id="")
-                                    label(for="") Màu
-                                //- .box-filter__group-item 
-                                //-     input(type="checkbox" id="")
-                                //-     label(for="") Lớn
+                                    input(type="checkbox" id="" aria-label="erroring")
+                                    label(for="") Đang bị lỗi
+                
+                    .section-5__add
+                        button(class="button button--add") Thêm máy in
+                        //- a(href="#" class="button button--add") 
                 .section-5__right
                     -
                         var printers = [
@@ -182,4 +164,8 @@ block main
                                 a(href="#" class="pagination__item") 68
                             li 
                                 a(href="#" class="pagination__item") <i class="fa-solid fa-arrow-right"></i>
+            .section-5__button-bottom
+                button(class="button button--add") Thêm máy in
     //- End Section-5
+
+    script(type = "module" src = "../assets/script/index.js")

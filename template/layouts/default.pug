@@ -13,7 +13,7 @@ html
             .container
                 .header__wrap
                     //- Menu
-                    button.header__menu-mobile
+                    button(aria-label="x").header__menu-mobile
                         i(class="fa-solid fa-bars")
 
                     //- Logo
@@ -34,12 +34,12 @@ html
                                 a(href="contact.html") Liên hệ
 
                     //- Form search
-                    button.header__search-mobile
+                    button(aria-label="x").header__search-mobile
                         i(class="fa-solid fa-magnifying-glass")
 
                     form(action="#" class="header__form")
                         input(name="keywork" placeholder="Tìm vị trí máy in...")
-                        button
+                        button(aria-label="x")
                             i(class="fa-solid fa-magnifying-glass")
 
                     //- Button
@@ -72,9 +72,7 @@ html
                             li
                                 a(href="index.html" target="_self") Trang Chủ
                             li
-                                a(href="#" target="_self") Danh Mục
-                            li
-                                a(href="#" target="_self") Giới Thiệu
+                                a(href="introduce.html" target="_self") Giới Thiệu
                             li
                                 a(href="contact.html" target="_self") Liên Hệ
 
@@ -93,7 +91,7 @@ html
                                 a(href="contact.html" target="_self")
                                     i(class="fa-solid fa-location-dot")
                 .footer__bottom
-                    .footer__copyright © HCMUT-VNU. All rights reserved.
+                    .footer__copyright © BKPrint. All rights reserved.
                     .footer__logo
                         img(src="assets/images/VNU_offical_logo.png" alt="VNU")
 

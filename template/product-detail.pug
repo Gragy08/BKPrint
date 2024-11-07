@@ -11,7 +11,7 @@ block main
             .section-6__wrap 
                 .section-6__images 
                     .section-6__image-main 
-                        img(src="assets/images/B4-304.webp")
+                        img(src="assets/images/B4-304.webp" alt="Printer")
                     //- .section-6__image-thumb 
                     //-     img(src="assets/images/pro-11.jpg")
                     //-     img(src="assets/images/pro-2.jpg")
@@ -35,8 +35,9 @@ block main
                     h1.section-6__title Máy in B4 - 304
                     .section-6__price HP LaserJet M211d
                     .section-6__buttons 
-                        a(href="#" class="button-outline") Chỉnh sửa
-                        a(href="#" class="button") Xóa
+                        //- a(href="#" class="button-outline" button-fix) 
+                        button(class = "button-outline button--fix") Chỉnh sửa
+                        button(class = "button button--delete") Xóa máy in
                     .section-6__table 
                         table 
                             tbody 
@@ -54,19 +55,10 @@ block main
                                     td 29 trang / 1 phút
                                 tr 
                                     td Trạng thái
-                                    td Đang hoạt động
+                                    td.status--active Đang hoạt động
                                 tr 
                                     td Mô tả ngắn
                                     td Máy in Laser đơn năng với khả năng in hai mặt trắng đen với tốc độ 29 trang/phút
-                    //- .box-share  
-                    //-     .box-share__label 
-                    //-         i(class="fa-solid fa-share")
-                    //-         | Chia sẻ:
-                    //-     .box-share__list 
-                    //-         a(href="#" target="_blank") <i class="fa-brands fa-facebook"></i>
-                    //-         a(href="#" target="_blank") <i class="fa-brands fa-twitter"></i>
-                    //-         a(href="#" target="_blank") <i class="fa-brands fa-instagram"></i>
-                    //-         a(href="#" target="_blank") <i class="fa-brands fa-youtube"></i>
     //- End Section-6
 
     -
@@ -101,7 +93,7 @@ block main
             }
         ];
 
-    section.section2
+    section.section-2
         .container
             .box-head
                 .box-head__left
@@ -111,10 +103,12 @@ block main
                         | Xem thêm 
                         i(class="fa-solid fa-angle-right")
 
-            .section2__wrap 
+            .section-2__wrap 
                 each printer in printers
                     +product-item(printer)
-            .section2__button-bottom
+            .section-2__button-bottom
                 a(class="button-outline" href="index.html") 
                     | Xem thêm 
                     i(class="fa-solid fa-angle-right")
+
+    script(type = "module" src = "../assets/script/product-detail.js")

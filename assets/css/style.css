@@ -812,6 +812,60 @@ a {
 .introduce__info i:hover {
   color: #2F57EF;
 }
+@media (max-width: 991.98px) {
+  .introduce__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: calc((100% - 30px) / 2) calc((100% - 30px) / 2);
+    grid-template-rows: auto auto;
+    gap: 120px 30px;
+    align-items: center;
+  }
+  .introduce__element {
+    width: 75%;
+    height: auto;
+    margin: auto;
+  }
+  .introduce__inner {
+    width: 80%;
+    height: auto;
+  }
+}
+@media (max-width: 767.98px) {
+  .introduce__content {
+    font-size: 42px;
+  }
+  .introduce__list {
+    display: grid;
+    grid-template-columns: calc((100% - 0px) / 2) calc((100% - 0px) / 2);
+    grid-template-rows: auto auto;
+    gap: 90px 0px;
+  }
+  .introduce__inner--nameAuthor {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .introduce__inner--education {
+    font-size: 12px;
+    font-weight: 350;
+  }
+  .introduce__position {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .introduce__desc {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  .introduce__info i {
+    font-size: 16px;
+  }
+}
+@media (max-width: 575.98px) {
+  .introduce__content {
+    font-size: 36px;
+  }
+}
 
 .form__wrap {
   padding: 20px 0;
@@ -847,6 +901,21 @@ a {
 .form__table--element:nth-child(0n+4) form .control {
   height: 100px;
 }
+@media (max-width: 991.98px) {
+  .form__table--element {
+    width: 100%;
+  }
+}
+@media (max-width: 767.98px) {
+  .form__table--element {
+    width: 120%;
+  }
+}
+@media (max-width: 575.98px) {
+  .form__content {
+    font-size: 28px;
+  }
+}
 
 .maps {
   margin-bottom: 40px;
@@ -869,6 +938,7 @@ a {
 .maps__info {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 20px;
@@ -888,6 +958,30 @@ a {
   color: #005B9A;
   width: 100%;
   text-align: center;
+}
+@media (max-width: 991.98px) {
+  .maps__base--destination iframe {
+    width: 75%;
+  }
+}
+@media (max-width: 767.98px) {
+  .maps__info {
+    margin-bottom: 30px;
+    gap: 5px 50px;
+  }
+}
+@media (max-width: 575.98px) {
+  .maps__content {
+    font-size: 24px;
+  }
+  .maps__base--title {
+    font-size: 18px;
+  }
+  .maps__info {
+    margin-bottom: 30px;
+    gap: 3px 60px;
+    font-size: 14px;
+  }
 }
 
 .maps .container {
@@ -1086,7 +1180,7 @@ a {
     padding: 40px 0 16px 0;
   }
   .footer__top {
-    padding: 16px;
+    padding: 18px;
   }
   .footer__top__logo__text-des {
     font-size: 14px;
@@ -1096,6 +1190,9 @@ a {
   }
   .footer__top__desc ul li a {
     font-size: 13px;
+  }
+  .footer__top__desc ul li {
+    padding: 0 30px;
   }
   .footer__form {
     flex-wrap: wrap;

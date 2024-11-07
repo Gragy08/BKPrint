@@ -865,6 +865,9 @@ a {
   .introduce__content {
     font-size: 36px;
   }
+  .introduce__element {
+    width: 90%;
+  }
 }
 
 .form__wrap {

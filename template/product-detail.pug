@@ -5,20 +5,20 @@ block title
     title Chi tiết máy in
 
 block main
-    //- Section-6
-    section.section-6
+    //- Section-3
+    section.section-3
         .container
-            .section-6__wrap 
-                .section-6__images 
-                    .section-6__image-main 
+            .section-3__wrap 
+                .section-3__images 
+                    .section-3__image-main 
                         img(src="assets/images/B4-304.webp" alt="Printer")
-                    //- .section-6__image-thumb 
+                    //- .section-3__image-thumb 
                     //-     img(src="assets/images/pro-11.jpg")
                     //-     img(src="assets/images/pro-2.jpg")
                     //-     img(src="assets/images/pro-3.jpg")
                     //-     img(src="assets/images/pro-4.jpg")
                     //-     img(src="assets/images/pro-5.jpg")
-                .section-6__content 
+                .section-3__content 
                     //- Breadcrumb
                     .breadcrumb
                         nav.breadcrumb__wrap
@@ -30,15 +30,15 @@ block main
                                 li 
                                     a(href="index.html") Máy in
                                 li 
-                                    a(href="product-detail.html") Máy in B4 - 304
+                                    a(href="product-detail.html" class = "contact") Máy in B4 - 304
                     //- End Breadcrumb
-                    h1.section-6__title Máy in B4 - 304
-                    .section-6__price HP LaserJet M211d
-                    .section-6__buttons 
+                    h1.section-3__title Máy in B4 - 304
+                    .section-3__price HP LaserJet M211d
+                    .section-3__buttons 
                         //- a(href="#" class="button-outline" button-fix) 
-                        button(class = "button-outline button--fix") Chỉnh sửa
+                        a(href = "../edit-printer.html" class = "button-outline") Chỉnh sửa
                         button(class = "button button--delete") Xóa máy in
-                    .section-6__table 
+                    .section-3__table 
                         table 
                             tbody 
                                 tr 
@@ -59,34 +59,34 @@ block main
                                 tr 
                                     td Mô tả ngắn
                                     td Máy in Laser đơn năng với khả năng in hai mặt trắng đen với tốc độ 29 trang/phút
-    //- End Section-6
+    //- End Section-3
 
     -
         var printers = [
             {
                 image: 'assets/images/B1-208.jpg',
-                title: 'B1-208 . Brother HL-L2366DW',
+                title: 'B1-208 . Brother HL-L2333DW',
                 function: 'In Laser',
                 ability: 'In 2 mặt tự động, trắng đen',
                 status: 'Đang hoạt động'
             },
             {
                 image: 'assets/images/A4-201.jpg',
-                title: 'A4-201 . Brother DCP-B7620DW',
+                title: 'A4-201 . Brother DCP-B7320DW',
                 function: 'In Laser',
                 ability: 'Copy, Scan(Màu), In 2 mặt tự động, trắng đen',
                 status: 'Đang hoạt động'
             },
             {
-                image: 'assets/images/B6-201.jpg',
-                title: 'B6-201 . HP Smart Tank 580',
+                image: 'assets/images/B3-201.jpg',
+                title: 'B3-201 . HP Smart Tank 580',
                 function: 'In phun màu',
                 ability: 'Copy, Scan(màu), In 1 mặt, in màu',
                 status: 'Đang hoạt động'
             },
             {
                 image: 'assets/images/B2-402.jpg',
-                title: 'B2-402 . Canon LBP6030',
+                title: 'B2-402 . Canon LBP3030',
                 function: 'In Laser',
                 ability: 'In 1 mặt, trắng đen',
                 status: 'Đang hoạt động'

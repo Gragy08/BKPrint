@@ -31,7 +31,7 @@ const showFix = () => {
     })
 }
 
-const buttonFix = document.querySelector(".button--fix");
+const buttonFix = document.querySelector(".button--delete");
 if (buttonFix) {
     buttonFix.addEventListener("click", () => {
         showFix();

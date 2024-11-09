@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charser="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh sửa máy in</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrap">
+          <button class="header__menu-mobile" aria-label="x"><i class="fa-solid fa-bars"></i></button>
+          <div class="header__logo"><a href="index.html"><img src="assets/images/HCMUT_official_logo.png" alt="BachKhoa"></a></div>
+          <nav class="header__menu">
+            <ul>
+              <li><a href="index.html">Trang Chủ</a></li>
+              <li><a href="introduce.html">Giới thiệu</a></li>
+              <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+            <div class="inner-overlay"> <i class="fa-regular fa-circle-xmark"></i></div>
+          </nav>
+          <button class="header__search-mobile" aria-label="x"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <form class="header__form" action="#">
+            <input name="keywork" placeholder="Tìm vị trí máy in...">
+            <button aria-label="x"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form><a class="button" href="#">Đăng nhập</a>
+        </div>
+      </div>
+    </header>
+    <div class="breadcrumb">
+      <div class="container">
+        <nav class="breadcrumb__wrap">
+          <ul>
+            <li> <a href="index.html">Trang chủ</a></li>
+            <li> <a href="index.html">Máy in</a></li>
+            <li> <a class="contact" href="index.html">Chỉnh sửa máy in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <section class="section-4">
+      <div class="container">
+        <div class="section-4__wrap"> 
+          <div class="section-4__left">
+            <div class="section-4__left--image"> <img src="../assets/images/printer-default.jpg" alt="printer default logo"></div>
+            <div class="section-4__left--button"> 
+              <button class="button"> <i class="fa-solid fa-arrow-up-from-bracket"></i>Thay đổi ảnh cho máy in</button>
+            </div>
+          </div>
+          <div class="section-4__right">
+            <div class="section-4__form">
+              <div class="section-4__form__content">Chỉnh sửa thông số máy in</div>
+              <div class="section-4__form__table">
+                <div class="section-4__form__table--list">
+                  <div class="section-4__form__table--element1">
+                    <div class="element--title">Điền mã máy in</div>
+                    <form action="#" target="_blank" method="GET">
+                      <input type="text" id="codeOfPrinter" name="maMayIn" placeholder="">
+                    </form>
+                  </div>
+                  <div class="section-4__form__table--element2">
+                    <div class="element--title">Chọn chức năng máy in</div>
+                    <form action="#" target="_blank" method="GET">
+                      <div class="element--detail">
+                        <input type="checkbox" id="printLaser" name="function" value="In Laser">
+                        <label for="printLaser">In Laser</label>
+                      </div>
+                      <div class="element--detail">
+                        <input type="checkbox" id="colorInkjet" name="function" value="In phun màu">
+                        <label for="colorInkjet">In phun màu</label>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="section-4__form__table--element3">
+                    <div class="element--title">Chọn khả năng máy in</div>
+                    <form action="#" target="_blank" method="GET">
+                      <div class="element--detail">
+                        <input type="checkbox" id="singleSideBW" name="ability" value="In 1 mặt, trắng đen">
+                        <label for="singleSideBW">In 1 mặt, trắng đen</label>
+                      </div>
+                      <div class="element--detail">
+                        <input type="checkbox" id="doubleSideBW" name="ability" value="In 2 mặt tự động, trắng đen">
+                        <label for="doubleSideBW">In 2 mặt tự động, trắng đen</label>
+                      </div>
+                      <div class="element--detail">
+                        <input type="checkbox" id="singleSideC" name="ability" value="In 1 mặt, in màu">
+                        <label for="singleSideC">In 1 mặt, in màu</label>
+                      </div>
+                      <div class="element--detail">
+                        <input type="checkbox" id="Copy" name="ability" value="Copy">
+                        <label for="Copy">Copy</label>
+                      </div>
+                      <div class="element--detail">
+                        <input type="checkbox" id="scanBW" name="ability" value="Scan(Trắng đen)">
+                        <label for="scanBW">Scan(Trắng đen)</label>
+                      </div>
+                      <div class="element--detail">
+                        <input type="checkbox" id="scanC" name="ability" value="Scan(Màu)">
+                        <label for="scanC">Scan(Màu)</label>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="section-4__form__table--element4">
+                    <div class="element--title">Điền tốc độ máy in</div>
+                    <form action="#" target="_blank" method="GET">
+                      <input type="text" id="speedOfPrinter" name="speed" placeholder="">
+                    </form>
+                  </div>
+                  <div class="section-4__form__table--element5">
+                    <div class="element--title">Chọn trạng thái máy in</div>
+                    <form action="#" target="_blank" method="GET">
+                      <input type="radio" id="active" name="status" value="Đang hoạt động">
+                      <label for="active">Đang hoạt động</label>
+                      <input type="radio" id="inactive" name="status" value="Không hoạt động">
+                      <label for="inactive">Không hoạt động</label>
+                    </form>
+                  </div>
+                  <div class="section-4__form__table--element6">
+                    <div class="element--title">Viết mô tả máy in</div>
+                    <textarea id="desc" name="moTa" rows="3" cols=""></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-4__button-submit"><a class="button-outline" href="product-detail.html"><i class="fa-solid fa-arrow-left-long"></i>trở lại trước</a>
+            <button class="button button-submit"><i class="fa-solid fa-gear "></i>Chỉnh sửa máy in</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="../assets/script/buttonMenu-mobile.js"></script>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__top__logo"><img src="assets/images/HCMUT_official_logo.png" alt="BachKhoa">
+            <div class="footer__top__logo__text">
+              <div class="footer__top__logo__text-des">ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH</div>
+              <div class="footer__top__logo__text-name">TRƯỜNG ĐẠI HỌC BÁCH KHOA</div>
+            </div>
+          </div>
+          <div class="footer__top__desc"> 
+            <ul>
+              <li><a a href="" target="_self"> <i class="fa-solid fa-location-dot"></i>Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh.</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__middle">
+          <nav class="footer__middle-links">
+            <ul> 
+              <li><a href="index.html" target="_self">Trang Chủ</a></li>
+              <li><a href="introduce.html" target="_self">Giới Thiệu</a></li>
+              <li><a href="contact.html" target="_self">Liên Hệ</a></li>
+            </ul>
+          </nav>
+          <nav class="footer__socials">
+            <ul>
+              <li><a a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a href="contact.html" target="_self"><i class="fa-solid fa-envelope"></i></a></li>
+              <li><a href="contact.html" target="_self"><i class="fa-solid fa-phone"></i></a></li>
+              <li><a href="contact.html" target="_self"><i class="fa-solid fa-location-dot"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__copyright">© BKPrint. All rights reserved.</div>
+          <div class="footer__logo"><img src="assets/images/VNU_offical_logo.png" alt="VNU"></div>
+          <nav class="footer__bottom-links">
+            <ul>
+              <li><a href="#">Điều khoản dịch vụ</a></li>
+              <li><a href="#">Chính sách bảo mật</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

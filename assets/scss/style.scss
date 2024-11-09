@@ -42,7 +42,6 @@ a {
     }
 }
 
-
 // Button
 .button {
     /* thẻ a, là inline, không thêm được chiều cao nên cố tình thêm height cũng ko được -> inline-block*/
@@ -115,7 +114,7 @@ a {
         /* lúc co màn hình lại thì cách nhau ít nhất là 14px */
         gap: 14px;
         position: relative;
-        // z-index: 10;
+        z-index: 10;
     }
 
     &__logo img {
@@ -192,6 +191,10 @@ a {
         display: none;
     }
 
+    .inner-overlay {
+        display: none;
+    }
+
     @media (max-width: 1199.98px) {
         .button {
             /* An nut nhung khong chiem dien tich giao dien */
@@ -237,6 +240,46 @@ a {
     
         &__menu {
             display: none;
+        }
+
+        &__menu[show = "yes"] {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            text-align: left;
+
+            ul {
+                flex-direction: column;
+                gap: 15px;
+                height: 100%;
+                background-color: #fff;
+                padding: 20px;
+                width: 250px;
+                position: relative;
+                z-index: 8;
+            }
+        }
+
+        &__menu[show = "yes"] .inner-overlay {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #0000007a;
+            cursor: pointer;
+
+            i {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 28px;
+                color: white;
+            }
         }
     
         &__inner-logo img {
@@ -296,8 +339,8 @@ a {
 
 //--------------------------------------------------INDEX--------------------------------------------------
 
-// Section-5
-.section-5 {
+// Section-1
+.section-1 {
     padding: 60px 0;
 
     &__head {
@@ -391,7 +434,7 @@ a {
         padding: 32px 0 40px 0;
     }
 }
-// End Section-5
+// End Section-1
 
 // box-filter
 .box-filter {
@@ -450,42 +493,212 @@ a {
 }
 // End box-filter
 
-// Pagination
-.pagination {
-    margin-top: 20px;
+//--------------------------------------------------END - INDEX--------------------------------------------------
 
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+
+//--------------------------------------------------ADD - PRINTER--------------------------------------------------
+.section-4 {
+    padding: 40px 0;
+
+    &__wrap {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
+        padding: 20px 22px;
+        border: 1px solid #EBEEFF;
+        border-radius: 20px;
+        gap: 0 30px;
     }
 
-    &__item {
-        display: inline-flex;
-        align-items: center;
+    &__left {
+        width: calc(50% - 15px);
+        border-bottom: 1px solid #EBEEFF;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        width: 34px;
-        height: 34px;
-        // background-color: #DDD;
-        border-radius: 8px;
-        font-size: 18px;
-        font-weight: 700;
-        color: $color-main;
 
-        &--active, &:hover {
-            background-color: $color-main;
-            color: white;
+        &--image {
+            width: 60%;
+            // height: 75%;
+            aspect-ratio: 1/1;
+            border-radius: 10px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 25px;
+                border: solid 1px #EBEEFF;
+            }
         }
-    }   
-}
-// End Pagination
 
-//--------------------------------------------------END - INDEX--------------------------------------------------
+        &--button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            button i {
+                margin-right: 8px;
+            }
+        }
+    }
+
+    &__right {
+        width: calc(50% - 15px);
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid #EBEEFF;
+    }
+
+    &__form {
+        width: 100%;
+
+        &__content {
+            width: 100%;
+
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 700;
+            color: $color-main;
+            text-align: center;
+        }
+
+        &__table {
+            width: 100%;
+            
+            &--list {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            &--element1 {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                width: 100%;
+                margin-bottom: 10px;
+                align-items: center;
+
+                input {
+                    width: 180px;
+                }
+            }
+
+            &--element2 {
+                width: 100%;
+                display: flex;
+                gap: 20px;
+                margin-bottom: 10px;
+                align-items: center;
+                
+                form {
+                    display: flex;
+                    gap: 15px;
+                }
+            }
+
+            &--element3 {
+                width: 50%;
+                margin-bottom: 10px;
+                padding-right: 10px;
+                align-items: center;
+
+                .element--title {
+                    padding-bottom: 5px;
+                }
+
+                form {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    position: relative;
+
+                    .element--detail:nth-child(4) {
+                        position: absolute;
+                        top: 45px;
+                        right: 41px;
+                    }
+                }
+            }
+
+            &--element4 {
+                width: 45%;
+                padding-left: 10px;
+                margin-bottom: 10px;
+                border-left: 1px solid #EBEEFF;
+                align-items: center;
+
+                .element--title {
+                    padding-bottom: 5px;
+                }
+
+                input {
+                    width: 180px;
+                }
+            }
+
+            &--element5 {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+                align-items: center;
+                gap: 20px;
+
+                form {
+                    gap: 15px;
+                }
+            }
+
+            &--element6 {
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+
+                gap: 20px;
+
+                textarea {
+                    width: 320px;
+                }
+            }
+        }
+    }
+
+    &__button-submit {
+        padding-top: 20px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        button i {
+            margin-right: 8px;
+        }
+
+        a i {
+            margin-right: 8px;
+        }
+    }
+
+    .element--title {
+        color: #003459;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    .element--detail label {
+        color: $color-dark-text;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+//--------------------------------------------------END ADD - PRINTER--------------------------------------------------
 
 
 //--------------------------------------------------PRODUCT-DETAIL--------------------------------------------------
@@ -611,132 +824,132 @@ a {
 }
 // End box-head
 
-// Section-6
-.section-6 {
+// Section-3
+.section-3 {
     &__wrap {
-         display: flex;
-         padding: 20px 22px;
-         border: 1px solid #EBEEFF;
-         border-radius: 20px;
-         gap: 30px;
+        display: flex;
+        padding: 20px 22px;
+        border: 1px solid #EBEEFF;
+        border-radius: 20px;
+        gap: 30px;
     } 
  
     &__image {
-         width: calc(50% - 15px);
+        width: calc(50% - 15px);
     }
  
     &__image-main {
-         width: 100%;
-         aspect-ratio: 1/1;
-         border-radius: 10px;
-         overflow: hidden;
-         margin-bottom: 12px;
- 
-         img {
-             width: 100%;
-             height: 100%;
-             object-fit: cover;
-         }
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 12px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
  
     &__image-thumb {
-         display: flex;
-         gap: 12px;
- 
-         img {
-             width: calc((100% - 48px) / 5);
-             aspect-ratio: 1/1;
-             object-fit: cover;
-             border-radius: 6px;
-             display: block;
-         }
+        display: flex;
+        gap: 12px;
+
+        img {
+            width: calc((100% - 48px) / 5);
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+        }
     }
  
     &__content {
-         width: calc(50% - 15px);
-    }
+        width: calc(50% - 15px);
+}
  
     &__title {
-         margin-top: 18px;
-         margin-bottom: 6px;
-         font-size: 24px;
-         font-weight: 700;
-         color: $color-dark-text;
+        margin-top: 18px;
+        margin-bottom: 6px;
+        font-size: 24px;
+        font-weight: 700;
+        color: $color-dark-text;
     }
  
     &__price {
-         margin-bottom: 18px;
-         font-weight: 700;
-         font-size: 20px;
-         color: $color-main;
+        margin-bottom: 18px;
+        font-weight: 700;
+        font-size: 20px;
+        color: $color-main;
     }
  
     &__buttons {
-         display: flex;
-         flex-wrap: wrap;
-         gap: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
     }
  
     &__table {
-         margin-top: 18px;
-         margin-bottom: 18px;
- 
-         td {
-            border-bottom: 1px solid #EBEEFF;
-            padding: 11px;
-            font-weight: 500;
-            font-size: 14px;
-            color: $color-light-text;
+        margin-top: 18px;
+        margin-bottom: 18px;
 
-            &.status--active {
-                color: #52CE22;
-                font-weight: 700;
-            }
-         }
+        td {
+        border-bottom: 1px solid #EBEEFF;
+        padding: 11px;
+        font-weight: 500;
+        font-size: 14px;
+        color: $color-light-text;
+
+        &.status--active {
+            color: #52CE22;
+            font-weight: 700;
+        }
+        }
     }
  
     @media (max-width: 991.98px) {
-         &__wrap {
-             flex-wrap: wrap;
-         }
- 
-         &__image {
-             width: 100%;
-         }
- 
-         &__content {
-             width: 100%;
-         }
+        &__wrap {
+            flex-wrap: wrap;
+        }
+
+        &__image {
+            width: 100%;
+        }
+
+        &__content {
+            width: 100%;
+        }
     } 
  
     @media (max-width: 575.98px) {
-         .container {
-             padding: 0;
-         }
- 
-         &__wrap {
-             padding: 0;
-             border: 0;
-             gap: 22px;
-         }
- 
-         &__content {
-             box-shadow: 0px -6px 6px 0px #0000000F;
-             padding: 32px 16px 20px 16px;
-             border-radius: 20px;
-         }
- 
-         &__title {
-             margin-top: 15px;
-             margin-bottom: 2px;
-         }
- 
-         &__price {
-             margin-bottom: 16px;
-         }
+        .container {
+            padding: 0;
+        }
+
+        &__wrap {
+            padding: 0;
+            border: 0;
+            gap: 22px;
+        }
+
+        &__content {
+            box-shadow: 0px -6px 6px 0px #0000000F;
+            padding: 32px 16px 20px 16px;
+            border-radius: 20px;
+        }
+
+        &__title {
+            margin-top: 15px;
+            margin-bottom: 2px;
+        }
+
+        &__price {
+            margin-bottom: 16px;
+        }
     }
  }
- // End Section-6
+ // End Section-3
 
  // modal
 .modal {
@@ -897,7 +1110,7 @@ a {
 //--------------------------------------------------INTRODUCE--------------------------------------------------
 .introduce {
     background-color: #FDFDFD;
-    padding: 80px 0;
+    padding: 40px 0;
     font-family: "Be Vietnam Pro", sans-serif;
 
     &__content {

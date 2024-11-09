@@ -1,11 +1,13 @@
-//PRODUCT-DETAIL_FIX
-const showFix = () => {
+//PRODUCT-DETAIL_button--add
+
+//
+const showadd = () => {
     const body = document.querySelector("body");
 
-    const elementFix = document.createElement("div");
-    elementFix.classList.add("modal");
+    const elementadd = document.createElement("div");
+    elementadd.classList.add("modal");
 
-    elementFix.innerHTML = `
+    elementadd.innerHTML = `
         <div class="modal__main">
             <button class="modal__close">
                 <i class="fa-solid fa-xmark"></i>
@@ -18,27 +20,44 @@ const showFix = () => {
         </div>
     `;
 
-    body.appendChild(elementFix);
+    body.appendChild(elementadd);
 
-    const buttonClose = elementFix.querySelector(".modal__close");
-    const buttonOverlay = elementFix.querySelector(".modal__overlay");
+    const buttonClose = elementadd.querySelector(".modal__close");
+    const buttonOverlay = elementadd.querySelector(".modal__overlay");
 
     buttonClose.addEventListener("click", () => {
-        body.removeChild(elementFix);
+        body.removeChild(elementadd);
     })
     buttonOverlay.addEventListener("click", () => {
-        body.removeChild(elementFix);
+        body.removeChild(elementadd);
     })
 }
 
-const buttonFix = document.querySelector(".button--add");
-if (buttonFix) {
-    buttonFix.addEventListener("click", () => {
-        showFix();
+const buttonadd = document.querySelector(".button--add");
+if (buttonadd) {
+    buttonadd.addEventListener("click", () => {
+        showadd();
     })
-    // listButtonFix.forEach(button => {
+    // listButtonadd.forEach(button => {
     //     button.addEventListener("click", () => {
-    //         showFix();
+    //         showadd();
     //     })
     // })
 }
+//END PRODUCT-DETAIL_button--add
+
+// // Button Menu Mobile
+// const buttonMenuMobile = document.querySelector(".header__menu-mobile");
+// if(buttonMenuMobile) {
+//     const menu = document.querySelector(".header__menu");
+//     const overlay = menu.querySelector(".header .inner-overlay");
+
+//     buttonMenuMobile.onclick = () => {
+//         menu.setAttribute("show", "yes");
+//     }
+
+//     overlay.onclick = () => {
+//         menu.setAttribute("show", "");
+//     }
+// }
+// // End Button Menu Mobile

@@ -95,6 +95,7 @@ a {
 
 .header {
   padding: 28px 0;
+  z-index: 10;
 }
 .header__wrap {
   /* cùng hàng, w=100% phần tử cha */
@@ -106,7 +107,6 @@ a {
   /* lúc co màn hình lại thì cách nhau ít nhất là 14px */
   gap: 14px;
   position: relative;
-  z-index: 10;
 }
 .header__logo img {
   width: auto;
@@ -256,6 +256,50 @@ a {
   }
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal__main {
+  width: 40%;
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #fff;
+  z-index: 999;
+  position: relative;
+}
+.modal__close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 32px;
+  height: 32px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+.modal__overlay {
+  background-color: rgba(0, 0, 0, 0.3960784314);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  cursor: pointer;
+}
+
 .breadcrumb {
   margin-bottom: 0;
   background: rgba(174, 216, 230, 0.1764705882);
@@ -290,7 +334,7 @@ a {
   font-size: 14px;
   color: #667479;
 }
-.breadcrumb ul .contact {
+.breadcrumb ul .last {
   color: #005B9A;
   font-weight: 700;
 }
@@ -425,10 +469,10 @@ a {
   border: 1px solid #EBEEFF;
   border-radius: 20px;
   gap: 0 30px;
+  box-shadow: 0px -6px 6px 0px rgba(0, 0, 0, 0.0588235294);
 }
 .section-4__left {
   width: calc(50% - 15px);
-  border-bottom: 1px solid #EBEEFF;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -461,7 +505,6 @@ a {
   width: calc(50% - 15px);
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #EBEEFF;
 }
 .section-4__form {
   width: 100%;
@@ -551,7 +594,7 @@ a {
 .section-4__form__table--element6 {
   width: 100%;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   gap: 20px;
 }
@@ -565,6 +608,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  border-top: 1px solid #EBEEFF;
 }
 .section-4__button-submit button i {
   margin-right: 8px;
@@ -581,6 +625,51 @@ a {
   color: #00171F;
   font-size: 16px;
   font-weight: 500;
+}
+@media (max-width: 1199.98px) {
+  .section-4__wrap {
+    gap: 30px 30px;
+  }
+  .section-4__left {
+    padding-top: 20px;
+  }
+  .section-4__left--image {
+    width: 55%;
+  }
+  .section-4__form__table--element1 {
+    gap: 15px;
+  }
+  .section-4__form__table--element1 input {
+    width: 150px;
+  }
+  .section-4__form__table--element2 {
+    gap: 15px;
+  }
+  .section-4__form__table--element2 form {
+    gap: 10px;
+  }
+  .section-4__form__table--element3 {
+    width: 60%;
+  }
+  .section-4__form__table--element4 {
+    width: 40%;
+  }
+  .section-4__form__table--element4 input {
+    width: 150px;
+  }
+  .section-4__form__table--element5 {
+    gap: 0;
+  }
+  .section-4__form__table--element5 .element--title {
+    padding-bottom: 5px;
+  }
+  .section-4__form__table--element6 {
+    gap: 0;
+  }
+  .section-4__form__table--element6 .element--title {
+    width: 100%;
+    padding-bottom: 5px;
+  }
 }
 
 .section-2 {
@@ -690,6 +779,7 @@ a {
   border: 1px solid #EBEEFF;
   border-radius: 20px;
   gap: 30px;
+  box-shadow: 0px -6px 6px 0px rgba(0, 0, 0, 0.0588235294);
 }
 .section-3__image {
   width: calc(50% - 15px);
@@ -785,49 +875,6 @@ a {
   .section-3__price {
     margin-bottom: 16px;
   }
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.modal__main {
-  width: 40%;
-  padding: 25px;
-  border-radius: 8px;
-  background-color: #fff;
-  z-index: 999;
-  position: relative;
-}
-.modal__close {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 32px;
-  height: 32px;
-  background-color: red;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-}
-.modal__overlay {
-  background-color: rgba(0, 0, 0, 0.3960784314);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
 }
 
 .product-item {
@@ -1095,7 +1142,7 @@ a {
 }
 @media (max-width: 575.98px) {
   .form__content {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 

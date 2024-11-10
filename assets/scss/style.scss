@@ -103,6 +103,8 @@ a {
 // Header
 .header {
     padding: 28px 0;
+    
+    z-index: 10;
 
     &__wrap {
         /* cùng hàng, w=100% phần tử cha */
@@ -114,7 +116,6 @@ a {
         /* lúc co màn hình lại thì cách nhau ít nhất là 14px */
         gap: 14px;
         position: relative;
-        z-index: 10;
     }
 
     &__logo img {
@@ -289,6 +290,56 @@ a {
 }
 // End Header
 
+ // modal
+ .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__main {
+        width: 40%;
+        padding: 25px;
+        border-radius: 8px;
+        background-color: #fff;
+        z-index: 999;
+        position: relative;
+    }
+
+    &__close {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 32px;
+        height: 32px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    &__overlay {
+        background-color: #00000065;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 998;
+        
+        cursor: pointer;
+    }
+ }
+ // End modal
+
 // Breadcrumb
 .breadcrumb {
     margin-bottom: 0;
@@ -328,7 +379,7 @@ a {
             }
         }
 
-        .contact {
+        .last {
             color: $color-main;
             font-weight: 700;
         }
@@ -496,7 +547,7 @@ a {
 //--------------------------------------------------END - INDEX--------------------------------------------------
 
 
-//--------------------------------------------------ADD - PRINTER--------------------------------------------------
+//--------------------------------------------------ADD/EDIT - PRINTER--------------------------------------------------
 .section-4 {
     padding: 40px 0;
 
@@ -507,11 +558,12 @@ a {
         border: 1px solid #EBEEFF;
         border-radius: 20px;
         gap: 0 30px;
+        box-shadow: 0px -6px 6px 0px #0000000F;
     }
 
     &__left {
         width: calc(50% - 15px);
-        border-bottom: 1px solid #EBEEFF;
+        // border-bottom: 1px solid #EBEEFF;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -550,7 +602,7 @@ a {
         width: calc(50% - 15px);
         display: flex;
         justify-content: center;
-        border-bottom: 1px solid #EBEEFF;
+        // border-bottom: 1px solid #EBEEFF;
     }
 
     &__form {
@@ -657,7 +709,7 @@ a {
             &--element6 {
                 width: 100%;
                 display: flex;
-                flex-wrap: nowrap;
+                flex-wrap: wrap;
                 align-items: center;
 
                 gap: 20px;
@@ -676,6 +728,7 @@ a {
         justify-content: center;
         align-items: center;
         gap: 20px;
+        border-top: 1px solid #EBEEFF;
 
         button i {
             margin-right: 8px;
@@ -697,8 +750,74 @@ a {
         font-size: 16px;
         font-weight: 500;
     }
+
+    @media (max-width: 1199.98px) {
+        &__wrap {  
+            gap: 30px 30px;
+        }
+
+        &__left {
+            padding-top: 20px;
+    
+            &--image {
+                width: 55%;
+            }
+        }
+
+        &__form {
+            &__table {
+
+                &--element1 {
+                    gap: 15px;
+    
+                    input {
+                        width: 150px;
+                    }
+                }
+    
+                &--element2 {
+                    gap: 15px;
+                    
+                    form {
+                        gap: 10px;
+                    }
+                }
+
+                &--element3 {
+                    width: 60%;
+                }
+
+                &--element4 {
+                    width: 40%;
+
+                    input {
+                        width: 150px;
+                    }
+                }
+
+                &--element5 {
+                    gap: 0;
+
+                    .element--title {
+                        padding-bottom: 5px;
+                    }
+                }
+
+                &--element6 {
+                    gap: 0;
+
+                    .element--title {
+                        width: 100%;
+                        padding-bottom: 5px;
+                    }
+                }
+            }
+        }
+
+        
+    }
 }
-//--------------------------------------------------END ADD - PRINTER--------------------------------------------------
+//--------------------------------------------------END ADD/EDIT - PRINTER--------------------------------------------------
 
 
 //--------------------------------------------------PRODUCT-DETAIL--------------------------------------------------
@@ -832,6 +951,7 @@ a {
         border: 1px solid #EBEEFF;
         border-radius: 20px;
         gap: 30px;
+        box-shadow: 0px -6px 6px 0px #0000000F;
     } 
  
     &__image {
@@ -950,55 +1070,6 @@ a {
     }
  }
  // End Section-3
-
- // modal
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &__main {
-        width: 40%;
-        padding: 25px;
-        border-radius: 8px;
-        background-color: #fff;
-        z-index: 999;
-        position: relative;
-    }
-
-    &__close {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        width: 32px;
-        height: 32px;
-        background-color: red;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 0;
-        color: #fff;
-        cursor: pointer;
-    }
-
-    &__overlay {
-        background-color: #00000065;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-
-        cursor: pointer;
-    }
- }
- // End modal
 
 //--------------------------------------------------END - PRODUCT-DETAIL--------------------------------------------------
 
@@ -1361,7 +1432,7 @@ a {
     @media (max-width: 575.98px) {
 
         &__content {
-            font-size: 28px;
+            font-size: 24px;
         }
     }
 }

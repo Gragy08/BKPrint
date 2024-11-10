@@ -80,7 +80,7 @@ a {
     /* width: auto; */
     padding: 0 28px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
     background-color: transparent;
     border-radius: 57px;
     border: 2px solid $color-main;
@@ -96,6 +96,10 @@ a {
     &--icon-left {
         margin-left: 0;
         margin-right: 10px;
+    }
+
+    @media (max-width: 767.98px) {
+        font-size: 14px;
     }
 }
 
@@ -1039,6 +1043,22 @@ a {
         .element--detail label {
             font-size: 12px;
             font-weight: 500;
+        }
+
+        &__button-submit {
+            display: flex;
+            flex-wrap: wrap;
+
+            a {
+                width: 100%;
+                justify-content: center;
+            }
+
+            button {
+                width: 100%;
+                justify-content: center;
+
+            }
         }
     }
 }

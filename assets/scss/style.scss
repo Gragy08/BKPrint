@@ -61,6 +61,10 @@ a {
 
     transition: all 0.3s;
 
+    @media (max-width: 767.98px) {
+        font-size: 14px;
+    }
+
 }
 
 .button:hover {
@@ -103,7 +107,6 @@ a {
 // Header
 .header {
     padding: 28px 0;
-    
     z-index: 10;
 
     &__wrap {
@@ -226,6 +229,8 @@ a {
     
         &__wrap {
             justify-content: space-between;
+            // z-index: 8;
+
         }
     
         &__menu-mobile {
@@ -251,7 +256,8 @@ a {
             height: 100%;
             width: 100%;
             text-align: left;
-
+            z-index: 8;
+            
             ul {
                 flex-direction: column;
                 gap: 15px;
@@ -260,26 +266,26 @@ a {
                 padding: 20px;
                 width: 250px;
                 position: relative;
-                z-index: 8;
+                z-index: 9;
             }
-        }
 
-        &__menu[show = "yes"] .inner-overlay {
-            display: block;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #0000007a;
-            cursor: pointer;
-
-            i {
+            .inner-overlay {
+                display: block;
+                width: 100%;
+                height: 100%;
                 position: absolute;
-                top: 10px;
-                right: 10px;
-                font-size: 28px;
-                color: white;
+                top: 0;
+                left: 0;
+                background-color: #0000007a;
+                cursor: pointer;
+    
+                i {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    font-size: 28px;
+                    color: white;
+                }
             }
         }
     
@@ -306,8 +312,8 @@ a {
         padding: 25px;
         border-radius: 8px;
         background-color: #fff;
-        z-index: 999;
         position: relative;
+        z-index: 8;
     }
 
     &__close {
@@ -333,7 +339,6 @@ a {
         left: 0px;
         width: 100%;
         height: 100%;
-        z-index: 998;
         
         cursor: pointer;
     }
@@ -473,7 +478,7 @@ a {
             // justify-content: center;
             // align-items: center;
 
-            button {
+            a {
                 display: flex;
                 width: 100%;
                 justify-content: center;
@@ -563,7 +568,6 @@ a {
 
     &__left {
         width: calc(50% - 15px);
-        // border-bottom: 1px solid #EBEEFF;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -636,7 +640,7 @@ a {
                 align-items: center;
 
                 input {
-                    width: 180px;
+                    width: 219px;
                 }
             }
 
@@ -689,7 +693,7 @@ a {
                 }
 
                 input {
-                    width: 180px;
+                    width: 219px;
                 }
             }
 
@@ -715,7 +719,7 @@ a {
                 gap: 20px;
 
                 textarea {
-                    width: 320px;
+                    width: 338px;
                 }
             }
         }
@@ -815,6 +819,227 @@ a {
         }
 
         
+    }
+
+    @media (max-width: 991.98px) {
+
+        &__wrap {
+            gap: 0;
+        }
+
+        &__left {
+            width: 100%;
+            border-bottom: 1px solid #EBEEFF;
+        }
+
+        &__right {
+            width: 100%;
+
+        }
+
+        &__form {
+            &__table {
+
+                &--element1 {
+    
+                    input {
+                        width: 200px;
+                    }
+                }
+
+                &--element3 {
+                    margin-bottom: 20px;
+
+                    form {
+    
+                        .element--detail:nth-child(4) {
+                            top: 45px;
+                            right: 332px;
+                        }
+                    }
+                }
+
+                &--element4 {
+    
+                    input {
+                        width: 200px;
+                    }
+                }
+
+                &--element6 {
+                    margin-bottom: 25px;
+                    gap: 20px;
+                    
+                    .element--title {
+                        width: 22%;
+                    }
+
+                    textarea {
+                        width: 447px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767.98px) {
+
+        &__form {
+
+            &__content {
+                font-size: 28px;
+            }
+
+            &__table {
+
+                &--element1 {
+    
+                    input {
+                        width: 177px;
+                    }
+                }
+
+                &--element3 {
+                    margin-bottom: 5px;
+
+                    form {
+    
+                        .element--detail:nth-child(4) {
+                            top: 68px;
+                            right: 82px;
+                        }
+                    }
+                }
+
+                &--element4 {
+    
+                    input {
+                        width: 177px;
+                    }
+                }
+
+                &--element6 {
+                    gap: 0px;
+                    
+                    .element--title {
+                        width: 100%;
+                    }
+
+                    textarea {
+                        width: 338px;
+                    }
+                }
+            }
+        }
+
+        .element--title {
+            font-weight: 700;
+            font-size: 16px;
+        }
+    
+        .element--detail label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        &__button-submit {
+    
+            button i {
+                font-size: 14px;
+                margin-right: 8px;
+            }
+    
+            a i {
+                font-size: 14px;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+
+        &__form {
+
+            &__content {
+                font-size: 24px;
+            }
+
+            &__table {
+
+                &--element1 {
+                    gap: 0;
+                    
+                    .element--title {
+                        width: 100%;
+                        padding-bottom: 5px;
+                    }
+    
+                    input {
+                        width: 180px;
+                    }
+                }
+
+                &--element2 {
+                    flex-wrap: wrap;
+                    gap: 0;
+
+                    .element--title {
+                        width: 100%;
+                        padding-bottom: 5px;
+                    }
+                }
+
+                &--element3 {
+                    width: 100%;
+                    margin-bottom: 10px;
+
+                    form {
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        position: static;                   
+
+                        .element--detail:nth-child(4) {
+                            position: static;
+                        }
+                    }
+                }
+
+                &--element4 {
+                    width: 100%;
+                    padding-left: 0;
+                    border-left: 0;
+    
+                    input {
+                        width: 180px;
+                    }
+                }
+
+                &--element5 {
+                    
+                    .element--title {
+                        width: 100%;
+                        padding-bottom: 5px;
+                    }
+                }
+
+                &--element6 {
+
+                    textarea {
+                        width: 290px;
+                    }
+                }
+            }
+        }
+
+        .element--title {
+            font-weight: 700;
+            font-size: 14px;
+        }
+    
+        .element--detail label {
+            font-size: 12px;
+            font-weight: 500;
+        }
     }
 }
 //--------------------------------------------------END ADD/EDIT - PRINTER--------------------------------------------------
@@ -1359,7 +1584,7 @@ a {
     @media (max-width: 575.98px) {
 
         &__content {
-            font-size: 36px;
+            font-size: 32px;
         }
 
         &__element {
@@ -1426,6 +1651,10 @@ a {
     @media(max-width: 767.98px) {
         &__table--element {
             width: 120%;
+        }
+
+        &__content {
+            font-size: 28px;
         }
     }
 
@@ -1501,6 +1730,10 @@ a {
         &__info {
             margin-bottom: 30px;
             gap: 5px 50px;
+        }
+
+        &__content {
+            font-size: 28px;
         }
     }
 
@@ -1698,13 +1931,15 @@ a {
     @media (max-width: 991.98px) {
         &__top { 
             flex-wrap: wrap;
+            justify-content: center;
+
 
             &__logo {
                 width: 100%;
             }
 
             &__desc {
-                width: 100%;
+                width: 80%;
             }
         }
     

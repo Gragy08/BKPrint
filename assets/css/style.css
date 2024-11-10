@@ -60,6 +60,11 @@ a {
   border: 0;
   transition: all 0.3s;
 }
+@media (max-width: 767.98px) {
+  .button {
+    font-size: 14px;
+  }
+}
 
 .button:hover {
   background-color: #00A7E7;
@@ -223,6 +228,7 @@ a {
     height: 100%;
     width: 100%;
     text-align: left;
+    z-index: 8;
   }
   .header__menu[show=yes] ul {
     flex-direction: column;
@@ -232,7 +238,7 @@ a {
     padding: 20px;
     width: 250px;
     position: relative;
-    z-index: 8;
+    z-index: 9;
   }
   .header__menu[show=yes] .inner-overlay {
     display: block;
@@ -271,8 +277,8 @@ a {
   padding: 25px;
   border-radius: 8px;
   background-color: #fff;
-  z-index: 999;
   position: relative;
+  z-index: 8;
 }
 .modal__close {
   position: absolute;
@@ -296,7 +302,6 @@ a {
   left: 0px;
   width: 100%;
   height: 100%;
-  z-index: 998;
   cursor: pointer;
 }
 
@@ -401,7 +406,7 @@ a {
     display: block;
     margin-top: 16px;
   }
-  .section-1__button-bottom button {
+  .section-1__button-bottom a {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -534,7 +539,7 @@ a {
   align-items: center;
 }
 .section-4__form__table--element1 input {
-  width: 180px;
+  width: 219px;
 }
 .section-4__form__table--element2 {
   width: 100%;
@@ -578,7 +583,7 @@ a {
   padding-bottom: 5px;
 }
 .section-4__form__table--element4 input {
-  width: 180px;
+  width: 219px;
 }
 .section-4__form__table--element5 {
   width: 100%;
@@ -599,7 +604,7 @@ a {
   gap: 20px;
 }
 .section-4__form__table--element6 textarea {
-  width: 320px;
+  width: 338px;
 }
 .section-4__button-submit {
   padding-top: 20px;
@@ -669,6 +674,142 @@ a {
   .section-4__form__table--element6 .element--title {
     width: 100%;
     padding-bottom: 5px;
+  }
+}
+@media (max-width: 991.98px) {
+  .section-4__wrap {
+    gap: 0;
+  }
+  .section-4__left {
+    width: 100%;
+    border-bottom: 1px solid #EBEEFF;
+  }
+  .section-4__right {
+    width: 100%;
+  }
+  .section-4__form__table--element1 input {
+    width: 200px;
+  }
+  .section-4__form__table--element3 {
+    margin-bottom: 20px;
+  }
+  .section-4__form__table--element3 form .element--detail:nth-child(4) {
+    top: 45px;
+    right: 332px;
+  }
+  .section-4__form__table--element4 input {
+    width: 200px;
+  }
+  .section-4__form__table--element6 {
+    margin-bottom: 25px;
+    gap: 20px;
+  }
+  .section-4__form__table--element6 .element--title {
+    width: 22%;
+  }
+  .section-4__form__table--element6 textarea {
+    width: 447px;
+  }
+}
+@media (max-width: 767.98px) {
+  .section-4__form__content {
+    font-size: 28px;
+  }
+  .section-4__form__table--element1 input {
+    width: 177px;
+  }
+  .section-4__form__table--element3 {
+    margin-bottom: 5px;
+  }
+  .section-4__form__table--element3 form .element--detail:nth-child(4) {
+    top: 68px;
+    right: 82px;
+  }
+  .section-4__form__table--element4 input {
+    width: 177px;
+  }
+  .section-4__form__table--element6 {
+    gap: 0px;
+  }
+  .section-4__form__table--element6 .element--title {
+    width: 100%;
+  }
+  .section-4__form__table--element6 textarea {
+    width: 338px;
+  }
+  .section-4 .element--title {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .section-4 .element--detail label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .section-4__button-submit button i {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .section-4__button-submit a i {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+}
+@media (max-width: 575.98px) {
+  .section-4__form__content {
+    font-size: 24px;
+  }
+  .section-4__form__table--element1 {
+    gap: 0;
+  }
+  .section-4__form__table--element1 .element--title {
+    width: 100%;
+    padding-bottom: 5px;
+  }
+  .section-4__form__table--element1 input {
+    width: 180px;
+  }
+  .section-4__form__table--element2 {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .section-4__form__table--element2 .element--title {
+    width: 100%;
+    padding-bottom: 5px;
+  }
+  .section-4__form__table--element3 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .section-4__form__table--element3 form {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: static;
+  }
+  .section-4__form__table--element3 form .element--detail:nth-child(4) {
+    position: static;
+  }
+  .section-4__form__table--element4 {
+    width: 100%;
+    padding-left: 0;
+    border-left: 0;
+  }
+  .section-4__form__table--element4 input {
+    width: 180px;
+  }
+  .section-4__form__table--element5 .element--title {
+    width: 100%;
+    padding-bottom: 5px;
+  }
+  .section-4__form__table--element6 textarea {
+    width: 290px;
+  }
+  .section-4 .element--title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .section-4 .element--detail label {
+    font-size: 12px;
+    font-weight: 500;
   }
 }
 
@@ -1089,7 +1230,7 @@ a {
 }
 @media (max-width: 575.98px) {
   .introduce__content {
-    font-size: 36px;
+    font-size: 32px;
   }
   .introduce__element {
     width: 95%;
@@ -1138,6 +1279,9 @@ a {
 @media (max-width: 767.98px) {
   .form__table--element {
     width: 120%;
+  }
+  .form__content {
+    font-size: 28px;
   }
 }
 @media (max-width: 575.98px) {
@@ -1197,6 +1341,9 @@ a {
   .maps__info {
     margin-bottom: 30px;
     gap: 5px 50px;
+  }
+  .maps__content {
+    font-size: 28px;
   }
 }
 @media (max-width: 575.98px) {
@@ -1351,12 +1498,13 @@ a {
 @media (max-width: 991.98px) {
   .footer__top {
     flex-wrap: wrap;
+    justify-content: center;
   }
   .footer__top__logo {
     width: 100%;
   }
   .footer__top__desc {
-    width: 100%;
+    width: 80%;
   }
   .footer__bottom {
     flex-wrap: wrap;

@@ -1422,7 +1422,7 @@ a {
   color: #00171F;
 }
 .footer__top__desc {
-  width: 50%;
+  width: 47%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1512,6 +1512,11 @@ a {
   font-size: 14px;
   color: #667479;
 }
+@media (max-width: 1199.98px) {
+  .footer__top__desc {
+    width: 48%;
+  }
+}
 @media (max-width: 991.98px) {
   .footer__top {
     flex-wrap: wrap;
@@ -1581,6 +1586,9 @@ a {
   }
   .footer__top__logo__text-name {
     font-size: 16px;
+  }
+  .footer__top__desc {
+    width: 100%;
   }
   .footer__top__desc ul li a {
     font-size: 13px;

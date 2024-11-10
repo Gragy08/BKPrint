@@ -1829,7 +1829,7 @@ a {
         }
 
         &__desc {
-            width: 50%;
+            width: 47%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1947,6 +1947,15 @@ a {
             }
         }
     }
+
+    @media (max-width: 1199.98px) {
+        &__top {
+
+            &__desc {
+                width: 48%;
+            }
+        }
+    }
     
     @media (max-width: 991.98px) {
         &__top { 
@@ -2037,6 +2046,8 @@ a {
             }
 
             &__desc {
+                width: 100%;
+
                 ul li a {
                     font-size: 13px;
                 }

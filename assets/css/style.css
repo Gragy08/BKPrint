@@ -478,7 +478,7 @@ a {
   padding: 20px 22px;
   border: 1px solid #EBEEFF;
   border-radius: 20px;
-  gap: 0 30px;
+  gap: 15px 30px;
   box-shadow: 0px -6px 6px 0px rgba(0, 0, 0, 0.0588235294);
 }
 .section-4__left {
@@ -585,7 +585,9 @@ a {
 }
 .section-4__form__table--element4 {
   width: 45%;
+  padding-left: 10px;
   margin-bottom: 10px;
+  border-left: 1px solid #EBEEFF;
   align-items: center;
 }
 .section-4__form__table--element4 .element--title {
@@ -642,7 +644,7 @@ a {
 }
 @media (max-width: 1199.98px) {
   .section-4__wrap {
-    gap: 30px 30px;
+    gap: 15px 30px;
   }
   .section-4__left {
     padding-top: 20px;
@@ -737,6 +739,10 @@ a {
   .section-4__form__table--element4 input {
     width: 177px;
   }
+  .section-4__form__table--element5 .form label {
+    font-size: 14px;
+    font-weight: 500;
+  }
   .section-4__form__table--element6 {
     gap: 0px;
   }
@@ -809,8 +815,12 @@ a {
     width: 100%;
     padding-bottom: 5px;
   }
+  .section-4__form__table--element5 .form label {
+    font-size: 12px;
+    font-weight: 500;
+  }
   .section-4__form__table--element6 textarea {
-    width: 290px;
+    width: 180px;
   }
   .section-4 .element--title {
     font-weight: 700;
@@ -1095,7 +1105,7 @@ a {
   font-weight: 700;
   color: #52CE22;
   position: absolute;
-  bottom: 3px;
+  bottom: 5px;
 }
 @media (max-width: 575.98px) {
   .product-item__title {

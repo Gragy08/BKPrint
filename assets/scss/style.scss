@@ -564,7 +564,7 @@ a {
         padding: 20px 22px;
         border: 1px solid #EBEEFF;
         border-radius: 20px;
-        gap: 0 30px;
+        gap: 15px 30px;
         box-shadow: 0px -6px 6px 0px #0000000F;
     }
 
@@ -693,9 +693,9 @@ a {
 
             &--element4 {
                 width: 45%;
-                // padding-left: 10px;
+                padding-left: 10px;
                 margin-bottom: 10px;
-                // border-left: 1px solid #EBEEFF;
+                border-left: 1px solid #EBEEFF;
                 align-items: center;
 
                 .element--title {
@@ -767,7 +767,7 @@ a {
 
     @media (max-width: 1199.98px) {
         &__wrap {  
-            gap: 30px 30px;
+            gap: 15px 30px;
         }
 
         &__left {
@@ -928,6 +928,15 @@ a {
                     }
                 }
 
+                &--element5 {
+                    .form {
+                        label {
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
                 &--element6 {
                     gap: 0px;
                     
@@ -1030,12 +1039,19 @@ a {
                         width: 100%;
                         padding-bottom: 5px;
                     }
+
+                    .form {
+                        label {
+                            font-size: 12px;
+                            font-weight: 500;
+                        }
+                    }
                 }
 
                 &--element6 {
 
                     textarea {
-                        width: 290px;
+                        width: 180px;
                     }
                 }
             }
@@ -1413,7 +1429,7 @@ a {
         color: #52CE22;
 
         position: absolute;
-        bottom: 3px;
+        bottom: 5px;
     }
     
     @media (max-width: 575.98px) {

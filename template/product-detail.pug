@@ -28,7 +28,7 @@ block main
                                 //- li 
                                 //-     a(href="#") Chó
                                 li 
-                                    a(href="index.html") Máy in
+                                    a(href="printer.html") Máy in
                                 li 
                                     a(href="product-detail.html" class = "last") Máy in B4 - 304
                     //- End Breadcrumb
@@ -99,15 +99,16 @@ block main
                 .box-head__left
                     h3 Xem thêm máy in khác
                 .box-head__right
-                    a(class="button-outline" href="index.html") 
+                    a(class="button-outline" href="printer.html") 
                         | Xem thêm 
                         i(class="fa-solid fa-angle-right")
 
             .section-2__wrap 
                 each printer in printers
                     +product-item(printer)
+
             .section-2__button-bottom
-                a(class="button-outline" href="index.html") 
+                a(class="button-outline" href="printer.html") 
                     | Xem thêm 
                     i(class="fa-solid fa-angle-right")
 

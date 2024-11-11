@@ -543,6 +543,9 @@ a {
   margin-bottom: 10px;
   align-items: center;
 }
+.section-4__form__table--element1 .element--title {
+  padding-bottom: 5px;
+}
 .section-4__form__table--element1 input {
   width: 219px;
 }
@@ -553,7 +556,10 @@ a {
   margin-bottom: 10px;
   align-items: center;
 }
-.section-4__form__table--element2 form {
+.section-4__form__table--element2 .element--title {
+  padding-bottom: 5px;
+}
+.section-4__form__table--element2 .form {
   display: flex;
   gap: 15px;
 }
@@ -566,22 +572,20 @@ a {
 .section-4__form__table--element3 .element--title {
   padding-bottom: 5px;
 }
-.section-4__form__table--element3 form {
+.section-4__form__table--element3 .form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
 }
-.section-4__form__table--element3 form .element--detail:nth-child(4) {
+.section-4__form__table--element3 .form .element--detail:nth-child(4) {
   position: absolute;
   top: 45px;
   right: 41px;
 }
 .section-4__form__table--element4 {
   width: 45%;
-  padding-left: 10px;
   margin-bottom: 10px;
-  border-left: 1px solid #EBEEFF;
   align-items: center;
 }
 .section-4__form__table--element4 .element--title {
@@ -598,7 +602,7 @@ a {
   align-items: center;
   gap: 20px;
 }
-.section-4__form__table--element5 form {
+.section-4__form__table--element5 .form {
   gap: 15px;
 }
 .section-4__form__table--element6 {
@@ -655,7 +659,7 @@ a {
   .section-4__form__table--element2 {
     gap: 15px;
   }
-  .section-4__form__table--element2 form {
+  .section-4__form__table--element2 .form {
     gap: 10px;
   }
   .section-4__form__table--element3 {
@@ -696,9 +700,9 @@ a {
     width: 200px;
   }
   .section-4__form__table--element3 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
-  .section-4__form__table--element3 form .element--detail:nth-child(4) {
+  .section-4__form__table--element3 .form .element--detail:nth-child(4) {
     top: 45px;
     right: 332px;
   }
@@ -706,14 +710,14 @@ a {
     width: 200px;
   }
   .section-4__form__table--element6 {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     gap: 20px;
   }
   .section-4__form__table--element6 .element--title {
     width: 22%;
   }
   .section-4__form__table--element6 textarea {
-    width: 447px;
+    width: 350px;
   }
 }
 @media (max-width: 767.98px) {
@@ -726,9 +730,9 @@ a {
   .section-4__form__table--element3 {
     margin-bottom: 5px;
   }
-  .section-4__form__table--element3 form .element--detail:nth-child(4) {
+  .section-4__form__table--element3 .form .element--detail:nth-child(4) {
     top: 68px;
-    right: 82px;
+    right: 72px;
   }
   .section-4__form__table--element4 input {
     width: 177px;
@@ -785,12 +789,12 @@ a {
     width: 100%;
     margin-bottom: 10px;
   }
-  .section-4__form__table--element3 form {
+  .section-4__form__table--element3 .form {
     flex-direction: column;
     flex-wrap: nowrap;
     position: static;
   }
-  .section-4__form__table--element3 form .element--detail:nth-child(4) {
+  .section-4__form__table--element3 .form .element--detail:nth-child(4) {
     position: static;
   }
   .section-4__form__table--element4 {
@@ -1091,7 +1095,7 @@ a {
   font-weight: 700;
   color: #52CE22;
   position: absolute;
-  bottom: 8px;
+  bottom: 3px;
 }
 @media (max-width: 575.98px) {
   .product-item__title {

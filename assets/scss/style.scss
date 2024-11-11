@@ -233,8 +233,6 @@ a {
     
         &__wrap {
             justify-content: space-between;
-            // z-index: 8;
-
         }
     
         &__menu-mobile {
@@ -397,7 +395,7 @@ a {
 // End Breadcrumb
 
 
-//--------------------------------------------------INDEX--------------------------------------------------
+//--------------------------------------------------PRINTER--------------------------------------------------
 
 // Section-1
 .section-1 {
@@ -553,7 +551,7 @@ a {
 }
 // End box-filter
 
-//--------------------------------------------------END - INDEX--------------------------------------------------
+//--------------------------------------------------END - PRINTER--------------------------------------------------
 
 
 //--------------------------------------------------ADD/EDIT - PRINTER--------------------------------------------------
@@ -642,6 +640,10 @@ a {
                 width: 100%;
                 margin-bottom: 10px;
                 align-items: center;
+                
+                .element--title {
+                    padding-bottom: 5px;
+                }
 
                 input {
                     width: 219px;
@@ -654,8 +656,12 @@ a {
                 gap: 20px;
                 margin-bottom: 10px;
                 align-items: center;
+
+                .element--title {
+                    padding-bottom: 5px;
+                }
                 
-                form {
+                .form {
                     display: flex;
                     gap: 15px;
                 }
@@ -671,7 +677,7 @@ a {
                     padding-bottom: 5px;
                 }
 
-                form {
+                .form {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-between;
@@ -687,9 +693,9 @@ a {
 
             &--element4 {
                 width: 45%;
-                padding-left: 10px;
+                // padding-left: 10px;
                 margin-bottom: 10px;
-                border-left: 1px solid #EBEEFF;
+                // border-left: 1px solid #EBEEFF;
                 align-items: center;
 
                 .element--title {
@@ -709,7 +715,7 @@ a {
                 align-items: center;
                 gap: 20px;
 
-                form {
+                .form {
                     gap: 15px;
                 }
             }
@@ -786,7 +792,7 @@ a {
                 &--element2 {
                     gap: 15px;
                     
-                    form {
+                    .form {
                         gap: 10px;
                     }
                 }
@@ -852,9 +858,9 @@ a {
                 }
 
                 &--element3 {
-                    margin-bottom: 20px;
+                    margin-bottom: 30px;
 
-                    form {
+                    .form {
     
                         .element--detail:nth-child(4) {
                             top: 45px;
@@ -871,7 +877,7 @@ a {
                 }
 
                 &--element6 {
-                    margin-bottom: 25px;
+                    margin-bottom: 20px;
                     gap: 20px;
                     
                     .element--title {
@@ -879,7 +885,7 @@ a {
                     }
 
                     textarea {
-                        width: 447px;
+                        width: 350px;
                     }
                 }
             }
@@ -906,11 +912,11 @@ a {
                 &--element3 {
                     margin-bottom: 5px;
 
-                    form {
+                    .form {
     
                         .element--detail:nth-child(4) {
                             top: 68px;
-                            right: 82px;
+                            right: 72px;
                         }
                     }
                 }
@@ -997,7 +1003,7 @@ a {
                     width: 100%;
                     margin-bottom: 10px;
 
-                    form {
+                    .form {
                         flex-direction: column;
                         flex-wrap: nowrap;
                         position: static;                   
@@ -1407,7 +1413,7 @@ a {
         color: #52CE22;
 
         position: absolute;
-        bottom: 8px;
+        bottom: 3px;
     }
     
     @media (max-width: 575.98px) {

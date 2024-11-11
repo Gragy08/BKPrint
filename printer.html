@@ -3,6 +3,7 @@
   <head>
     <meta charser="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy in</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   </head>
@@ -28,6 +29,63 @@
         </div>
       </div>
     </header>
+    <div class="breadcrumb">
+      <div class="container">
+        <nav class="breadcrumb__wrap">
+          <ul>
+            <li> <a href="index.html">Trang chủ</a></li>
+            <li> <a class="last" href="printer.html">Máy in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <section class="section-1"> 
+      <div class="container"> 
+        <div class="section-1__wrap"> 
+          <div class="section-1__left">
+            <div class="box-filter"> 
+              <div class="box-filter__title"><i class="fa-solid fa-filter"></i>
+                <div class="box-filter__title__inner">Bộ lọc</div>
+              </div>
+              <div class="box-filter__group"> 
+                <div class="box-filter__group-label">Trạng thái</div>
+                <div class="box-filter__group-list"> 
+                  <div class="box-filter__group-item"> 
+                    <input type="checkbox" id="" aria-label="active">
+                    <label for="">Đang hoạt động</label>
+                  </div>
+                  <div class="box-filter__group-item"> 
+                    <input type="checkbox" id="" aria-label="passive">
+                    <label for="">Không hoạt động</label>
+                  </div>
+                  <div class="box-filter__group-item"> 
+                    <input type="checkbox" id="" aria-label="maintenance">
+                    <label for="">Đang bảo trì</label>
+                  </div>
+                  <div class="box-filter__group-item"> 
+                    <input type="checkbox" id="" aria-label="erroring">
+                    <label for="">Đang bị lỗi</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section-1__add"><a class="button" href="add-printer.html">Thêm máy in</a></div>
+          </div>
+          <div class="section-1__right">
+            <div class="section-1__head">
+              <h2 class="section-1__title">Máy in</h2>
+              <div class="box-filter__title"><i class="fa-solid fa-filter"></i>
+                <div class="box-filter__title__inner">Bộ lọc</div>
+              </div>
+            </div>
+            <div class="section-1__list" id="product-list"></div>
+          </div>
+        </div>
+        <div class="section-1__button-bottom"><a class="button" href="add-printer.html">Thêm máy in</a></div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="../assets/script/printer.js"></script>
     <script type="module" src="../assets/script/buttonMenu-mobile.js"></script>
     <footer class="footer">
       <div class="container">

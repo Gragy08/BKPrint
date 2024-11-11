@@ -394,6 +394,51 @@ a {
 }
 // End Breadcrumb
 
+// Alert
+.alert {
+    background-color: gray;
+    width: 300px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+
+    &-list {
+        position: fixed;
+        top: 10px;
+        right: 20px;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &--success {
+        background-color: #52CE22;
+    }
+
+    &--error {
+        background-color: #F40000;
+    }
+
+    &__content {
+        font-size: 16px;
+        font-family: Arial;
+    }
+
+    &__close {
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    &__close:hover {
+        color: #0A0A0A;
+    }
+}
+// End Alert
+
 
 //--------------------------------------------------PRINTER--------------------------------------------------
 
@@ -595,12 +640,21 @@ a {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin-top: 25px;
+            margin-bottom: 15px;
 
-            button i {
+            span i {
                 margin-right: 8px;
             }
+
+            //Không hiển thị nút choosen file mặc định
+            input[type="file"] {
+                display: none;
+            }
+        }
+
+        .nameFile {
+            display: none;
         }
     }
 
@@ -1254,7 +1308,7 @@ a {
  
     &__content {
         width: calc(50% - 15px);
-}
+    }
  
     &__title {
         margin-top: 18px;
@@ -1288,10 +1342,14 @@ a {
         font-size: 14px;
         color: $color-light-text;
 
-        &.status--active {
-            color: #52CE22;
-            font-weight: 700;
+            &.status--active {
+                color: #52CE22;
+                font-weight: 700;
+            }
         }
+
+        td.attribute {
+            width: 20%;
         }
     }
  
@@ -1333,6 +1391,12 @@ a {
 
         &__price {
             margin-bottom: 16px;
+        }
+
+        &__table {
+            td.attribute {
+                width: auto;
+            }
         }
     }
  }

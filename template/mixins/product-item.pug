@@ -3,9 +3,9 @@ mixin product-item(printer)
     .product-item
         a(href="product-detail.html")
             .product-item__image
-                img(src=printer.image alt=printer.title) 
+                img(src=printer.image alt=printer.name) 
             .product-item__content
-                h3.product-item__title #{printer.title} 
+                h3.product-item__title #{printer.name} 
                 .product-item__info
                     .product-item__info-item Chức năng: <b>#{printer.function}</b>
                     .product-item__info-item Khả năng: <b>#{printer.ability}</b>

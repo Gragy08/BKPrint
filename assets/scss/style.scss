@@ -298,7 +298,7 @@ a {
 }
 // End Header
 
- // modal
+ // modal - DELETE
  .modal {
     position: fixed;
     top: 0;
@@ -324,7 +324,7 @@ a {
         right: -10px;
         width: 32px;
         height: 32px;
-        background-color: red;
+        background-color: #F40000;
         border-radius: 50%;
         display: inline-flex;
         align-items: center;
@@ -344,8 +344,196 @@ a {
         
         cursor: pointer;
     }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        &__top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &--icon {
+                font-size: 80px;
+                color: #F40000;
+            }
+
+            &--title {
+                font-size: 34px;
+                font-weight: 600;
+                color: #003459;
+            }
+
+            &--desc {
+                font-size: 18px;
+                font-weight: 500;
+                color: $color-light-text;
+            }
+        }
+    }
+
+    &__bottom--Yes:hover {
+        background-color: #52CE22;
+    }
+
+    &__bottom--No:hover {
+        color: #FDFDFD;
+        border: 0px;
+        background-color: #F40000;
+    }
+
+    @media (max-width: 1199.98px) {
+        &__content {
+    
+            &__top {
+    
+                &--icon {
+                    font-size: 50px;
+                }
+    
+                &--title {
+                    font-size: 28px;
+                    font-weight: 600;
+                }
+    
+                &--desc {
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 991.98px) {
+
+        &__main {
+            width: 50%;
+        }
+
+        &__content {
+    
+            &__top {
+    
+                &--icon {
+                    font-size: 50px;
+                }
+    
+                &--title {
+                    text-align: center;
+                    font-size: 26px;
+                    font-weight: 600;
+                }
+    
+                &--desc {
+                    text-align: center;
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+            }
+
+            &__bottom {
+                
+                .button-outline {
+                    font-size: 14px;
+                }
+
+                .button {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767.98px) {
+
+        &__main {
+            width: 60%;
+        }
+
+        &__content {
+    
+            &__top {
+    
+                &--icon {
+                    font-size: 45px;
+                }
+    
+                &--title {
+                    font-size: 21px;
+                    font-weight: 600;
+                }
+    
+                &--desc {
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+            }
+
+            // &__bottom {
+                
+            //     .button-outline {
+            //         width: 100%;
+            //         justify-content: center;
+            //         margin-bottom: 10px;
+            //     }
+
+            //     .button {
+            //         width: 100%;
+            //         justify-content: center;
+            //     }
+            // }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+
+        &__main {
+            width: 80%;
+        }
+
+        &__content {
+    
+            &__top {
+    
+                &--icon {
+                    font-size: 35px;
+                }
+    
+                &--title {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+    
+                &--desc {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: $color-light-text;
+                }
+            }
+
+            &__bottom {
+                
+                .button-outline {
+                    font-size: 12px;
+                    width: 100%;
+                    justify-content: center;
+                    margin-bottom: 10px;
+                }
+
+                .button {
+                    font-size: 12px;
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+    }
  }
- // End modal
+ // End modal - DELETE
 
 // Breadcrumb
 .breadcrumb {
@@ -671,7 +859,7 @@ a {
         &__content {
             width: 100%;
 
-            margin-top: 20px;
+            // margin-top: 20px;
             margin-bottom: 20px;
             font-size: 32px;
             font-weight: 700;
@@ -714,6 +902,39 @@ a {
                 .element--title {
                     padding-bottom: 5px;
                 }
+
+                .element--detail {
+                    cursor: pointer;
+                }
+                
+                .form {
+                    display: flex;
+                    gap: 15px;
+                }
+            }
+
+            &--element2--edit {
+                width: 100%;
+                display: flex;
+                gap: 20px;
+                margin-bottom: 10px;
+                align-items: center;
+
+                .element--title {
+                    padding-bottom: 5px;
+                }
+
+                .element--detail {
+                    cursor: pointer;
+                    
+                    input {
+                        cursor: pointer;
+                    }
+
+                    label {
+                        cursor: pointer;
+                    }
+                }
                 
                 .form {
                     display: flex;
@@ -729,6 +950,18 @@ a {
 
                 .element--title {
                     padding-bottom: 5px;
+                }
+
+                .element--detail {
+                    cursor: pointer;
+                    
+                    input {
+                        cursor: pointer;
+                    }
+
+                    label {
+                        cursor: pointer;
+                    }
                 }
 
                 .form {
@@ -771,6 +1004,34 @@ a {
 
                 .form {
                     gap: 15px;
+                }
+            }
+
+            &--element5--edit {
+                width: 100%;
+                margin-bottom: 10px;
+                align-items: center;
+
+                .element--title {
+                    width: 100%;
+                }
+
+                .element--detail {
+                    cursor: pointer;
+                    
+                    input {
+                        cursor: pointer;
+                    }
+
+                    label {
+                        cursor: pointer;
+                    }
+                }
+
+                .form {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
                 }
             }
 
@@ -851,6 +1112,16 @@ a {
                     }
                 }
 
+                &--element2--edit {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0;
+
+                    .element--title {
+                        width: 100%;
+                    }
+                }
+
                 &--element3 {
                     width: 60%;
                 }
@@ -868,6 +1139,13 @@ a {
 
                     .element--title {
                         padding-bottom: 5px;
+                    }
+                }
+
+                &--element5--edit {
+                    
+                    .form {
+                        gap: 0 20px;
                     }
                 }
 
@@ -1102,6 +1380,13 @@ a {
                     }
                 }
 
+                &--element5--edit {
+                    
+                    .form {
+                        flex-direction: column;
+                    }
+                }
+
                 &--element6 {
 
                     textarea {
@@ -1267,6 +1552,7 @@ a {
 // Section-3
 .section-3 {
     &__wrap {
+        width: 100%;
         display: flex;
         padding: 20px 22px;
         border: 1px solid #EBEEFF;
@@ -1275,7 +1561,7 @@ a {
         box-shadow: 0px -6px 6px 0px #0000000F;
     } 
  
-    &__image {
+    &__images {
         width: calc(50% - 15px);
     }
  
@@ -1284,11 +1570,13 @@ a {
         aspect-ratio: 1/1;
         border-radius: 10px;
         overflow: hidden;
-        margin-bottom: 12px;
+        padding: 40px;
+        margin-bottom: 10px;
+        margin-top: 15px;
+        // border: 1px solid #EBEEFF;
 
         img {
             width: 100%;
-            height: 100%;
             object-fit: cover;
         }
     }

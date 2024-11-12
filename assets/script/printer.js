@@ -40,7 +40,7 @@ if(elementProductList) {
         for (const item of res.data) {
             htmls += `
                 <div class="product-item">
-                    <a href="product-detail.html">
+                    <a href="product-detail.html?id=${item.id}">
                         <div class="product-item__image">
                             <img src=${item.image} alt=${item.name} />
                         </div>
@@ -63,81 +63,6 @@ if(elementProductList) {
 }
 //Hết Vẽ ra giao diện từ database - PRINTER PAGE
 
-// const formCreate = document.querySelector("#form-create");
-// console.log(formCreate);
-// if(formCreate) {
-//     formCreate.addEventListener("submit", (event) => {
-//         event.preventDefault();
-
-//         //Lấy giá trị của các thuộc tính máy in
-//         //Mã
-//         const name = formCreate.name.value;
-//         //Nơi
-//         const place = formCreate.place.value;
-//         //Chức năng
-//         const functionPrint = Array.from(event.target.functionPrint);
-//         const checkedFunc = functionPrint.filter((item) => item.checked === true);
-//         //Khả năng
-//         const ability = Array.from(event.target.ability);
-//         const checkedAbility = ability.filter((item) => item.checked === true);
-//         //Tốc độ
-//         const speed = formCreate.speed.value;
-//         //Trạng thái
-//         const status = Array.from(event.target.status);
-//         const checkedStatus = status.filter((item) => item.checked === true);
-//         //Mô tả
-//         const description = formCreate.description.value;
-
-//         //In ra cảnh báo
-//         if(!name) {
-//             showAlert("Vui lòng nhập tên máy in!", 3000, "alert--error");
-//             return;
-//         }
-//         if(!place) {
-//             showAlert("Vui lòng nhập nơi đặt máy in!", 3000, "alert--error");
-//             return;
-//         }
-//         if(checkedFunc.length === 0) {
-//             showAlert("Vui lòng chọn chức năng máy in!", 3000, "alert--error");
-//             return;
-//         }
-//         if(checkedAbility.length === 0) {
-//             showAlert("Vui lòng chọn khả năng máy in!", 3000, "alert--error");
-//             return;
-//         }
-//         if(!speed) {
-//             showAlert("Vui lòng nhập tốc độ của máy in!", 3000, "alert--error");
-//             return;
-//         }
-//         if(checkedStatus.length === 0) {
-//             showAlert("Vui lòng chọn trạng thái máy in!", 3000, "alert--error");
-//             return;
-//         }
-//         if(!description) {
-//             showAlert("Vui lòng nhập mô tả máy in!", 3000, "alert--error");
-//             return;
-//         }
-
-//         console.log(name);
-//         console.log(place);
-//         console.log(checkedFunc);
-//         console.log(checkedAbility);
-//         console.log(speed);
-//         console.log(checkedStatus);
-//         console.log(description);
-
-//         const data = {
-//             name: name,
-//             place: place,
-//             function: checkedFunc,
-//             ability: checkedAbility,
-//             speed: speed,
-//             status: status,
-//             description: description
-//         };
-//     })
-// }
-
 //Lấy data của người dùng nhập vào form và gửi về database - ADD PRINTER PAGE
 const formCreate = document.querySelector("#form-create");
 if (formCreate) {
@@ -159,7 +84,7 @@ if (formCreate) {
         // Lấy ảnh (nếu có)
         const imageInput = formCreate.imageOfPrinter;
         let image = null;
-        let imageURL = "default-image-url.png"; // Đường dẫn ảnh mặc định
+        let imageURL = "https://i.imgur.com/zqCxoN3.jpeg"; // Đường dẫn ảnh mặc định
 
         if (imageInput.files && imageInput.files[0]) {
             image = imageInput.files[0];
@@ -207,7 +132,7 @@ if (formCreate) {
         const data = {
             place: place,
             name: name,
-            image: image || "default-image-url.png", // Nếu không có ảnh, sử dụng ảnh mặc định
+            image: image || imageURL, // Nếu không có ảnh, sử dụng ảnh mặc định
             function: checkedFunc[0].value,
             // function: checkedFunc,
             ability: checkedAbility.map(item => item.value).join(", "),

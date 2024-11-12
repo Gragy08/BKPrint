@@ -5,99 +5,120 @@ block title
 
 block main
 
+    .alert-list
+
     //- Breadcrumb
     .breadcrumb
         .container
-            nav.breadcrumb__wrap
-                ul
-                    li 
-                        a(href="index.html") Trang chủ
-                    li 
-                        a(href="printer.html") Máy in
-                    li 
-                        a(href="product-detail.html") Máy in # 
-                    li 
-                        a(href="edit-printer.html" class="last") Chỉnh sửa máy in
+            nav(class="breadcrumb__wrap" id="breadcrumb-list")
+                //- ul
+                //-     li 
+                //-         a(href="index.html") Trang chủ
+                //-     li 
+                //-         a(href="printer.html") Máy in
+                //-     li 
+                //-         a(href="product-detail.html") Máy in # 
+                //-     li 
+                //-         a(href="edit-printer.html" class="last") Chỉnh sửa máy in
     //- End Breadcrumb
 
+    //- Section 4
     section.section-4
         .container
-            .section-4__wrap 
-                .section-4__left
-                    .section-4__left--image 
-                        img(src = "../assets/images/printer-default.jpg" alt = "printer default logo") 
-                    .section-4__left--button 
-                        button(class = "button") 
-                            i(class = "fa-solid fa-arrow-up-from-bracket")
-                            | Thay đổi ảnh cho máy in
-                .section-4__right
-                    .section-4__form
-                        .section-4__form__content Chỉnh sửa thông số máy in
-                        .section-4__form__table
-                            .section-4__form__table--list
-                                .section-4__form__table--element1
-                                    .element--title Điền mã máy in
-                                    form(action="#" target="_blank" method="GET")
-                                        input(type="text" id="codeOfPrinter" name="maMayIn" placeholder="")
+            form(id="form-edit"  action="")
+                .section-4__wrap 
+                    .section-4__left
+                        .section-4__left--image 
+                            img(id="printerImage" src="../assets/images/printer-default.jpg" alt="printer default logo")
+                        label.section-4__left--button 
+                            input(type="file" id="imageOfPrinter" name="image" accept="image/*" onchange="updatePrinterImage(this)")
+                            span(class="button")
+                                i(class = "fa-solid fa-arrow-up-from-bracket")
+                                | Thay đổi ảnh cho máy in
+                        span(id="file-name" class="nameFile") No file chosen
 
-                                .section-4__form__table--element1
-                                        .element--title Điền nơi đặt máy in
-                                        .form
-                                            input(type="text" id="placeOfPrinter" name="place" placeholder="")
+                    .section-4__right
+                        .section-4__form
+                            .section-4__form__content Điều chỉnh thông số máy in
+                            .section-4__form__table
+                                .section-4__form__table--list
+                                        .section-4__form__table--element1
+                                            .element--title Chỉnh sửa tên máy in
+                                            .form
+                                                input(type="text" id="nameOfPrinter" name="name" placeholder="#")
 
-                                .section-4__form__table--element2
-                                    .element--title Chọn chức năng máy in
-                                    form(action="#" target="_blank" method="GET")
-                                        .element--detail
-                                            input(type="checkbox" id="printLaser" name="function" value="In Laser")
-                                            label(for="printLaser") In Laser
-                                        .element--detail
-                                            input(type="checkbox" id="colorInkjet" name="function" value="In phun màu")
-                                            label(for="colorInkjet") In phun màu
+                                        .section-4__form__table--element1
+                                            .element--title Chỉnh sửa nơi đặt máy in
+                                            .form
+                                                input(type="text" id="placeOfPrinter" name="place" placeholder="CS1")
 
-                                .section-4__form__table--element3
-                                    .element--title Chọn khả năng máy in
-                                    form(action="#" target="_blank" method="GET")
-                                        .element--detail
-                                            input(type="checkbox" id="singleSideBW" name="ability" value="In 1 mặt, trắng đen")
-                                            label(for="singleSideBW") In 1 mặt, trắng đen
-                                        .element--detail
-                                            input(type="checkbox" id="doubleSideBW" name="ability" value="In 2 mặt tự động, trắng đen")
-                                            label(for="doubleSideBW") In 2 mặt tự động, trắng đen
-                                        .element--detail
-                                            input(type="checkbox" id="singleSideC" name="ability" value="In 1 mặt, in màu")
-                                            label(for="singleSideC") In 1 mặt, in màu
-                                        .element--detail
-                                            input(type="checkbox" id="Copy" name="ability" value="Copy")
-                                            label(for="Copy") Copy
-                                        .element--detail
-                                            input(type="checkbox" id="scanBW" name="ability" value="Scan(Trắng đen)")
-                                            label(for="scanBW") Scan(Trắng đen)
-                                        .element--detail
-                                            input(type="checkbox" id="scanC" name="ability" value="Scan(Màu)")
-                                            label(for="scanC") Scan(Màu)
+                                        .section-4__form__table--element2--edit
+                                            .element--title Thay đổi chức năng máy in
+                                            .form
+                                                .element--detail
+                                                    input(type="checkbox" id="printLaser" name="functionPrint" value="In Laser")
+                                                    label(for="printLaser") In Laser
+                                                .element--detail
+                                                    input(type="checkbox" id="colorInkjet" name="functionPrint" value="In phun màu")
+                                                    label(for="colorInkjet") In phun màu
 
-                                .section-4__form__table--element4
-                                    .element--title Điền tốc độ máy in
-                                    form(action="#" target="_blank" method="GET")
-                                        input(type="text" id="speedOfPrinter" name="speed" placeholder="")
-                                
-                                .section-4__form__table--element5
-                                    .element--title Chọn trạng thái máy in
-                                    form(action="#" target="_blank" method="GET")
-                                        input(type="radio" id="active" name="status" value="Đang hoạt động")
-                                        label(for="active") Đang hoạt động
+                                        .section-4__form__table--element3
+                                            .element--title Thay đổi khả năng máy in
+                                            .form
+                                                .element--detail
+                                                    input(type="checkbox" id="singleSideBW" name="ability" value="In 1 mặt, trắng đen")
+                                                    label(for="singleSideBW") In 1 mặt, trắng đen
+                                                .element--detail
+                                                    input(type="checkbox" id="doubleSideBW" name="ability" value="In 2 mặt tự động, trắng đen")
+                                                    label(for="doubleSideBW") In 2 mặt tự động, trắng đen
+                                                .element--detail
+                                                    input(type="checkbox" id="singleSideC" name="ability" value="In 1 mặt, in màu")
+                                                    label(for="singleSideC") In 1 mặt, in màu
+                                                .element--detail
+                                                    input(type="checkbox" id="Copy" name="ability" value="Copy")
+                                                    label(for="Copy") Copy
+                                                .element--detail
+                                                    input(type="checkbox" id="scanBW" name="ability" value="Scan(Trắng đen)")
+                                                    label(for="scanBW") Scan(Trắng đen)
+                                                .element--detail
+                                                    input(type="checkbox" id="scanC" name="ability" value="Scan(Màu)")
+                                                    label(for="scanC") Scan(Màu)
 
-                                        input(type="radio" id="inactive" name="status" value="Không hoạt động")
-                                        label(for="inactive") Không hoạt động
-                                
-                                .section-4__form__table--element6
-                                    .element--title Viết mô tả máy in
-                                    textarea(id="desc" name="moTa" rows="3" cols="")
-                .section-4__button-submit
-                    a(class="button-outline" href="product-detail.html")
-                        i(class="fa-solid fa-arrow-left-long")
-                        | Trở lại trang trước
-                    button(class="button button-submit")
-                        i(class="fa-solid fa-gear ")
-                        | Chỉnh sửa máy in
+                                        .section-4__form__table--element4
+                                            .element--title Chỉnh sửa tốc độ máy in
+                                            .form
+                                                input(type="text" id="speedOfPrinter" name="speed" placeholder="trang/phút")
+                                        
+                                        .section-4__form__table--element5--edit
+                                            .element--title Thay đổi trạng thái máy in
+                                            .form
+                                                .element--detail
+                                                    input(type="radio" id="active" name="status" value="Đang hoạt động")
+                                                    label(for="active") Đang hoạt động
+                                                .element--detail
+                                                    input(type="radio" id="inactive" name="status" value="Không hoạt động")
+                                                    label(for="inactive") Không hoạt động
+                                                .element--detail
+                                                    input(type="radio" id="maintenance" name="status" value="Đang bảo trì")
+                                                    label(for="maintenance") Đang bảo trì
+                                                .element--detail
+                                                    input(type="radio" id="erroring" name="status" value="Đang bị lỗi")
+                                                    label(for="erroring") Đang bị lỗi
+                                        
+                                        .section-4__form__table--element6
+                                            .element--title Thay đổi mô tả máy in
+                                            .form
+                                                textarea(id="desc" name="description" rows="3" cols="" aria-label="x")
+
+                    .section-4__button-submit
+                        div(id="backPage")
+                            //- a(class="button-outline" href="printer.html")
+                            //-     i(class="fa-solid fa-arrow-left-long")
+                            //-     | Trở lại trang trước
+                        button(type="submit" class="button button-submit")
+                            i(class="fa-solid fa-gear")
+                            | Chỉnh sửa máy in
+    //- End Section 4
+
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
+    script(src = "../assets/script/product-detail.js")

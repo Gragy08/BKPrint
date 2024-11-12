@@ -5,62 +5,66 @@ block title
     title Chi tiết máy in
 
 block main
-    //- Section-3
+
+    .alert-list
+
+    //- Section 3
     section.section-3
         .container
-            .section-3__wrap 
-                .section-3__images 
-                    .section-3__image-main 
-                        img(src="assets/images/B4-304.webp" alt="Printer")
-                    //- .section-3__image-thumb 
-                    //-     img(src="assets/images/pro-11.jpg")
-                    //-     img(src="assets/images/pro-2.jpg")
-                    //-     img(src="assets/images/pro-3.jpg")
-                    //-     img(src="assets/images/pro-4.jpg")
-                    //-     img(src="assets/images/pro-5.jpg")
-                .section-3__content 
-                    //- Breadcrumb
-                    .breadcrumb
-                        nav.breadcrumb__wrap
-                            ul
-                                li 
-                                    a(href="index.html") Trang chủ
-                                //- li 
-                                //-     a(href="#") Chó
-                                li 
-                                    a(href="printer.html") Máy in
-                                li 
-                                    a(href="product-detail.html" class = "last") Máy in B4 - 304
-                    //- End Breadcrumb
-                    h1.section-3__title Máy in B4 - 304
-                    .section-3__price HP LaserJet M211d
-                    .section-3__buttons 
-                        //- a(href="#" class="button-outline" button-fix) 
-                        a(href = "../edit-printer.html" class = "button-outline") Chỉnh sửa
-                        button(class = "button button--delete") Xóa máy in
-                    .section-3__table 
-                        table 
-                            tbody 
-                                //- tr 
-                                //-     td Code
-                                //-     td #9YF82A
-                                tr 
-                                    td.attribute Chức năng
-                                    td In Laser
-                                tr 
-                                    td.attribute Khả năng
-                                    td In hai mặt, trắng đen
-                                tr 
-                                    td.attribute Tốc độ
-                                    td 29 trang / 1 phút
-                                tr 
-                                    td.attribute Trạng thái
-                                    td.status--active Đang hoạt động
-                                tr 
-                                    td.attribute Mô tả ngắn
-                                    td Máy in Laser đơn năng với khả năng in hai mặt trắng đen với tốc độ 29 trang/phút
-    //- End Section-3
+            div(class="section-3__wrap" id="product-detail")
+                //- .section-3__images 
+                //-     .section-3__image-main 
+                //-         img(src="assets/images/B4-304.webp" alt="Printer")
+                //-     //- .section-3__image-thumb 
+                //-     //-     img(src="assets/images/pro-11.jpg")
+                //-     //-     img(src="assets/images/pro-2.jpg")
+                //-     //-     img(src="assets/images/pro-3.jpg")
+                //-     //-     img(src="assets/images/pro-4.jpg")
+                //-     //-     img(src="assets/images/pro-5.jpg")
+                //- .section-3__content 
+                //-     //- Breadcrumb
+                //-     .breadcrumb
+                //-         nav.breadcrumb__wrap
+                //-             ul
+                //-                 li 
+                //-                     a(href="index.html") Trang chủ
+                //-                 //- li 
+                //-                 //-     a(href="#") Chó
+                //-                 li 
+                //-                     a(href="printer.html") Máy in
+                //-                 li 
+                //-                     a(href="product-detail.html" class = "last") Máy in B4 - 304
+                //-     //- End Breadcrumb
+                //-     h1.section-3__title Máy in B4 - 304
+                //-     .section-3__price HP LaserJet M211d
+                //-     .section-3__buttons 
+                //-         //- a(href="#" class="button-outline" button-fix) 
+                //-         a(href = "../edit-printer.html" class = "button-outline") Chỉnh sửa
+                //-         button(class = "button button--delete") Xóa máy in
+                //-     .section-3__table 
+                //-         table 
+                //-             tbody 
+                //-                 //- tr 
+                //-                 //-     td Code
+                //-                 //-     td #9YF82A
+                //-                 tr 
+                //-                     td.attribute Chức năng
+                //-                     td In Laser
+                //-                 tr 
+                //-                     td.attribute Khả năng
+                //-                     td In hai mặt, trắng đen
+                //-                 tr 
+                //-                     td.attribute Tốc độ
+                //-                     td 29 trang / 1 phút
+                //-                 tr 
+                //-                     td.attribute Trạng thái
+                //-                     td.status--active Đang hoạt động
+                //-                 tr 
+                //-                     td.attribute Mô tả ngắn
+                //-                     td Máy in Laser đơn năng với khả năng in hai mặt trắng đen với tốc độ 29 trang/phút
+    //- End Section 3
 
+    //- Section 2
     -
         var printers = [
             {
@@ -111,5 +115,7 @@ block main
                 a(class="button-outline" href="printer.html") 
                     | Xem thêm 
                     i(class="fa-solid fa-angle-right")
+    //- End Section 2
 
-    script(type = "module" src = "../assets/script/product-detail.js")
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
+    script(src = "../assets/script/product-detail.js")

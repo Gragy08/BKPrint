@@ -29,115 +29,128 @@
         </div>
       </div>
     </header>
+    <div class="alert-list"></div>
     <div class="breadcrumb">
       <div class="container">
-        <nav class="breadcrumb__wrap">
-          <ul>
-            <li> <a href="index.html">Trang chủ</a></li>
-            <li> <a href="printer.html">Máy in</a></li>
-            <li> <a href="product-detail.html">Máy in # </a></li>
-            <li> <a class="last" href="edit-printer.html">Chỉnh sửa máy in</a></li>
-          </ul>
-        </nav>
+        <nav class="breadcrumb__wrap" id="breadcrumb-list"></nav>
       </div>
     </div>
     <section class="section-4">
       <div class="container">
-        <div class="section-4__wrap"> 
-          <div class="section-4__left">
-            <div class="section-4__left--image"> <img src="../assets/images/printer-default.jpg" alt="printer default logo"></div>
-            <div class="section-4__left--button"> 
-              <button class="button"> <i class="fa-solid fa-arrow-up-from-bracket"></i>Thay đổi ảnh cho máy in</button>
+        <form id="form-edit" action="">
+          <div class="section-4__wrap"> 
+            <div class="section-4__left">
+              <div class="section-4__left--image"> <img id="printerImage" src="../assets/images/printer-default.jpg" alt="printer default logo"></div>
+              <label class="section-4__left--button"> 
+                <input type="file" id="imageOfPrinter" name="image" accept="image/*" onchange="updatePrinterImage(this)"><span class="button"><i class="fa-solid fa-arrow-up-from-bracket"></i>Thay đổi ảnh cho máy in</span>
+              </label><span class="nameFile" id="file-name">No file chosen</span>
             </div>
-          </div>
-          <div class="section-4__right">
-            <div class="section-4__form">
-              <div class="section-4__form__content">Chỉnh sửa thông số máy in</div>
-              <div class="section-4__form__table">
-                <div class="section-4__form__table--list">
-                  <div class="section-4__form__table--element1">
-                    <div class="element--title">Điền mã máy in</div>
-                    <form action="#" target="_blank" method="GET">
-                      <input type="text" id="codeOfPrinter" name="maMayIn" placeholder="">
-                    </form>
-                  </div>
-                  <div class="section-4__form__table--element1">
-                    <div class="element--title">Điền nơi đặt máy in</div>
-                    <div class="form">
-                      <input type="text" id="placeOfPrinter" name="place" placeholder="">
+            <div class="section-4__right">
+              <div class="section-4__form">
+                <div class="section-4__form__content">Điều chỉnh thông số máy in</div>
+                <div class="section-4__form__table">
+                  <div class="section-4__form__table--list">
+                    <div class="section-4__form__table--element1">
+                      <div class="element--title">Chỉnh sửa tên máy in</div>
+                      <div class="form">
+                        <input type="text" id="nameOfPrinter" name="name" placeholder="#">
+                      </div>
                     </div>
-                  </div>
-                  <div class="section-4__form__table--element2">
-                    <div class="element--title">Chọn chức năng máy in</div>
-                    <form action="#" target="_blank" method="GET">
-                      <div class="element--detail">
-                        <input type="checkbox" id="printLaser" name="function" value="In Laser">
-                        <label for="printLaser">In Laser</label>
+                    <div class="section-4__form__table--element1">
+                      <div class="element--title">Chỉnh sửa nơi đặt máy in</div>
+                      <div class="form">
+                        <input type="text" id="placeOfPrinter" name="place" placeholder="CS1">
                       </div>
-                      <div class="element--detail">
-                        <input type="checkbox" id="colorInkjet" name="function" value="In phun màu">
-                        <label for="colorInkjet">In phun màu</label>
+                    </div>
+                    <div class="section-4__form__table--element2--edit">
+                      <div class="element--title">Thay đổi chức năng máy in</div>
+                      <div class="form">
+                        <div class="element--detail">
+                          <input type="checkbox" id="printLaser" name="functionPrint" value="In Laser">
+                          <label for="printLaser">In Laser</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="checkbox" id="colorInkjet" name="functionPrint" value="In phun màu">
+                          <label for="colorInkjet">In phun màu</label>
+                        </div>
                       </div>
-                    </form>
-                  </div>
-                  <div class="section-4__form__table--element3">
-                    <div class="element--title">Chọn khả năng máy in</div>
-                    <form action="#" target="_blank" method="GET">
-                      <div class="element--detail">
-                        <input type="checkbox" id="singleSideBW" name="ability" value="In 1 mặt, trắng đen">
-                        <label for="singleSideBW">In 1 mặt, trắng đen</label>
+                    </div>
+                    <div class="section-4__form__table--element3">
+                      <div class="element--title">Thay đổi khả năng máy in</div>
+                      <div class="form">
+                        <div class="element--detail">
+                          <input type="checkbox" id="singleSideBW" name="ability" value="In 1 mặt, trắng đen">
+                          <label for="singleSideBW">In 1 mặt, trắng đen</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="checkbox" id="doubleSideBW" name="ability" value="In 2 mặt tự động, trắng đen">
+                          <label for="doubleSideBW">In 2 mặt tự động, trắng đen</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="checkbox" id="singleSideC" name="ability" value="In 1 mặt, in màu">
+                          <label for="singleSideC">In 1 mặt, in màu</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="checkbox" id="Copy" name="ability" value="Copy">
+                          <label for="Copy">Copy</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="checkbox" id="scanBW" name="ability" value="Scan(Trắng đen)">
+                          <label for="scanBW">Scan(Trắng đen)</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="checkbox" id="scanC" name="ability" value="Scan(Màu)">
+                          <label for="scanC">Scan(Màu)</label>
+                        </div>
                       </div>
-                      <div class="element--detail">
-                        <input type="checkbox" id="doubleSideBW" name="ability" value="In 2 mặt tự động, trắng đen">
-                        <label for="doubleSideBW">In 2 mặt tự động, trắng đen</label>
+                    </div>
+                    <div class="section-4__form__table--element4">
+                      <div class="element--title">Chỉnh sửa tốc độ máy in</div>
+                      <div class="form">
+                        <input type="text" id="speedOfPrinter" name="speed" placeholder="trang/phút">
                       </div>
-                      <div class="element--detail">
-                        <input type="checkbox" id="singleSideC" name="ability" value="In 1 mặt, in màu">
-                        <label for="singleSideC">In 1 mặt, in màu</label>
+                    </div>
+                    <div class="section-4__form__table--element5--edit">
+                      <div class="element--title">Thay đổi trạng thái máy in</div>
+                      <div class="form">
+                        <div class="element--detail">
+                          <input type="radio" id="active" name="status" value="Đang hoạt động">
+                          <label for="active">Đang hoạt động</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="radio" id="inactive" name="status" value="Không hoạt động">
+                          <label for="inactive">Không hoạt động</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="radio" id="maintenance" name="status" value="Đang bảo trì">
+                          <label for="maintenance">Đang bảo trì</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="radio" id="erroring" name="status" value="Đang bị lỗi">
+                          <label for="erroring">Đang bị lỗi</label>
+                        </div>
                       </div>
-                      <div class="element--detail">
-                        <input type="checkbox" id="Copy" name="ability" value="Copy">
-                        <label for="Copy">Copy</label>
+                    </div>
+                    <div class="section-4__form__table--element6">
+                      <div class="element--title">Thay đổi mô tả máy in</div>
+                      <div class="form">
+                        <textarea id="desc" name="description" rows="3" cols="" aria-label="x"></textarea>
                       </div>
-                      <div class="element--detail">
-                        <input type="checkbox" id="scanBW" name="ability" value="Scan(Trắng đen)">
-                        <label for="scanBW">Scan(Trắng đen)</label>
-                      </div>
-                      <div class="element--detail">
-                        <input type="checkbox" id="scanC" name="ability" value="Scan(Màu)">
-                        <label for="scanC">Scan(Màu)</label>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="section-4__form__table--element4">
-                    <div class="element--title">Điền tốc độ máy in</div>
-                    <form action="#" target="_blank" method="GET">
-                      <input type="text" id="speedOfPrinter" name="speed" placeholder="">
-                    </form>
-                  </div>
-                  <div class="section-4__form__table--element5">
-                    <div class="element--title">Chọn trạng thái máy in</div>
-                    <form action="#" target="_blank" method="GET">
-                      <input type="radio" id="active" name="status" value="Đang hoạt động">
-                      <label for="active">Đang hoạt động</label>
-                      <input type="radio" id="inactive" name="status" value="Không hoạt động">
-                      <label for="inactive">Không hoạt động</label>
-                    </form>
-                  </div>
-                  <div class="section-4__form__table--element6">
-                    <div class="element--title">Viết mô tả máy in</div>
-                    <textarea id="desc" name="moTa" rows="3" cols=""></textarea>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="section-4__button-submit">
+              <div id="backPage"></div>
+              <button class="button button-submit" type="submit"><i class="fa-solid fa-gear"></i>Chỉnh sửa máy in</button>
+            </div>
           </div>
-          <div class="section-4__button-submit"><a class="button-outline" href="product-detail.html"><i class="fa-solid fa-arrow-left-long"></i>Trở lại trang trước</a>
-            <button class="button button-submit"><i class="fa-solid fa-gear "></i>Chỉnh sửa máy in</button>
-          </div>
-        </div>
+        </form>
       </div>
     </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../assets/script/product-detail.js"></script>
     <footer class="footer">
       <div class="container">
         <div class="footer__top">

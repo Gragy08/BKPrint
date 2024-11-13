@@ -175,6 +175,24 @@ const eventButtonDelete = () => {
 // Hết Bắt sự kiện cho phần xóa máy in
 
 
+// Đổi class cho trạng thái
+function getStatusClass(status) {
+    switch (status) {
+        case "Đang hoạt động":
+            return "status--active";
+        case "Không hoạt động":
+            return "status--inactive";
+        case "Đang bảo trì":
+            return "status--maintenance";
+        case "Đang bị lỗi":
+            return "status--erroring";
+        default:
+            return "";
+    }
+}
+// Hết Đổi class cho trạng thái
+
+
 //  Vẽ ra giao diện trang - PRODUCT-DETAIL PAGE
 const elementProductDetail = document.querySelector("#product-detail");
 if(elementProductDetail) {
@@ -239,7 +257,7 @@ if(elementProductDetail) {
                             </tr>
                             <tr> 
                                 <td class="attribute">Trạng thái</td>
-                                <td class="status--active">${status}</td>
+                                <td class="${getStatusClass(status)}">${status}</td>
                             </tr>
                             <tr> 
                                 <td class="attribute">Mô tả ngắn</td>
@@ -327,27 +345,14 @@ if(formEdit) {
             if(res.data.function == "In phun màu") {
                 formEdit.colorInkjet.checked = true;
             }
+            if(res.data.function == "In nhiệt") {
+                formEdit.hotPrint.checked = true;
+            }
 
             //Tốc độ
             formEdit.speed.value = res.data.speed;
 
             //Khả năng
-            //cần chuyển mảng thành phần tử
-
-            console.log(res.data.ability);
-            console.log(res.data.ability.length);
-
-            // for(let i=0; i < res.data.ability.length; i++) {
-            //     let countA = 1;
-            //     if(res.data.ability[i] == ",") {
-            //         countA += 1;
-            //     }
-
-            //     for(let j=0; j < countA; j++) {
-            //         // tạo số biến tương ứng, giá trị của mỗi biến tương ứng với giá trị của phần tử trong mảng
-            //     }
-            // }
-
             let abilitiesArray = res.data.ability.split(", ");
 
             // Đối tượng để lưu các biến động
@@ -358,12 +363,6 @@ if(formEdit) {
                 // Tạo tên biến động theo thứ tự var1, var2, ...
                 variables[`var${i + 1}`] = abilitiesArray[i];
             }
-
-            // Kiểm tra kết quả
-            console.log(variables.var1); // "Copy"
-            console.log(variables.var2); // "Scan(màu)"
-            console.log(variables.var3); // "In 1 mặt-in màu"
-            console.log(variables);
 
             for (let key in variables) {
                 if (variables[key] === "In 1 mặt-trắng đen") {
@@ -385,25 +384,6 @@ if(formEdit) {
                     formEdit.scanC.checked = true;
                 }
             }
-
-            // if(res.data.ability == "In 1 mặt-trắng đen") {
-            //     formEdit.singleSideBW.checked = true;
-            // }
-            // if(res.data.ability == "In 2 mặt tự động-trắng đen") {
-            //     formEdit.doubleSideBW.checked = true;
-            // }
-            // if(res.data.ability == "In 1 mặt-in màu") {
-            //     formEdit.singleSideC.checked = true;
-            // }
-            // if(res.data.ability == "Copy") {
-            //     formEdit.Copy.checked = true;
-            // }
-            // if(res.data.ability == "Scan(Trắng đen)") {
-            //     formEdit.scanBW.checked = true;
-            // }
-            // if(res.data.ability == "Scan(Màu)") {
-            //     formEdit.scanC.checked = true;
-            // }
 
             //Trạng thái
             if(res.data.status == "Đang hoạt động") {

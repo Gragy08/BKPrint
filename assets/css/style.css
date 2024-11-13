@@ -726,7 +726,7 @@ a {
 .section-4__form__table--element2--edit {
   width: 100%;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 10px;
   align-items: center;
 }
@@ -744,7 +744,7 @@ a {
 }
 .section-4__form__table--element2--edit .form {
   display: flex;
-  gap: 15px;
+  gap: 5px;
 }
 .section-4__form__table--element3 {
   width: 50%;
@@ -797,6 +797,7 @@ a {
   gap: 20px;
 }
 .section-4__form__table--element5 .form {
+  display: flex;
   gap: 15px;
 }
 .section-4__form__table--element5--edit {
@@ -873,10 +874,14 @@ a {
     width: 150px;
   }
   .section-4__form__table--element2 {
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 0;
   }
   .section-4__form__table--element2 .form {
-    gap: 10px;
+    gap: 0;
+  }
+  .section-4__form__table--element2 .element--title {
+    width: 100%;
   }
   .section-4__form__table--element2--edit {
     display: flex;
@@ -1016,6 +1021,15 @@ a {
     width: 100%;
     padding-bottom: 5px;
   }
+  .section-4__form__table--element2 .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .section-4__form__table--element2--edit .form {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+  }
   .section-4__form__table--element3 {
     width: 100%;
     margin-bottom: 10px;
@@ -1039,6 +1053,11 @@ a {
   .section-4__form__table--element5 .element--title {
     width: 100%;
     padding-bottom: 5px;
+  }
+  .section-4__form__table--element5 .form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
   .section-4__form__table--element5 .form label {
     font-size: 12px;
@@ -1245,6 +1264,18 @@ a {
   color: #52CE22;
   font-weight: 700;
 }
+.section-3__table td.status--inactive {
+  color: #F40000;
+  font-weight: 700;
+}
+.section-3__table td.status--maintenance {
+  color: #3EABF0;
+  font-weight: 700;
+}
+.section-3__table td.status--erroring {
+  color: #FFA500;
+  font-weight: 700;
+}
 .section-3__table td.attribute {
   width: 20%;
 }
@@ -1348,6 +1379,27 @@ a {
   font-size: 14px;
   font-weight: 700;
   color: #52CE22;
+  position: absolute;
+  bottom: 5px;
+}
+.product-item .status--inactive {
+  font-size: 14px;
+  font-weight: 700;
+  color: #F40000;
+  position: absolute;
+  bottom: 5px;
+}
+.product-item .status--maintenance {
+  font-size: 14px;
+  font-weight: 700;
+  color: #3EABF0;
+  position: absolute;
+  bottom: 5px;
+}
+.product-item .status--erroring {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFA500;
   position: absolute;
   bottom: 5px;
 }

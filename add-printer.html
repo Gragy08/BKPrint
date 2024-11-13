@@ -72,12 +72,16 @@
                       <div class="element--title">Chọn chức năng máy in</div>
                       <div class="form">
                         <div class="element--detail">
-                          <input type="checkbox" id="printLaser" name="functionPrint" value="In Laser">
+                          <input type="radio" id="printLaser" name="functionPrint" value="In Laser">
                           <label for="printLaser">In Laser</label>
                         </div>
                         <div class="element--detail">
-                          <input type="checkbox" id="colorInkjet" name="functionPrint" value="In phun màu">
+                          <input type="radio" id="colorInkjet" name="functionPrint" value="In phun màu">
                           <label for="colorInkjet">In phun màu</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="radio" id="hotPrint" name="functionPrint" value="In nhiệt">
+                          <label for="hotPrint">In nhiệt</label>
                         </div>
                       </div>
                     </div>
@@ -85,15 +89,15 @@
                       <div class="element--title">Chọn khả năng máy in</div>
                       <div class="form">
                         <div class="element--detail">
-                          <input type="checkbox" id="singleSideBW" name="ability" value="In 1 mặt, trắng đen">
+                          <input type="checkbox" id="singleSideBW" name="ability" value="In 1 mặt-trắng đen">
                           <label for="singleSideBW">In 1 mặt-trắng đen</label>
                         </div>
                         <div class="element--detail">
-                          <input type="checkbox" id="doubleSideBW" name="ability" value="In 2 mặt tự động, trắng đen">
+                          <input type="checkbox" id="doubleSideBW" name="ability" value="In 2 mặt tự động-trắng đen">
                           <label for="doubleSideBW">In 2 mặt tự động-trắng đen</label>
                         </div>
                         <div class="element--detail">
-                          <input type="checkbox" id="singleSideC" name="ability" value="In 1 mặt, in màu">
+                          <input type="checkbox" id="singleSideC" name="ability" value="In 1 mặt-in màu">
                           <label for="singleSideC">In 1 mặt-in màu</label>
                         </div>
                         <div class="element--detail">
@@ -119,10 +123,14 @@
                     <div class="section-4__form__table--element5">
                       <div class="element--title">Chọn trạng thái máy in</div>
                       <div class="form">
-                        <input type="radio" id="active" name="status" value="Đang hoạt động">
-                        <label for="active">Đang hoạt động</label>
-                        <input type="radio" id="inactive" name="status" value="Không hoạt động">
-                        <label for="inactive">Không hoạt động</label>
+                        <div class="element--detail">
+                          <input type="radio" id="active" name="status" value="Đang hoạt động">
+                          <label for="active">Đang hoạt động</label>
+                        </div>
+                        <div class="element--detail">
+                          <input type="radio" id="inactive" name="status" value="Không hoạt động">
+                          <label for="inactive">Không hoạt động</label>
+                        </div>
                       </div>
                     </div>
                     <div class="section-4__form__table--element6">

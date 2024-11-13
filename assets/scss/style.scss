@@ -916,7 +916,7 @@ a {
             &--element2--edit {
                 width: 100%;
                 display: flex;
-                gap: 20px;
+                gap: 10px;
                 margin-bottom: 10px;
                 align-items: center;
 
@@ -938,7 +938,7 @@ a {
                 
                 .form {
                     display: flex;
-                    gap: 15px;
+                    gap: 5px;
                 }
             }
 
@@ -1003,6 +1003,7 @@ a {
                 gap: 20px;
 
                 .form {
+                    display: flex;
                     gap: 15px;
                 }
             }
@@ -1105,10 +1106,20 @@ a {
                 }
     
                 &--element2 {
-                    gap: 15px;
+                    // gap: 15px;
                     
+                    // .form {
+                    //     gap: 10px;
+                    // }
+                    flex-wrap: wrap;
+                    gap: 0;
+
                     .form {
-                        gap: 10px;
+                        gap: 0;
+                    }
+
+                    .element--title {
+                        width: 100%;
                     }
                 }
 
@@ -1338,6 +1349,19 @@ a {
                         width: 100%;
                         padding-bottom: 5px;
                     }
+
+                    .form {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
+                &--element2--edit {
+                    .form {
+                        gap: 0;
+                        display: flex;
+                        flex-direction: column;
+                    }
                 }
 
                 &--element3 {
@@ -1373,6 +1397,10 @@ a {
                     }
 
                     .form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0;
+
                         label {
                             font-size: 12px;
                             font-weight: 500;
@@ -1634,6 +1662,18 @@ a {
                 color: #52CE22;
                 font-weight: 700;
             }
+            &.status--inactive {
+                color: #F40000;
+                font-weight: 700;
+            }
+            &.status--maintenance {
+                color: #3EABF0;
+                font-weight: 700;
+            }
+            &.status--erroring {
+                color: #FFA500;
+                font-weight: 700;
+            }
         }
 
         td.attribute {
@@ -1790,6 +1830,30 @@ a {
         font-size: 14px;
         font-weight: 700;
         color: #52CE22;
+
+        position: absolute;
+        bottom: 5px;
+    }
+    .status--inactive {
+        font-size: 14px;
+        font-weight: 700;
+        color: #F40000;
+
+        position: absolute;
+        bottom: 5px;
+    }
+    .status--maintenance {
+        font-size: 14px;
+        font-weight: 700;
+        color: #3EABF0;
+
+        position: absolute;
+        bottom: 5px;
+    }
+    .status--erroring {
+        font-size: 14px;
+        font-weight: 700;
+        color: #FFA500;
 
         position: absolute;
         bottom: 5px;

@@ -32,6 +32,24 @@ const showAlert = (content = null, time = 3000, type = "alert--success") => {
 // Hết Hiển thị thông báo
 
 
+// Đổi class cho trạng thái
+function getStatusClass(status) {
+    switch (status) {
+        case "Đang hoạt động":
+            return "status--active";
+        case "Không hoạt động":
+            return "status--inactive";
+        case "Đang bảo trì":
+            return "status--maintenance";
+        case "Đang bị lỗi":
+            return "status--erroring";
+        default:
+            return "";
+    }
+}
+// Hết Đổi class cho trạng thái
+
+
 // Vẽ ra giao diện từ database - PRINTER PAGE
 const elementProductList = document.querySelector("#product-list");
 if(elementProductList) {
@@ -51,7 +69,7 @@ if(elementProductList) {
                             <div class="product-item__info">
                                 <div class="product-item__info-item"> Chức năng: <b> ${item.function} </b> </div>
                                 <div class="product-item__info-item"> Khả năng: <b> ${item.ability} </b> </div>
-                                <div class="product-item__status status--active"> ${item.status} </div>
+                                <div class="product-item__status ${getStatusClass(item.status)}"> ${item.status} </div>
                             </div>
                         </div>
                     </a>
@@ -156,8 +174,6 @@ if (formCreate) {
         // console.log(data); // In ra toàn bộ data
     });
 }
-
-
 // Hết Lấy data của người dùng nhập vào form và gửi về database - ADD PRINTER PAGE
 
 

@@ -1642,11 +1642,16 @@ a {
     }
  
     @media (max-width: 991.98px) {
+
+        &__image-main {
+            padding: 20px;
+        }
+
         &__wrap {
             flex-wrap: wrap;
         }
 
-        &__image {
+        &__images  {
             width: 100%;
         }
 
@@ -1654,6 +1659,12 @@ a {
             width: 100%;
         }
     } 
+
+    @media(max-width: 767.98px) {
+        &__image-main {
+            padding: 0;
+        }
+    }
  
     @media (max-width: 575.98px) {
         .container {

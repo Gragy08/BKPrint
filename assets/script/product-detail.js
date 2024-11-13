@@ -79,6 +79,36 @@ const showAlert = (content = null, time = 3000, type = "alert--success") => {
 //  Hết Hàm show confirm của nút xóa - PRODUCT-DETAIL PAGE
 
 
+// Hàm set cookies
+const setCookie = (name, value, seconds) => {
+    const expires = secondss ? `expires=${new Date(Date.now() +
+    seconds * 1000).toUTCString()};` : '';
+    document.cookie = `${name}=${value}; ${expires}`;
+}
+// Hết Hàm set cookies
+
+
+// Hàm Get Cookie
+const getCookie = (cookieName) => {
+    // Tách chuỗi thành một mảng các cặp name/value
+    let cookieArray = document.cookie.split("; ");
+    // Chuyển name/value từ dạng string thành object
+    cookieArray = cookieArray.map(item => {
+    item = item.split("=");
+    return {
+    name: item[0],
+    value: item[1]
+    };
+    });
+    // Lấy ra cookie đang cần tìm
+    const cookie = cookieArray.find(item => {
+    return item.name === cookieName;
+    });
+    return cookie ? cookie.value : null; 
+}
+// Hết Hàm Get Cookie
+
+
 // Bắt sự kiện cho phần xóa máy in
 const eventButtonDelete = () => {
     const buttonDelete = document.querySelector("[button-delete]");
@@ -131,12 +161,15 @@ const eventButtonDelete = () => {
         const buttonYes = elementDelete.querySelector(".modal__bottom--Yes");
 
         buttonYes.addEventListener("click", () => {
+
             axios.delete(`http://localhost:3000/printers/${id}`)
-                .then(res => {
-                    window.location.href = "printer.html";
+                .then(res => {  
+                    
+                    window.location.href = "printer.html"; 
+                    const alert = "showSuccess";
+                    setCookie("alert", "showSuccess", 10); 
                 })
         })
-
     })
 }
 // Hết Bắt sự kiện cho phần xóa máy in
@@ -299,24 +332,78 @@ if(formEdit) {
             formEdit.speed.value = res.data.speed;
 
             //Khả năng
-            if(res.data.ability == "In 1 mặt, trắng đen") {
-                formEdit.singleSideBW.checked = true;
+            //cần chuyển mảng thành phần tử
+
+            console.log(res.data.ability);
+            console.log(res.data.ability.length);
+
+            // for(let i=0; i < res.data.ability.length; i++) {
+            //     let countA = 1;
+            //     if(res.data.ability[i] == ",") {
+            //         countA += 1;
+            //     }
+
+            //     for(let j=0; j < countA; j++) {
+            //         // tạo số biến tương ứng, giá trị của mỗi biến tương ứng với giá trị của phần tử trong mảng
+            //     }
+            // }
+
+            let abilitiesArray = res.data.ability.split(", ");
+
+            // Đối tượng để lưu các biến động
+            let variables = {};
+
+            // Lặp qua mảng và gán giá trị của từng phần tử vào các biến động trong đối tượng variables
+            for (let i = 0; i < abilitiesArray.length; i++) {
+                // Tạo tên biến động theo thứ tự var1, var2, ...
+                variables[`var${i + 1}`] = abilitiesArray[i];
             }
-            if(res.data.ability == "In 2 mặt tự động, trắng đen") {
-                formEdit.doubleSideBW.checked = true;
+
+            // Kiểm tra kết quả
+            console.log(variables.var1); // "Copy"
+            console.log(variables.var2); // "Scan(màu)"
+            console.log(variables.var3); // "In 1 mặt-in màu"
+            console.log(variables);
+
+            for (let key in variables) {
+                if (variables[key] === "In 1 mặt-trắng đen") {
+                    formEdit.singleSideBW.checked = true;
+                }
+                if (variables[key] === "In 2 mặt tự động-trắng đen") {
+                    formEdit.doubleSideBW.checked = true;
+                }
+                if (variables[key] === "In 1 mặt-in màu") {
+                    formEdit.singleSideC.checked = true;
+                }
+                if (variables[key] === "Copy") {
+                    formEdit.Copy.checked = true;
+                }
+                if (variables[key] === "Scan(Trắng đen)") {
+                    formEdit.scanBW.checked = true;
+                }
+                if (variables[key] === "Scan(Màu)") {
+                    formEdit.scanC.checked = true;
+                }
             }
-            if(res.data.ability == "In 1 mặt, in màu") {
-                formEdit.singleSideC.checked = true;
-            }
-            if(res.data.ability == "Copy") {
-                formEdit.Copy.checked = true;
-            }
-            if(res.data.ability == "Scan(Trắng đen)") {
-                formEdit.scanBW.checked = true;
-            }
-            if(res.data.ability == "Scan(Màu)") {
-                formEdit.scanC.checked = true;
-            }
+
+            // if(res.data.ability == "In 1 mặt-trắng đen") {
+            //     formEdit.singleSideBW.checked = true;
+            // }
+            // if(res.data.ability == "In 2 mặt tự động-trắng đen") {
+            //     formEdit.doubleSideBW.checked = true;
+            // }
+            // if(res.data.ability == "In 1 mặt-in màu") {
+            //     formEdit.singleSideC.checked = true;
+            // }
+            // if(res.data.ability == "Copy") {
+            //     formEdit.Copy.checked = true;
+            // }
+            // if(res.data.ability == "Scan(Trắng đen)") {
+            //     formEdit.scanBW.checked = true;
+            // }
+            // if(res.data.ability == "Scan(Màu)") {
+            //     formEdit.scanC.checked = true;
+            // }
 
             //Trạng thái
             if(res.data.status == "Đang hoạt động") {

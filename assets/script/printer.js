@@ -1,5 +1,6 @@
 // JS CHO TRANG PRINTER VA TRANG ADD-PRINTER
 
+
 // Hiển thị thông báo
 const showAlert = (content = null, time = 3000, type = "alert--success") => {
     if(content) {
@@ -30,7 +31,8 @@ const showAlert = (content = null, time = 3000, type = "alert--success") => {
 }
 // Hết Hiển thị thông báo
 
-//Vẽ ra giao diện từ database - PRINTER PAGE
+
+// Vẽ ra giao diện từ database - PRINTER PAGE
 const elementProductList = document.querySelector("#product-list");
 if(elementProductList) {
     axios.get("http://localhost:3000/printers")
@@ -61,9 +63,10 @@ if(elementProductList) {
         elementProductList.innerHTML = htmls;
     })
 }
-//Hết Vẽ ra giao diện từ database - PRINTER PAGE
+// Hết Vẽ ra giao diện từ database - PRINTER PAGE
 
-//Lấy data của người dùng nhập vào form và gửi về database - ADD PRINTER PAGE
+
+// Lấy data của người dùng nhập vào form và gửi về database - ADD PRINTER PAGE
 const formCreate = document.querySelector("#form-create");
 if (formCreate) {
     formCreate.addEventListener("submit", (event) => {
@@ -84,7 +87,7 @@ if (formCreate) {
         // Lấy ảnh (nếu có)
         const imageInput = formCreate.imageOfPrinter;
         let image = null;
-        let imageURL = "https://i.imgur.com/zqCxoN3.jpeg"; // Đường dẫn ảnh mặc định
+        let imageURL = "assets/images/printer-default.jpg"; // Đường dẫn ảnh mặc định
 
         if (imageInput.files && imageInput.files[0]) {
             image = imageInput.files[0];
@@ -153,15 +156,19 @@ if (formCreate) {
         // console.log(data); // In ra toàn bộ data
     });
 }
-//Hết Lấy data của người dùng nhập vào form và gửi về database - ADD PRINTER PAGE
 
-//Thay đổi tên file-name của người dùng upload - ADD PRINTER PAGE
+
+// Hết Lấy data của người dùng nhập vào form và gửi về database - ADD PRINTER PAGE
+
+
+// Thay đổi tên file-name của người dùng upload - ADD PRINTER PAGE
 function updateFileName(input) {
     const fileName = input.files.length > 0 ? input.files[0].name : "No file chosen";
     document.getElementById("file-name").textContent = fileName;
 }
 
-//Chèn ảnh người dùng upload thay cho ảnh default - ADD PRINTER PAGE
+
+// Chèn ảnh người dùng upload thay cho ảnh default - ADD PRINTER PAGE
 function updatePrinterImage(input) {
     const file = input.files[0];
     if (file) {
@@ -179,3 +186,36 @@ function updatePrinterImage(input) {
         document.getElementById("file-name").textContent = "No file chosen";
     }
 }
+
+
+// In thông báo thành công từ trang product-detail sau khi xóa máy in
+
+// Get Cookie
+const getCookie = (cookieName) => {
+    // Tách chuỗi thành một mảng các cặp name/value
+    let cookieArray = document.cookie.split("; ");
+    // Chuyển name/value từ dạng string thành object
+    cookieArray = cookieArray.map(item => {
+    item = item.split("=");
+    return {
+    name: item[0],
+    value: item[1]
+    };
+    });
+    // Lấy ra cookie đang cần tìm
+    const cookie = cookieArray.find(item => {
+    return item.name === cookieName;
+    });
+    return cookie ? cookie.value : null; 
+}
+// Hết Get Cookie
+
+
+// Kiểm tra biến có trong Cookie hay không
+let alertSuccess = getCookie("alert");
+if(alertSuccess) {
+    showAlert("Xóa máy in thành công!");
+}
+// Hết Kiểm tra biến có trong Cookie hay không
+
+// Hết In thông báo thành công từ trang product-detail sau khi xóa máy in

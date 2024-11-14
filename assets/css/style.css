@@ -500,6 +500,15 @@ a {
 .alert__close:hover {
   color: #0A0A0A;
 }
+@media (max-width: 767.98px) {
+  .alert {
+    width: 220px;
+    padding: 8px 12px;
+  }
+  .alert__content {
+    font-size: 14px;
+  }
+}
 
 .section-1 {
   padding: 60px 0;
@@ -1081,11 +1090,22 @@ a {
     display: flex;
     flex-wrap: wrap;
   }
-  .section-4__button-submit a {
+  .section-4__button-submit div {
+    width: 100%;
+  }
+  .section-4__button-submit div a {
     width: 100%;
     justify-content: center;
   }
   .section-4__button-submit button {
+    width: 100%;
+    justify-content: center;
+  }
+  .section-4__button-submit--add {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .section-4__button-submit--add a {
     width: 100%;
     justify-content: center;
   }

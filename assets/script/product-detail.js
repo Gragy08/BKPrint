@@ -81,7 +81,7 @@ const showAlert = (content = null, time = 3000, type = "alert--success") => {
 
 // Hàm set cookies
 const setCookie = (name, value, seconds) => {
-    const expires = secondss ? `expires=${new Date(Date.now() +
+    const expires = seconds ? `expires=${new Date(Date.now() +
     seconds * 1000).toUTCString()};` : '';
     document.cookie = `${name}=${value}; ${expires}`;
 }
@@ -167,7 +167,7 @@ const eventButtonDelete = () => {
                     
                     window.location.href = "printer.html"; 
                     const alert = "showSuccess";
-                    setCookie("alert", "showSuccess", 10); 
+                    setCookie("alert", "showSuccess", 5);
                 })
         })
     })

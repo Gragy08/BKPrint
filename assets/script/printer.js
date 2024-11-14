@@ -226,7 +226,6 @@ const getCookie = (cookieName) => {
 }
 // Hết Get Cookie
 
-
 // Kiểm tra biến có trong Cookie hay không
 let alertSuccess = getCookie("alert");
 if(alertSuccess) {

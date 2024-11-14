@@ -624,6 +624,15 @@ a {
     &__close:hover {
         color: #0A0A0A;
     }
+
+    @media (max-width: 767.98px) {
+        width: 220px;
+        padding: 8px 12px;
+
+        &__content {
+            font-size: 14px;
+        }
+    }
 }
 // End Alert
 
@@ -1438,15 +1447,29 @@ a {
             display: flex;
             flex-wrap: wrap;
 
-            a {
+            div {
                 width: 100%;
-                justify-content: center;
+
+                a {
+                    width: 100%;
+                    justify-content: center;
+                }
             }
 
             button {
                 width: 100%;
                 justify-content: center;
 
+            }
+        }
+
+        &__button-submit--add {
+            display: flex;
+            flex-wrap: wrap;
+
+            a {
+                width: 100%;
+                justify-content: center;
             }
         }
     }

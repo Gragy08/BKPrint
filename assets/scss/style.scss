@@ -845,6 +845,8 @@ a {
             width: 100%;
             margin-right: 0;
             margin-top: 25px;
+            display: flex;
+            justify-content: center;
 
             &-bg1 {
                 top: 60px;
@@ -959,13 +961,13 @@ a {
 
             &-bg1 {
                 width: 50%;
-                top: 60px;
-                right: 260px;
+                top: 20%;
+                right: 40%;
             }
             &-bg2 {
                 width: 55%;
-                top: 5px;
-                right: 110px;
+                top: 1%;
+                right: 10%;
             }
         }
     }

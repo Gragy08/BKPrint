@@ -16,7 +16,7 @@ block main
                     li 
                         a(href="index.html") Trang chủ
                     li 
-                        a(href="printer.html" class = "last") Máy in
+                        a(href="printer.html" class = "last") Quản lý máy in
     //- End Breadcrumb
 
     //- Section-1
@@ -32,17 +32,17 @@ block main
                             .box-filter__group-label Trạng thái
                             .box-filter__group-list 
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="" aria-label="active")
-                                    label(for="") Đang hoạt động
+                                    input(type="checkbox" id="active" aria-label="active")
+                                    label(for="active") Đang hoạt động
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="" aria-label="passive")
-                                    label(for="") Không hoạt động
+                                    input(type="checkbox" id="inactive" aria-label="passive")
+                                    label(for="inactive") Không hoạt động
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="" aria-label="maintenance")
-                                    label(for="") Đang bảo trì
+                                    input(type="checkbox" id="maintance" aria-label="maintenance")
+                                    label(for="maintance") Đang bảo trì
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="" aria-label="erroring")
-                                    label(for="") Đang bị lỗi
+                                    input(type="checkbox" id="erroring" aria-label="erroring")
+                                    label(for="erroring") Đang bị lỗi
                 
                     .section-1__add
                         //- button(class="button button--add") 

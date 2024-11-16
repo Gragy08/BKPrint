@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Faculty+Glyphic&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import "variable";
 
 * {
@@ -637,6 +637,344 @@ a {
 // End Alert
 
 
+//--------------------------------------------------INDEX--------------------------------------------------
+
+// Section-0
+.section0 {
+    background: linear-gradient(109.6deg, rgb(223, 234, 247) 11.2%, rgb(244, 248, 252) 91.1%);
+    /* góc trên phải trái bo 0, góc dưới phải trái bo 40px */
+    border-radius: 0 0 40px 40px;
+    /* do cái nền nó thòi lên trên bao cái header nên margin-100px để nó thòi lên */
+    /* không thêm nền cho header vì các trang con có header màu khác nên mình dùng cách này để dễ responsive và dùng header cho nhiều trang */
+    margin-top: -100px;
+    /* các phần tử cũng bị thòi theo nên pad 100px để nó có khoảng cách và về vị trí cũ */
+    padding-top: 100px;
+    /* display: flex; */
+
+    overflow: hidden;
+    /* do anh x1.5 nen se co thanh cuon ngang -> loi man hinh */
+
+    &__wrap {
+        /* content và img cùng một hàng */
+        display: flex;
+    }
+
+    &__content {
+        width: 50%;
+        padding-top: 80px;
+        padding-right: 60px;
+    
+        /* để ảnh bg1 có class cha là inner content có thể canh chỉnh position */
+        position: relative;
+        z-index: 1;
+
+        &--img {
+            display: none;
+        }
+    }
+
+    &__title {
+        /* các thẻ h1-h6 luôn có margin mặc định nên phải reset về 0 */
+        margin-top: 0;
+        margin-bottom: 24px;
+        color: $color-main;
+        font-weight: 700;
+        text-transform: capitalize;
+        font-family: "Montserrat", sans-serif;
+    
+        /* để có position có z-index=0 (mặc định), nếu 0 thêm pos relative thì có pos < 0*/
+        position: relative;
+        /* z-index: 0; */
+
+        &-main {
+            font-size: 60px;
+        }
+
+        &-sub {
+            font-size: 46px;
+        }
+
+        &--desc {
+            width: 490px;
+            height: 72px;
+            font-size: 22px;
+            font-weight: 500;
+            color: #003459;
+            margin-bottom: 30px;
+
+            .slowgan {
+                font-size: 24px;
+                font-weight: 700;
+                // color: $color-main;
+                background: linear-gradient(to right, #065A9C, #01E696);
+                background-clip: text;
+                color: transparent;
+            }
+
+            .italic {
+                font-size: 18px;
+                font-style: italic;
+            }
+        }
+    }
+    
+
+    &__image {
+        width: 50%;
+        padding-right: 35px;
+    
+        position: relative;
+
+        &-main {
+            /* để ảnh co nhỏ lại vừa container, không fix cứng chiều cao */
+            width: 100%;
+            height: auto;
+            /* thẻ img có kiểu hiển thị inline, có mặc định 1 khoảng trắng nho nhỏ ở dưới nên chỉ cần thêm display block là mất khoảng trắng */
+            display: block;
+            position: relative;
+        }
+
+        &-bg1 {
+            width: 60%;
+            position: absolute;
+            top: 60px;
+            right: 240px;
+        }
+        &-bg2 {
+            width: 65%;
+            position: absolute;
+            top: 0px;
+            right: 45px;
+        }
+    }
+
+    @media (max-width: 1199.98px) {
+
+        &__content {
+            padding-top: 60px;
+            padding-right: 0px;
+        }
+
+        &__title {
+
+            &-main {
+                font-size: 52px;
+            }
+    
+            &-sub {
+                font-size: 38px;
+            }
+
+            &--desc {
+                width: 430px;
+                font-size: 20px;
+                font-weight: 500;
+    
+                .slowgan {
+                    font-size: 22px;
+                    font-weight: 700;
+                }
+    
+                .italic {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__image {
+            width: 50%;
+            padding-right: 0px;
+
+            &-bg1 {
+                top: 60px;
+                right: 190px;
+            }
+            &-bg2 {
+                top: 0px;
+                right: 10px;
+            }
+        }
+    }
+    
+    /* block content ben tren, block img ben duoi */
+    @media (max-width: 991.98px) {
+        &__wrap {
+            flex-wrap: wrap;
+        }
+    
+        &__content {
+            width: 100%;
+            padding-right: 0;
+            padding-top: 35px;
+
+            &--img {
+                display: inline-block;
+                position: absolute;
+                width: 8%;
+                right: 20px;
+                top: 100px;
+            }
+        }
+    
+        &__title {
+
+            &-main {
+                font-size: 56px;
+            }
+    
+            &-sub {
+                font-size: 42px;
+            }
+
+            &--desc {
+                width: 480px;
+                font-size: 22px;
+    
+                .slowgan {
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+    
+                .italic {
+                    font-size: 18px;
+                }
+            }
+        }
+    
+        &__image {
+            width: 100%;
+            margin-right: 0;
+            margin-top: 25px;
+
+            &-bg1 {
+                top: 60px;
+                right: 280px;
+            }
+            &-bg2 {
+                top: 0px;
+                right: 10px;
+            }
+        }
+    }
+    
+    @media (max-width: 767.98px) {
+        &__content {
+            padding-top: 30px;
+
+            &--img {
+                width: 8%;
+                right: 30px;
+                top: 130px;
+            }
+        }
+    
+        &__title {
+
+            &-main {
+                font-size: 48px;
+            }
+    
+            &-sub {
+                font-size: 36px;
+            }
+
+            &--desc {
+                width: 480px;
+                font-size: 20px;
+    
+                .slowgan {
+                    font-size: 22px;
+                    font-weight: 700;
+                }
+    
+                .italic {
+                    font-size: 16px;
+                }
+            }
+        }
+    
+        &__image {
+            width: 100%;
+            margin-right: 0;
+            margin-top: 25px;
+
+            &-bg1 {
+                top: 60px;
+                right: 210px;
+            }
+            &-bg2 {
+                top: 0px;
+                right: 10px;
+            }
+        }
+    }
+    
+    @media (max-width: 575.98px) {
+        border-radius: 0 0 20px 20px;
+        /* overflow: hidden; */
+    
+        &__content {
+            padding-top: 30px;
+
+            &--img {
+                width: 6%;
+                right: 10%;
+                top: 180px;
+            }
+        }
+    
+        &__title {
+
+            &-main {
+                font-size: 38px;
+            }
+    
+            &-sub {
+                font-size: 28px;
+            }
+
+            &--desc {
+                width: 250px;
+                font-size: 16px;
+    
+                .slowgan {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+    
+                .italic {
+                    font-size: 13px;
+                }
+            }
+        }
+    
+        &__image {
+            width: 100%;
+            margin-right: 0;
+            margin-top: 25px;
+
+            &-main {
+                width: 80%;
+            }
+
+            &-bg1 {
+                width: 50%;
+                top: 60px;
+                right: 260px;
+            }
+            &-bg2 {
+                width: 55%;
+                top: 5px;
+                right: 110px;
+            }
+        }
+    }
+}
+// End Section-0
+
+//--------------------------------------------------END - INDEX--------------------------------------------------
+
+
 //--------------------------------------------------PRINTER--------------------------------------------------
 
 // Section-1
@@ -781,6 +1119,7 @@ a {
             width: 16px;
             height: 16px;
             margin-right: 10px;
+            cursor: pointer;
         }
 
         label {
@@ -788,6 +1127,7 @@ a {
             font-weight: 500;
             font-size: 14px;
             color: $color-dark-text;
+            cursor: pointer;
         }
     }
 }

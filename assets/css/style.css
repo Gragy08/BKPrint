@@ -119,7 +119,18 @@ a {
   gap: 14px;
   position: relative;
 }
-.header__logo img {
+.header__logo a {
+  display: flex;
+  align-items: center;
+}
+.header__logo a .header__name {
+  margin-left: 5px;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  color: #005B9A;
+}
+.header__logo a img {
   width: auto;
   height: 40px;
   /* không nên fix cứng w và h theo figma, nên để h fix cứng theo figma và w auto */
@@ -144,6 +155,9 @@ a {
   font-weight: 700;
   font-size: 16px;
   color: #005B9A;
+}
+.header__menu ul a:hover {
+  color: #00A7E7;
 }
 .header__form {
   background-color: #F3F3F3;
@@ -737,7 +751,7 @@ a {
   }
   .section0__content--img {
     width: 6%;
-    right: 10%;
+    right: 8%;
     top: 180px;
   }
   .section0__title-main {
@@ -747,7 +761,7 @@ a {
     font-size: 28px;
   }
   .section0__title--desc {
-    width: 250px;
+    width: 300px;
     font-size: 16px;
   }
   .section0__title--desc .slowgan {
@@ -755,6 +769,7 @@ a {
     font-weight: 700;
   }
   .section0__title--desc .italic {
+    width: 250px;
     font-size: 13px;
   }
   .section0__image {
@@ -774,6 +789,247 @@ a {
     width: 55%;
     top: 1%;
     right: 10%;
+  }
+}
+
+.section01 {
+  padding: 60px 0px;
+}
+.section01__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section01__content {
+  text-align: center;
+  color: #005B9A;
+}
+.section01__content--main {
+  font-size: 56px;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1;
+}
+.section01__content--desc {
+  color: #003459;
+  font-size: 26px;
+  font-weight: 600;
+}
+.section01__list {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+.section01__list--element {
+  display: flex;
+  gap: 10px;
+}
+.section01__list--element-num {
+  width: 48px;
+  height: 48px;
+  border: 0px solid;
+  border-radius: 100%;
+  background-image: linear-gradient(to right, #005B9A, #003459);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+.section01__list--element-content {
+  width: 260px;
+}
+.section01__list--element-content--main {
+  font-size: 26px;
+  font-weight: 600;
+}
+.section01__list--element-content--desc {
+  font-size: 16px;
+  font-weight: 500;
+  color: #667479;
+}
+.section01__list--element-content .main1 {
+  background: linear-gradient(to right, #065A9C, #05789B);
+  background-clip: text;
+  color: transparent;
+}
+.section01__list--element-content .main2 {
+  background: linear-gradient(to right, #05809A, #04949A);
+  background-clip: text;
+  color: transparent;
+}
+.section01__list--element-content .main3 {
+  background: linear-gradient(to right, #049C99, #03BD98);
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 1199.98px) {
+  .section01__content--main {
+    font-size: 54px;
+  }
+  .section01__content--desc {
+    font-size: 26px;
+  }
+  .section01__list {
+    margin-top: 20px;
+    gap: 18px;
+  }
+  .section01__list--element-num {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+  .section01__list--element-content {
+    width: 250px;
+  }
+  .section01__list--element-content--main {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .section01__list--element-content--desc {
+    font-size: 15px;
+    font-weight: 500;
+    color: #667479;
+  }
+}
+@media (max-width: 991.98px) {
+  .section01__content--main {
+    font-size: 48px;
+    font-weight: 700;
+  }
+  .section01__content--desc {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .section01__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .section01__list--element-num {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .section01__list--element-content {
+    width: 260px;
+  }
+  .section01__list--element-content--main {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .section01__list--element-content--desc {
+    font-size: 16px;
+    font-weight: 500;
+    color: #667479;
+  }
+}
+@media (max-width: 575.98px) {
+  .section01__content--main {
+    font-size: 42px;
+    font-weight: 700;
+  }
+  .section01__content--desc {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .section01__list {
+    flex-direction: column;
+  }
+  .section01__list--element-num {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .section01__list--element-content {
+    width: 200px;
+  }
+  .section01__list--element-content--main {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .section01__list--element-content--desc {
+    font-size: 14px;
+    font-weight: 500;
+    color: #667479;
+  }
+}
+
+.section02 {
+  margin-bottom: 60px;
+}
+.section02 .container {
+  display: flex;
+  justify-content: center;
+}
+.section02 .container a {
+  border: 2px solid #CFCFCF;
+  border-radius: 45px;
+  overflow: hidden;
+  background: radial-gradient(827px at 47.3% 48%, rgb(255, 255, 255) 0%, rgb(138, 192, 216) 90%);
+}
+.section02 .container a .section02__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 40px 0 40px;
+}
+.section02 .container a .section02__image img {
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+}
+.section02 .container a .section02__content {
+  width: 440px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  padding: 12px;
+  color: #F9F1ED;
+  background: linear-gradient(89.4deg, rgb(74, 77, 103) -4.3%, rgb(119, 125, 165) 102.1%);
+}
+.section02 .container a .section02__content i {
+  margin-left: 10px;
+}
+@media (max-width: 767.98px) {
+  .section02 .container a {
+    width: 380px;
+  }
+  .section02 .container a .section02__image {
+    width: 100%;
+    padding: 20px 0 0 0;
+  }
+  .section02 .container a .section02__image img {
+    width: 280px;
+    height: auto;
+    object-fit: cover;
+  }
+  .section02 .container a .section02__content {
+    width: 380px;
+    font-size: 22px;
+  }
+}
+@media (max-width: 575.98px) {
+  .section02 .container a {
+    width: 350px;
+  }
+  .section02 .container a .section02__image {
+    width: 100%;
+    padding: 20px 0 0 0;
+  }
+  .section02 .container a .section02__image img {
+    width: 280px;
+    height: auto;
+    object-fit: cover;
+  }
+  .section02 .container a .section02__content {
+    width: 350px;
+    font-size: 20px;
   }
 }
 

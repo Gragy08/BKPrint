@@ -1024,8 +1024,6 @@ a {
   }
   .section02 .container a .section02__image img {
     width: 280px;
-    height: auto;
-    object-fit: cover;
   }
   .section02 .container a .section02__content {
     width: 350px;

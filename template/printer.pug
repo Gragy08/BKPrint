@@ -4,6 +4,16 @@ include mixins/product-item.pug
 block title 
     title Máy in
 
+block search
+    //- Form search
+    button(aria-label="x").header__search-mobile
+        i(class="fa-solid fa-magnifying-glass")
+
+    form(action="#" class="header__form")
+        input(name="keyword" placeholder="Tìm máy in")
+        button(aria-label="x")
+            i(class="fa-solid fa-magnifying-glass")
+
 block main
 
     .alert-list
@@ -24,7 +34,7 @@ block main
         .container 
             .section-1__wrap 
                 .section-1__left
-                    .box-filter 
+                    div(class="box-filter" id="status-filter") 
                         .box-filter__title
                             i(class="fa-solid fa-filter")
                             .box-filter__title__inner Bộ lọc
@@ -32,110 +42,22 @@ block main
                             .box-filter__group-label Trạng thái
                             .box-filter__group-list 
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="active" aria-label="active")
+                                    input(type="checkbox" id="active" value="Đang hoạt động" aria-label="active")
                                     label(for="active") Đang hoạt động
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="inactive" aria-label="passive")
+                                    input(type="checkbox" id="inactive" value="Không hoạt động" aria-label="passive")
                                     label(for="inactive") Không hoạt động
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="maintance" aria-label="maintenance")
+                                    input(type="checkbox" id="maintance" value="Đang bảo trì" aria-label="maintenance")
                                     label(for="maintance") Đang bảo trì
                                 .box-filter__group-item 
-                                    input(type="checkbox" id="erroring" aria-label="erroring")
+                                    input(type="checkbox" id="erroring" value="Đang bị lỗi" aria-label="erroring")
                                     label(for="erroring") Đang bị lỗi
                 
                     .section-1__add
-                        //- button(class="button button--add") 
                         a(href="add-printer.html" class="button") Thêm máy in
+                
                 .section-1__right
-                    //- -
-                    //-     var printers = [
-                    //-         {
-                    //-             image: 'assets/images/B4-304.webp',
-                    //-             title: 'B4-304 . HP LaserJet M211d',
-                    //-             function: 'In Laser',
-                    //-             ability: 'In 2 mặt tự động, trắng đen',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/A4-201.jpg',
-                    //-             title: 'A4-201 . Brother DCP-B7620DW',
-                    //-             function: 'In Laser',
-                    //-             ability: 'Copy, Scan(Màu), In 2 mặt tự động, trắng đen',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/B6-201.jpg',
-                    //-             title: 'B6-201 . HP Smart Tank 180',
-                    //-             function: 'In phun màu',
-                    //-             ability: 'Copy, Scan(màu), In 1 mặt, in màu',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/B2-402.jpg',
-                    //-             title: 'B2-402 . Canon LBP6030',
-                    //-             function: 'In Laser',
-                    //-             ability: 'In 1 mặt, trắng đen',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/B1-208.jpg',
-                    //-             title: 'B1-208 . Brother HL-L2366DW',
-                    //-             function: 'In Laser',
-                    //-             ability: 'In 2 mặt tự động, trắng đen',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/A4-201.jpg',
-                    //-             title: 'A4-201 . Brother DCP-B7620DW',
-                    //-             function: 'In Laser',
-                    //-             ability: 'Copy, Scan(Màu), In 2 mặt tự động, trắng đen',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/B6-201.jpg',
-                    //-             title: 'B6-201 . HP Smart Tank 180',
-                    //-             function: 'In phun màu',
-                    //-             ability: 'Copy, Scan(màu), In 1 mặt, in màu',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/B2-402.jpg',
-                    //-             title: 'B2-402 . Canon LBP6030',
-                    //-             function: 'In Laser',
-                    //-             ability: 'In 1 mặt, trắng đen',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/B1-208.jpg',
-                    //-             title: 'B1-208 . Brother HL-L2366DW',
-                    //-             function: 'In Laser',
-                    //-             ability: 'In 2 mặt tự động, trắng đen',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/A4-201.jpg',
-                    //-             title: 'A4-201 . Brother DCP-B7620DW',
-                    //-             function: 'In Laser',
-                    //-             ability: 'Copy, Scan(Màu), In 2 mặt tự động, trắng đen',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/B6-201.jpg',
-                    //-             title: 'B6-201 . HP Smart Tank 180',
-                    //-             function: 'In phun màu',
-                    //-             ability: 'Copy, Scan(màu), In 1 mặt, in màu',
-                    //-             status: 'Đang hoạt động'
-                    //-         },
-                    //-         {
-                    //-             image: 'assets/images/B2-402.jpg',
-                    //-             title: 'B2-402 . Canon LBP6030',
-                    //-             function: 'In Laser',
-                    //-             ability: 'In 1 mặt, trắng đen',
-                    //-             status: 'Đang hoạt động'
-                    //-         }
-                    //-     ];
-
                     
                     .section-1__head
                         h2.section-1__title Máy in

@@ -3,7 +3,7 @@
   <head>
     <meta charser="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Máy in</title>
+    <title>Trang chủ</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   </head>
@@ -22,11 +22,12 @@
             </ul>
             <div class="inner-overlay"> <i class="fa-regular fa-circle-xmark"></i></div>
           </nav>
-          <button class="header__search-mobile" aria-label="x"><i class="fa-solid fa-magnifying-glass"></i></button>
-          <form class="header__form" action="#">
-            <input name="keywork" placeholder="Tìm vị trí máy in... Tòa-Phòng">
-            <button aria-label="x"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form><a class="button" href="#">Đăng nhập</a>
+          <div class="header__block--button"><button id="btnLogin" class="button-login button">Đăng nhập</button>
+<button id="btnLogout" class="button-logout button" style="display: none;">Đăng xuất</button>
+          </div>
+          <div class="header__block--button-mobile"><button id="btnLogin_mobile" class="button-login_mobile "><i class="fa-solid fa-right-to-bracket"></i></button>
+<button id="btnLogout_mobile" class="button-logout_mobile "><i class="fa-solid fa-right-from-bracket"></i></i></button>
+          </div>
         </div>
       </div>
     </header>
@@ -81,13 +82,9 @@
         </div>
       </div>
     </section>
-    <section class="section02"> 
-      <div class="container"><a href="printer.html" target="_self">
-          <div class="section02__image"><img src="../assets/images/LogoPrinter.png" alt="printer"></div>
-          <div class="section02__content">
-             Đi đến trang Quản lý máy in<i class=" fa-solid fa-arrow-right"></i></div></a></div>
-    </section>
+    <section class="section02"> </section>
     <script src="../assets/script/buttonMenu-mobile.js"></script>
+    <script src="../assets/script/buttonLogin.js"></script>
     <footer class="footer">
       <div class="container">
         <div class="footer__top">

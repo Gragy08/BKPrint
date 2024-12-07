@@ -64,6 +64,7 @@ a {
 @media (max-width: 767.98px) {
   .button {
     font-size: 14px;
+    height: 38px;
   }
 }
 
@@ -97,6 +98,7 @@ a {
 @media (max-width: 767.98px) {
   .button-outline {
     font-size: 14px;
+    height: 38px;
   }
 }
 
@@ -177,12 +179,13 @@ a {
   padding: 0;
   border: 0;
   order: 0;
+  cursor: pointer;
 }
 .header__form input {
   border: 0;
   /* mất đường viền khi click vào */
   outline: 0;
-  color: #99A2A5;
+  color: black;
   height: 100%;
   /* màu trong suốt */
   background-color: transparent;
@@ -190,6 +193,9 @@ a {
   order: 1;
   /* cho phép phần tử tự động điều chỉnh kích thước để vừa với không gian có sẵn trong block */
   flex: 1;
+}
+.header__block--button-mobile {
+  display: none;
 }
 .header__search-mobile {
   display: none;
@@ -210,6 +216,8 @@ a {
   .header__search-mobile {
     /* hien thi cai button search len man hinh */
     display: inline-block;
+    position: absolute;
+    right: 0;
     font-size: 23px;
     color: #00171F;
     border: 0;
@@ -226,12 +234,14 @@ a {
     padding: 12.5px 0;
   }
   .header__wrap {
-    justify-content: space-between;
+    justify-content: center;
   }
   .header__menu-mobile {
     display: inline-block;
+    position: absolute;
+    left: 0px;
     font-size: 23px;
-    color: #00171F;
+    color: #003459;
     border: 0;
     background-color: transparent;
     /* dua chuot vao hien thi ban tay */
@@ -239,6 +249,22 @@ a {
   }
   .header__menu {
     display: none;
+  }
+  .header__block--button {
+    display: none;
+  }
+  .header__block--button-mobile {
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+  }
+  .header__block--button-mobile button {
+    font-size: 24px;
+    font-weight: 500;
+    color: #003459;
+    background-color: #EBF2FA;
+    border: 0;
+    cursor: pointer;
   }
   .header__menu[show=yes] {
     display: block;
@@ -291,9 +317,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 }
 .modal__main {
-  width: 40%;
+  width: 50%;
   padding: 25px;
   border-radius: 8px;
   background-color: #fff;
@@ -331,6 +358,60 @@ a {
   align-items: center;
   gap: 20px;
 }
+.modal__content .form__wrap {
+  width: 100%;
+}
+.modal__content .form__wrap form input {
+  width: 80%;
+  height: 30px;
+  padding: 20px;
+  border-radius: 15px;
+}
+.modal__content .content {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EBEEFF;
+  font-size: 34px;
+  font-weight: 600;
+  color: #003459;
+}
+.modal__content .box-filter__group {
+  border-bottom: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+.modal__content .mobile__form {
+  background-color: #F3F3F3;
+  /* block search fix cứng w và h */
+  height: 44px;
+  width: 220px;
+  border-radius: 46px;
+  padding: 0 16px;
+  display: inline-flex;
+  gap: 12px;
+}
+.modal__content .mobile__form button {
+  font-size: 16.68px;
+  color: #667479;
+  background-color: transparent;
+  /* button có padding mặc định nên phải reset về 0 */
+  padding: 0;
+  border: 0;
+  order: 0;
+  cursor: pointer;
+}
+.modal__content .mobile__form input {
+  border: 0;
+  /* mất đường viền khi click vào */
+  outline: 0;
+  color: black;
+  height: 100%;
+  /* màu trong suốt */
+  background-color: transparent;
+  padding: 0 16px;
+  order: 1;
+  /* cho phép phần tử tự động điều chỉnh kích thước để vừa với không gian có sẵn trong block */
+  flex: 1;
+}
 .modal__content__top {
   display: flex;
   flex-direction: column;
@@ -349,6 +430,12 @@ a {
   font-size: 18px;
   font-weight: 500;
   color: #667479;
+}
+.modal__bottom--confirm {
+  padding: 0 78px;
+}
+.modal__bottom--confirm:hover {
+  background-color: #52CE22;
 }
 .modal__bottom--Yes:hover {
   background-color: #52CE22;
@@ -373,7 +460,7 @@ a {
 }
 @media (max-width: 991.98px) {
   .modal__main {
-    width: 50%;
+    width: 60%;
   }
   .modal__content__top--icon {
     font-size: 50px;
@@ -403,17 +490,32 @@ a {
     font-size: 45px;
   }
   .modal__content__top--title {
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 600;
   }
   .modal__content__top--desc {
     font-size: 13px;
     font-weight: 500;
   }
+  .modal__content__bottom .button-outline {
+    font-size: 12px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .modal__content__bottom .button {
+    font-size: 12px;
+    width: 100%;
+    justify-content: center;
+  }
 }
 @media (max-width: 575.98px) {
   .modal__main {
     width: 80%;
+  }
+  .modal__content .content {
+    font-size: 28px;
+    font-weight: 700;
   }
   .modal__content__top--icon {
     font-size: 35px;
@@ -426,17 +528,6 @@ a {
     font-size: 12px;
     font-weight: 500;
     color: #667479;
-  }
-  .modal__content__bottom .button-outline {
-    font-size: 12px;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  .modal__content__bottom .button {
-    font-size: 12px;
-    width: 100%;
-    justify-content: center;
   }
 }
 
@@ -1082,6 +1173,11 @@ a {
     align-items: center;
     justify-content: space-between;
   }
+  .section-1__head button {
+    border: 0;
+    background-color: #FFF;
+    cursor: pointer;
+  }
   .section-1__head .box-filter__title {
     display: inline-flex;
     font-size: 16px;
@@ -1250,6 +1346,11 @@ a {
 }
 .section-4__form__table--element2 .element--detail {
   cursor: pointer;
+  display: flex;
+  gap: 5px;
+}
+.section-4__form__table--element2 .element--detail label {
+  cursor: pointer;
 }
 .section-4__form__table--element2 .form {
   display: flex;
@@ -1327,6 +1428,14 @@ a {
   margin-bottom: 10px;
   align-items: center;
   gap: 20px;
+}
+.section-4__form__table--element5 .element--detail {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+.section-4__form__table--element5 .element--detail label {
+  cursor: pointer;
 }
 .section-4__form__table--element5 .form {
   display: flex;

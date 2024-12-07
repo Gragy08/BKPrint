@@ -112,8 +112,7 @@ const getCookie = (cookieName) => {
 // Bắt sự kiện cho phần xóa máy in
 const eventButtonDelete = () => {
     const buttonDelete = document.querySelector("[button-delete]");
-    console.log(buttonDelete);
-    buttonDelete.addEventListener("click" ,() => {
+    buttonDelete.addEventListener("click", () => {
         const id = buttonDelete.getAttribute("button-delete");
         
         const body = document.querySelector("body");

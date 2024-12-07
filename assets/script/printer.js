@@ -55,6 +55,9 @@ const elementProductList = document.querySelector("#product-list");
 if(elementProductList) {
     axios.get("http://localhost:3000/printers")
     .then(res => {
+
+        console.log(res);
+
         let htmls = "";
 
         for (const item of res.data) {
@@ -234,3 +237,102 @@ if(alertSuccess) {
 // Hết Kiểm tra biến có trong Cookie hay không
 
 // Hết In thông báo thành công từ trang product-detail sau khi xóa máy in
+
+
+// Tìm kiếm máy in 
+const formSearch = document.querySelector(".header__form");
+if(formSearch) {
+    formSearch.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const keyword = formSearch.keyword.value;
+
+        axios.get(`http://localhost:3000/printers?q=${keyword}`)
+            .then(res => {
+                let htmls = "";
+
+                for (const item of res.data) {
+                    htmls += `
+                        <div class="product-item">
+                            <a href="product-detail.html?id=${item.id}">
+                                <div class="product-item__image">
+                                    <img src=${item.image} alt=${item.name} />
+                                </div>
+                                <div class="product-item__content">
+                                    <h3 class="product-item__title"> ${item.name} . ${item.place} </h3>
+                                    <div class="product-item__info">
+                                        <div class="product-item__info-item"> Chức năng: <b> ${item.function} </b> </div>
+                                        <div class="product-item__info-item"> Khả năng: <b> ${item.ability} </b> </div>
+                                        <div class="product-item__status ${getStatusClass(item.status)}"> ${item.status} </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    `;
+                }
+
+                
+                elementProductList.innerHTML = htmls;
+            })
+    })
+}
+// Hết Tìm kiếm máy in 
+
+
+// Bộ lọc
+
+// Lấy phần tử chứa bộ lọc
+const filterContainer = document.getElementById("status-filter");
+// Lấy danh sách các checkbox bên trong bộ lọc
+const checkboxes = filterContainer.querySelectorAll("input[type='checkbox']");
+
+// Hàm lọc dữ liệu
+function filterData() {
+    const selectedStatuses = Array.from(checkboxes)
+      .filter((checkbox) => checkbox.checked)
+      .map((checkbox) => checkbox.nextElementSibling.textContent.trim());
+
+    axios.get("http://localhost:3000/printers")
+    .then (res => {
+        
+        let filteredData;
+
+        // Nếu không có checkbox nào được chọn, hiển thị toàn bộ dữ liệu
+        if (selectedStatuses.length === 0) {
+            filteredData = res.data;
+        } else {
+            // Lọc dữ liệu dựa trên trạng thái được chọn
+            filteredData = res.data.filter((item) => selectedStatuses.includes(item.status));
+        }
+
+        // Hiển thị dữ liệu lên giao diện
+        let htmls = "";
+
+        for (const item of filteredData) {
+            htmls += `
+                <div class="product-item">
+                    <a href="product-detail.html?id=${item.id}">
+                        <div class="product-item__image">
+                            <img src=${item.image} alt=${item.name} />
+                        </div>
+                        <div class="product-item__content">
+                            <h3 class="product-item__title"> ${item.name} . ${item.place} </h3>
+                            <div class="product-item__info">
+                                <div class="product-item__info-item"> Chức năng: <b> ${item.function} </b> </div>
+                                <div class="product-item__info-item"> Khả năng: <b> ${item.ability} </b> </div>
+                                <div class="product-item__status ${getStatusClass(item.status)}"> ${item.status} </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `;
+        }
+
+        elementProductList.innerHTML = htmls;
+    })
+}
+
+checkboxes.forEach((checkbox) =>
+    checkbox.addEventListener("change", filterData)
+);
+
+// Hết Bộ lọc

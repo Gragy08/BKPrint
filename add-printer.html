@@ -22,11 +22,10 @@
             </ul>
             <div class="inner-overlay"> <i class="fa-regular fa-circle-xmark"></i></div>
           </nav>
-          <button class="header__search-mobile" aria-label="x"><i class="fa-solid fa-magnifying-glass"></i></button>
-          <form class="header__form" action="#">
-            <input name="keywork" placeholder="Tìm vị trí máy in... Tòa-Phòng">
-            <button aria-label="x"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form><a class="button" href="#">Đăng nhập</a>
+          <div class="header__block--button">
+          </div>
+          <div class="header__block--button-mobile">
+          </div>
         </div>
       </div>
     </header>
@@ -91,27 +90,27 @@
                       <div class="form">
                         <div class="element--detail">
                           <input type="checkbox" id="singleSideBW" name="ability" value="In 1 mặt-trắng đen">
-                          <label for="singleSideBW">In 1 mặt-trắng đen</label>
+                          <label for="singleSideBW">In 1 mặt-trắng đen<span class="checkbox-container"></span></label>
                         </div>
                         <div class="element--detail">
                           <input type="checkbox" id="doubleSideBW" name="ability" value="In 2 mặt tự động-trắng đen">
-                          <label for="doubleSideBW">In 2 mặt tự động-trắng đen</label>
+                          <label for="doubleSideBW">In 2 mặt tự động-trắng đen<span class="checkbox-container"></span></label>
                         </div>
                         <div class="element--detail">
                           <input type="checkbox" id="singleSideC" name="ability" value="In 1 mặt-in màu">
-                          <label for="singleSideC">In 1 mặt-in màu</label>
+                          <label for="singleSideC">In 1 mặt-in màu<span class="checkbox-container"></span></label>
                         </div>
                         <div class="element--detail">
                           <input type="checkbox" id="Copy" name="ability" value="Copy">
-                          <label for="Copy">Copy</label>
+                          <label for="Copy">Copy<span class="checkbox-container"></span></label>
                         </div>
                         <div class="element--detail">
                           <input type="checkbox" id="scanBW" name="ability" value="Scan(Trắng đen)">
-                          <label for="scanBW">Scan(Trắng đen)</label>
+                          <label for="scanBW">Scan(Trắng đen)<span class="checkbox-container"></span></label>
                         </div>
                         <div class="element--detail">
                           <input type="checkbox" id="scanC" name="ability" value="Scan(Màu)">
-                          <label for="scanC">Scan(Màu)</label>
+                          <label for="scanC">Scan(Màu)<span class="checkbox-container"></span></label>
                         </div>
                       </div>
                     </div>
@@ -154,6 +153,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../assets/script/printer.js"></script>
     <script src="../assets/script/buttonMenu-mobile.js"></script>
+    <script src="../assets/script/buttonLogin.js"></script>
     <footer class="footer">
       <div class="container">
         <div class="footer__top">

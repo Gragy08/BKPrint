@@ -22,11 +22,15 @@
             </ul>
             <div class="inner-overlay"> <i class="fa-regular fa-circle-xmark"></i></div>
           </nav>
-          <button class="header__search-mobile" aria-label="x"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button class="header__search-mobile" aria-label="x" button-SerFil="1"><i class="fa-solid fa-magnifying-glass"></i></button>
           <form class="header__form" action="#">
-            <input name="keywork" placeholder="Tìm vị trí máy in... Tòa-Phòng">
+            <input name="keyword" placeholder="Tìm máy in">
             <button aria-label="x"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form><a class="button" href="#">Đăng nhập</a>
+          </form>
+          <div class="header__block--button">
+          </div>
+          <div class="header__block--button-mobile">
+          </div>
         </div>
       </div>
     </header>
@@ -45,7 +49,7 @@
       <div class="container"> 
         <div class="section-1__wrap"> 
           <div class="section-1__left">
-            <div class="box-filter"> 
+            <div class="box-filter" id="status-filter"> 
               <div class="box-filter__title"><i class="fa-solid fa-filter"></i>
                 <div class="box-filter__title__inner">Bộ lọc</div>
               </div>
@@ -53,19 +57,19 @@
                 <div class="box-filter__group-label">Trạng thái</div>
                 <div class="box-filter__group-list"> 
                   <div class="box-filter__group-item"> 
-                    <input type="checkbox" id="active" aria-label="active">
+                    <input type="checkbox" id="active" value="Đang hoạt động" aria-label="active">
                     <label for="active">Đang hoạt động</label>
                   </div>
                   <div class="box-filter__group-item"> 
-                    <input type="checkbox" id="inactive" aria-label="passive">
+                    <input type="checkbox" id="inactive" value="Không hoạt động" aria-label="passive">
                     <label for="inactive">Không hoạt động</label>
                   </div>
                   <div class="box-filter__group-item"> 
-                    <input type="checkbox" id="maintance" aria-label="maintenance">
+                    <input type="checkbox" id="maintance" value="Đang bảo trì" aria-label="maintenance">
                     <label for="maintance">Đang bảo trì</label>
                   </div>
                   <div class="box-filter__group-item"> 
-                    <input type="checkbox" id="erroring" aria-label="erroring">
+                    <input type="checkbox" id="erroring" value="Đang bị lỗi" aria-label="erroring">
                     <label for="erroring">Đang bị lỗi</label>
                   </div>
                 </div>
@@ -76,9 +80,9 @@
           <div class="section-1__right">
             <div class="section-1__head">
               <h2 class="section-1__title">Máy in</h2>
-              <div class="box-filter__title"><i class="fa-solid fa-filter"></i>
+              <button class="box-filter__title" button-SerFil="2"><i class="fa-solid fa-filter"></i>
                 <div class="box-filter__title__inner">Bộ lọc</div>
-              </div>
+              </button>
             </div>
             <div class="section-1__list" id="product-list"></div>
           </div>
@@ -88,7 +92,9 @@
     </section>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../assets/script/printer.js"></script>
+    <script src="../assets/script/buttonSearch-mobile.js"></script>
     <script src="../assets/script/buttonMenu-mobile.js"></script>
+    <script src="../assets/script/buttonLogin.js"></script>
     <footer class="footer">
       <div class="container">
         <div class="footer__top">

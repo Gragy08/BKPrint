@@ -6,7 +6,7 @@ block title
 
 block search
     //- Form search
-    button(aria-label="x").header__search-mobile
+    button(aria-label="x" class="header__search-mobile" button-SerFil="1")
         i(class="fa-solid fa-magnifying-glass")
 
     form(action="#" class="header__form")
@@ -61,7 +61,7 @@ block main
                     
                     .section-1__head
                         h2.section-1__title Máy in
-                        .box-filter__title
+                        button(button-SerFil="2" class="box-filter__title")
                             i(class="fa-solid fa-filter")
                             .box-filter__title__inner Bộ lọc
 
@@ -77,3 +77,4 @@ block main
     script(src="https://unpkg.com/axios/dist/axios.min.js")
     //- script(src="../assets/script/product-detail.js")
     script(src = "../assets/script/printer.js")
+    script(src = "../assets/script/buttonSearch-mobile.js")

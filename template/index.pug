@@ -4,6 +4,13 @@ include mixins/product-item.pug
 block title 
     title Trang chủ
 
+block button
+    <button id="btnLogin" class="button-login button">Đăng nhập</button>
+    <button id="btnLogout" class="button-logout button" style="display: none;">Đăng xuất</button>
+block button-mobile
+    <button id="btnLogin_mobile" class="button-login_mobile "><i class="fa-solid fa-right-to-bracket"></i></button>
+    <button id="btnLogout_mobile" class="button-logout_mobile "><i class="fa-solid fa-right-from-bracket"></i></i></button>
+
 block main
 
     section.section0
@@ -50,11 +57,11 @@ block main
 
 
     section.section02 
-        .container
-            a(href = "printer.html" target = "_self")
-                .section02__image
-                    img(src = "../assets/images/LogoPrinter.png" alt="printer")
-                .section02__content 
-                    | Đi đến trang Quản lý máy in
-                    i(class=" fa-solid fa-arrow-right")
+        //- .container
+        //-     a(href = "printer.html" target = "_self")
+        //-         .section02__image
+        //-             img(src = "../assets/images/LogoPrinter.png" alt="printer")
+        //-         .section02__content 
+        //-             | Đi đến trang Quản lý máy in
+        //-             i(class=" fa-solid fa-arrow-right")
     //- a(href="printer.html" class="button") Trang máy in

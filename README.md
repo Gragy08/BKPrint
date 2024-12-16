@@ -86,6 +86,14 @@ Tài liệu này dùng để chỉ rõ các yêu cầu cho hệ thống HCMUT_SS
 3. Mở rộng cho giảng viên sử dụng.  
 
 ---
+
+##Các công nghệ sử dụng:
+1. UX/UI: Figma
+2. Giao diện: Pug, Sass
+3. Xử lý logic: Javascript
+4. Database: Json Server (db.json)
+
+---
 ## Cài đặt 
 
 Clone repository này về máy local

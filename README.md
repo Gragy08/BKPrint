@@ -94,9 +94,17 @@ Tài liệu này dùng để chỉ rõ các yêu cầu cho hệ thống HCMUT_SS
 4. Database: Json Server (db.json)
 
 ---
+
+## Các kho lưu trữ:
+1. Source code:
+`https://github.com/Gragy08/BKPrint`
+2. Database:
+`https://github.com/Gragy08/BKPrintDatabase`
+
+---
 ## Cài đặt 
 
-Clone repository này về máy local
+Clone repository này về máy local:
 
 `git clone https://github.com/Gragy08/BKPrint.git`
 

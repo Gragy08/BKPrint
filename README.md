@@ -86,7 +86,34 @@ Tài liệu này dùng để chỉ rõ các yêu cầu cho hệ thống HCMUT_SS
 3. Mở rộng cho giảng viên sử dụng.  
 
 ---
+## Cài đặt 
+
+Clone repository này về máy local
+
+`git clone https://github.com/Gragy08/BKPrint.git`
+
+---
+
+Để chạy hệ thống cần hai chương trình: một chương trình cho cơ sở dữ liệu và một chương trình cho hệ thống.
+
+## Chạy chương trình cho cơ sở dũ liệu
+
+Chuyển vào thư mục ***database***
+
+`cd database`
+
+Mở terminal và gõ lệnh
+
+`npm run start`
+
+## Chạy chương trình cho hệ thống
+
+Trước tiên cài extension ***open with live server***.
+
+Sau đó click vào file index.html và nhấn vào open with live server.
+
+---
 
 Tài liệu này sẽ được cập nhật thường xuyên khi hệ thống có thay đổi.
 
-23/11/2024.
+16/12/2024.

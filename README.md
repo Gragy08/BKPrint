@@ -87,7 +87,7 @@ Tài liệu này dùng để chỉ rõ các yêu cầu cho hệ thống HCMUT_SS
 
 ---
 
-##Các công nghệ sử dụng:
+## Các công nghệ sử dụng:
 1. UX/UI: Figma
 2. Giao diện: Pug, Sass
 3. Xử lý logic: Javascript
